@@ -1,0 +1,6 @@
+﻿@model System.Linq.IQueryable<Dunfoss.Models.Letter>
+
+@foreach(Dunfoss.Models.Letter letter in Model){
+    <a href="~/Letter/GetLetterById/?id=@letter.Id">@letter.Date.Day @letter.Date.Month @letter.Date.Year @letter.Date.Hour:@letter.Date.Minute:@letter.Date.Second @letter.Division</a>
+    <br />
+}

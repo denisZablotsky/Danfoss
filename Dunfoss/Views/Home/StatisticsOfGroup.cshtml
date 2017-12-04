@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="windows-main">
+    
+    <div id="go-to-charts">
+       @Html.ActionLink("Функция построения графиков", "GetNav", "Chart")
+    </div>
+    
+    <div class="window-files">
+        <h4>Важные документы</h4>
+        @{
+            Html.RenderAction("GetFileList", "Home");
+        }
+    </div>
+    <div class="window-files">
+        <h4>Информационные письма</h4>
+        @{
+            Html.RenderAction("GetLetterList", "Letter");
+        }
+    </div>
+    <div class="window-reports">
+        <h4>Отчеты</h4>
+        @{
+            Html.RenderAction("GetReportList", "Report");
+        }
+    </div>
+</div>

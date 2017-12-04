@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Info";
+}
+
+<table border="1" cellpadding="10" align="center" style="text-align:center;">
+    <th>В очереди</th>
+    <th>В процессе дизайна</th>
+    <th>На согласовании</th>
+    <th>Загружено на завод</th>
+    <tr>
+        <td>@ViewBag.q</td>
+        <td>@ViewBag.d</td>
+        <td>@ViewBag.ag</td>
+        <td>@ViewBag.f</td>
+    </tr>
+</table>
+
+<table border="1" align="center" style="text-align:center;">
+    <th>Дизайнер</th>
+    <th>Объект(название)</th>
+    <th>Код RO</th>
+    <th>Код RU</th>
+    <th>Ссылка на црм/диск G</th>
+    <th>В очереди</th>
+    <th>В процессе дизайна</th>
+    <th>На согласовании</th>
+    <th>Загружена на завод</th>
+    @for(int i = 0; i < ViewBag.len; i++)
+    {
+        <tr>
+            @for (int j = 0; j < 9; j++)
+            {
+                if (j == 4)
+                {
+                    <td><a href="@ViewBag.ar[i, j]">@ViewBag.ar[i, j]</a></td>
+                }
+                else
+                {
+                    <td>@ViewBag.ar[i, j]</td>
+                }
+            }
+        </tr>
+    }
+</table>
+

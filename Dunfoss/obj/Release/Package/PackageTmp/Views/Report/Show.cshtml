@@ -1,0 +1,12 @@
+﻿@model int
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>@Model</h2>
+
+<div>
+    @{
+        Html.RenderAction("GetReportById", "Report", new { id = Model });
+     }
+</div>

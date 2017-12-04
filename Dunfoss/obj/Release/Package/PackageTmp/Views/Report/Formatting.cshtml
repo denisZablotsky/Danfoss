@@ -1,0 +1,436 @@
+﻿<div id="go-to-report"><a id="go-to-report-link" href="" style="display: none;">Перейти к отчету</a></div>
+<div id="chart_div" style="width: 100%; height: 600px; display: none;"></div>
+
+
+
+<script type="text/javascript">
+
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawStacked);
+
+
+    var exportData;
+
+    function drawStacked() {
+        // ---------------------- 1 --------------------------------------------------------------------
+        var imagesAr = new Array(7);
+        var allValues = @Html.Raw(Json.Encode(@ViewBag.all1));
+        var goodValues = @Html.Raw(Json.Encode(@ViewBag.good1));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.Titles));
+
+        var dataN = new Array(allValues.length + 1);
+        var count = 1;
+        var flag = 1;
+        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        for(var i = 0; i < allValues.length; i++){
+            if(allValues[i] != 0){
+                var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(1);
+                dataN[count] = [titles[i], goodValues[i], goodValues[i], (allValues[i] - goodValues[i]), (allValues[i] - goodValues[i]), percent + "%"];
+                count++;
+                if (flag == 1)
+                    flag = 0;
+            }
+        }
+        if(allValues.length - count >= 0)
+            dataN.splice(count, (allValues.length + 1) - count );
+
+        if(flag == 1){
+            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+        }
+
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var options = {
+                'width':1600,
+                'height':800,
+                title: 'Новые расчеты БТП',
+                isStacked: true,
+                hAxis: {                    
+                    format: 'W'
+                },
+                colors: ['#92d14f', '#E20011']
+            };
+
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(view, options);
+        exportData = chart.getImageURI();
+
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Report/Export",
+            data: '{"imageData":"' + image + '", "number": "1"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                imagesAr[0] = result;
+                Draw2(imagesAr);
+            }
+        });
+        // ---------------------- 1 --------------------------------------------------------------------
+
+
+
+
+    }
+
+
+    function Draw2(imagesAr){
+
+        var allValues = @Html.Raw(Json.Encode(@ViewBag.all2));
+        var goodValues = @Html.Raw(Json.Encode(@ViewBag.good2));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.Titles));
+
+        var dataN = new Array(allValues.length + 1);
+        var count = 1;
+        var flag = 1;
+        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        for(var i = 0; i < allValues.length; i++){
+            if(allValues[i] != 0){
+                var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(1);
+                dataN[count] = [titles[i], goodValues[i], goodValues[i], (allValues[i] - goodValues[i]), (allValues[i] - goodValues[i]), percent + "%"];
+                count++;
+                if (flag == 1)
+                    flag = 0;
+            }
+        }
+        if(allValues.length - count >= 0)
+            dataN.splice(count, (allValues.length + 1) - count );
+
+        if(flag == 1){
+            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+        }
+
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var options = {
+            'width':1600,
+            'height':800,
+            title: 'Корректировки расчетов БТП',
+            isStacked: true,
+            hAxis: {
+                format: 'W'
+            },
+            colors: ['#92d14f', '#E20011']
+        };
+
+        
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(view, options);
+        exportData = chart.getImageURI();
+
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Report/Export",
+            data: '{"imageData":"' + image + '", "number": "2"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                imagesAr[1] = result;
+                Draw3(imagesAr);
+            }
+        });
+    }
+    //////////////////////////////////////////////////////////////////////////////////////
+    function Draw3(imagesAr){
+
+        var allValues = @Html.Raw(Json.Encode(@ViewBag.all3));
+        var goodValues = @Html.Raw(Json.Encode(@ViewBag.good3));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.Titles));
+
+        var dataN = new Array(allValues.length + 1);
+        var count = 1;
+        var flag = 1;
+        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        for(var i = 0; i < allValues.length; i++){
+            if(allValues[i] != 0){
+                var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(1);
+                dataN[count] = [titles[i], goodValues[i], goodValues[i], (allValues[i] - goodValues[i]), (allValues[i] - goodValues[i]), percent + "%"];
+                count++;
+                if (flag == 1)
+                    flag = 0;
+            }
+        }
+        if(allValues.length - count >= 0)
+            dataN.splice(count, (allValues.length + 1) - count );
+
+        if(flag == 1){
+            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+        }
+
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var options = {
+            'width':1600,
+            'height':800,
+            title: 'Новые расчеты и корректировки БТП',
+            isStacked: true,
+            hAxis: {
+                format: 'W'
+            },
+            colors: ['#92d14f', '#E20011']
+        };
+
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(view, options);
+        exportData = chart.getImageURI();
+
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Report/Export",
+            data: '{"imageData":"' + image + '", "number": "3"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                imagesAr[2] = result;
+                Draw4(imagesAr);
+            }
+        });
+    }
+    //////////////////////////////////////////////////////////////////////////////////////
+    function Draw4(imagesAr){
+
+        var allValues = @Html.Raw(Json.Encode(@ViewBag.all4));
+        var goodValues = @Html.Raw(Json.Encode(@ViewBag.good4));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.TitlesM));
+
+        var dataN = new Array(allValues.length + 1);
+        var count = 1;
+        var flag = 1;
+        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        for(var i = 0; i < allValues.length; i++){
+            if(allValues[i] != 0){
+                var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(1);
+                dataN[count] = [titles[i], goodValues[i], goodValues[i], (allValues[i] - goodValues[i]), (allValues[i] - goodValues[i]), percent + "%"];
+                count++;
+                if (flag == 1)
+                    flag = 0;
+            }
+        }
+        if(allValues.length - count >= 0)
+            dataN.splice(count, (allValues.length + 1) - count );
+
+        if(flag == 1){
+            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+        }
+
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var options = {
+            'width':1600,
+            'height':800,
+            title: 'Новые расчеты и корректировки БТП',
+            isStacked: true,
+            hAxis: {
+                
+                format: 'W'
+            },            
+            colors: ['#92d14f', '#E20011']
+        };/////4
+
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(view, options);
+        @{System.Threading.Thread.Sleep(50); }
+            exportData = chart.getImageURI();
+
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Report/Export",
+            data: '{"imageData":"' + image + '", "number": "4"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                    imagesAr[3] = result;
+                    Draw5(imagesAr);
+                }
+            });
+    }
+    //////////////////////////////////////////////////////////////////////////////////////
+    function Draw5(imagesAr){
+        var allValues = @Html.Raw(Json.Encode(@ViewBag.all5));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.titlesR));
+
+        var dataN = new Array(allValues.length + 1);
+        dataN[0] = ["Причина", "Кол-во просроченных задач", { role: "annotation" }];
+        for(var i = 0; i < allValues.length; i++){
+            dataN[i + 1] = [titles[i], allValues[i], allValues[i]];
+        }
+
+
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var option;
+        options = {
+            'width':1600,
+            'height':800,
+            title: 'Причины просроченных задач',
+            colors: ['#9b2d30']
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(view, options);
+
+        exportData = chart.getImageURI();
+
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Report/Export",
+            data: '{"imageData":"' + image + '", "number": "5"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                imagesAr[4] = result;
+                Draw6(imagesAr);
+            }
+        });
+    }
+    //////////////////////////////////////////////////////////////////////////////////////
+    function Draw6(imagesAr){
+        var allValues = @Html.Raw(Json.Encode(@ViewBag.all6));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.titlesR2));
+
+        var dataN = new Array(allValues.length + 1);
+        dataN[0] = ["Причина", "Кол-во просроченных задач", { role: "annotation" }];
+        for(var i = 0; i < allValues.length; i++){
+            dataN[i + 1] = [titles[i], allValues[i], allValues[i]];
+        }
+
+
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var option;
+        options = {
+            'width':1600,
+            'height':800,
+            title: 'Причины корректировок',
+            colors: ['#00008b']
+        };//6
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(view, options);
+
+        exportData = chart.getImageURI();
+
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Report/Export",
+            data: '{"imageData":"' + image + '", "number": "6"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                imagesAr[5] = result;
+                Draw7(imagesAr);
+            }
+        });
+    }
+    //////////////////////////////////////////////////////////////////////////////////////
+    function Draw7(imagesAr){
+        var allValues = @Html.Raw(Json.Encode(@ViewBag.all7));
+        var goodValues = @Html.Raw(Json.Encode(@ViewBag.good7));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.TitlesC));
+
+        var dataN = new Array(allValues.length + 1);
+        var count = 1;
+        var flag = 1;
+        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        for(var i = 0; i < allValues.length; i++){
+            if(allValues[i] != 0){
+                var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(1);
+                dataN[count] = [titles[i], goodValues[i], goodValues[i], (allValues[i] - goodValues[i]), (allValues[i] - goodValues[i]), percent + "%"];
+                count++;
+                if (flag == 1)
+                    flag = 0;
+            }
+        }
+        if(allValues.length - count >= 0)
+            dataN.splice(count, (allValues.length + 1) - count );
+
+        if(flag == 1){
+            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+        }
+
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var options = {
+            'width':1600,
+            'height':800,
+            title: 'Заказы БТП',
+            isStacked: true,
+            hAxis: {
+                
+                format: 'W'
+            },
+            colors: ['#92d14f', '#E20011']
+        };
+
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(view, options);
+        exportData = chart.getImageURI();
+
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Report/Export",
+            data: '{"imageData":"' + image + '", "number": "7"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                imagesAr[6] = result;
+                $.ajax({
+                    type: "POST",
+                    url: "/Report/GetImages",
+                    success: function (result) {
+                        $("#circularG1").hide();
+                        $("#go-to-report-link").attr("href", "/Report/GetReportById/?id=" + result);
+                        $("#go-to-report-link").show();
+                        
+                    },
+                    data:
+                        JSON.stringify({
+                            image1: imagesAr[0],
+                            image2: imagesAr[1],
+                            image3: imagesAr[2],
+                            image4: imagesAr[3],
+                            image5: imagesAr[4],
+                            image6: imagesAr[5],
+                            image7: imagesAr[6]
+                        })
+                    ,
+                    contentType: "application/json; charset=utf-8"
+                });
+            }
+        });
+    }
+
+    function ExportToServer(){
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Chart/Export",
+            data: '{"imageData":"' + image + '"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+
+        });
+    }
+</script>
+<div id="show"></div>
+
+

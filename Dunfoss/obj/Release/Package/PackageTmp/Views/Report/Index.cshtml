@@ -1,0 +1,51 @@
+﻿<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+@{
+    ViewBag.Title = "Report";
+}
+
+<div class="chart-options">
+    @using (Ajax.BeginForm("Formatting", "Report", new AjaxOptions { UpdateTargetId = "chart-draw", OnBegin = "ShowLoad" }))
+    {
+        <div id="WeekFilter" class="option-chart-filter">
+            <span class="chart-options-opt">Фильтрация по неделям: с</span><input type="number" value="1" max="52" min="1" name="min" />
+            <span> по </span><input type="number" value="52" max="52" min="1" name="max" />
+            <br />
+        </div>
+        <div id="Division" class="option-chart-filter">
+            <span>Дивизионы :</span>
+            <select id="division" name="division">
+                <option>Все</option>
+                <option>Юг</option>
+                <option>Дальний Восток</option>
+                <option>Западная Сибирь</option>
+                <option>Северо-Запад</option>
+                <option>Урал</option>
+                <option>Москва</option>
+                <option>Поволжье</option>
+                <option>Центр</option>
+            </select>
+            <br />
+        </div>
+        <div class="chart-options-submit"><input type="submit" value="Сформировать" /></div>
+    }
+
+</div>
+<div style="margin: auto; display: none; float: none; margin-top: 10px;" class="circularGh" id="circularG1">
+    <div id="circularG_1" class="circularG"></div>
+    <div id="circularG_2" class="circularG"></div>
+    <div id="circularG_3" class="circularG"></div>
+    <div id="circularG_4" class="circularG"></div>
+    <div id="circularG_5" class="circularG"></div>
+    <div id="circularG_6" class="circularG"></div>
+    <div id="circularG_7" class="circularG"></div>
+    <div id="circularG_8" class="circularG"></div>
+</div>
+<div id="chart-draw" class="chart-draw">
+
+</div>
+
+<script type="text/javascript">
+    function ShowLoad() {
+        $("#circularG1").show();
+    }
+</script>

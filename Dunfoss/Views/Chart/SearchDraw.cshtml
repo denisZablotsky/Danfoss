@@ -1,0 +1,39 @@
+﻿@model System.Collections.Generic.List<string>
+
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['table'] });
+
+    google.charts.setOnLoadCallback(drawTable);
+    google.charts.setOnLoadCallback(drawTable2);
+
+
+        function drawTable() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Код RO');
+            data.addColumn('string', 'Код RU');
+            data.addColumn('string', '3Д дизайнер');
+            data.addColumn('string', 'Ссылка в црм / на диск G');
+            data.addRow(['@Model[0]', '@Model[1]', "@Model[2]", '<a href="@Model[3]">@Model[3]</a>']);
+
+            var table = new google.visualization.Table(document.getElementById('table_div'));
+
+            table.draw(data, { showRowNumber: true, width: '100%', height: '100%' ,allowHtml: true });
+        }
+
+
+        function drawTable2() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', '');
+            data.addColumn('string', '');
+            data.addRow(['', '@Model[4]']);
+            data.addRow(['', '@Model[5]']);
+            data.addRow(['', '@Model[6]']);
+
+            var table = new google.visualization.Table(document.getElementById('table_div2'));
+
+            table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+        }
+</script>
+<div id="table_div" style="margin-top: 30px;"></div>
+<div id="table_div2"></div>
+

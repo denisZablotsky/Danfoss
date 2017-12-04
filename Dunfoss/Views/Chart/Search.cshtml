@@ -1,0 +1,19 @@
+﻿<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="chart-options">
+    @using (Ajax.BeginForm("Search", "Chart", new AjaxOptions { UpdateTargetId = "chart-draw" }))
+    {
+        <span>Номер: </span><input type="text" name="number" />
+        <div class="chart-options-submit"><input type="submit" value="Найти" /></div>
+    }
+
+</div>
+
+
+<div id="chart-draw" class="chart-draw">
+
+</div>
+

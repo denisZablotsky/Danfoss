@@ -1,0 +1,53 @@
+﻿<div id="chart" style="width: 1200px; height: 600px;"></div>
+
+<script type="text/javascript">
+
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawStacked);
+
+
+
+    var exportData;
+
+    function drawStacked() {
+        var allValues = @Html.Raw(Json.Encode(@ViewBag.All));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.Titles));
+
+        var dataN = new Array(allValues.length + 1);
+        dataN[0] = ["Причина", "Кол-во просроченных задач", { role: "annotation" }];
+        for(var i = 0; i < allValues.length; i++){   
+            dataN[i + 1] = [titles[i], allValues[i], allValues[i]];
+        }
+
+
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var option;
+        options = {
+            title: 'Причины',
+           
+            colors: ['#E20011']
+        };
+       
+        var chart = new google.visualization.BarChart(document.getElementById('chart'));
+        chart.draw(view, options);
+
+        exportData = chart.getImageURI();
+    }
+
+
+    function ExportToServer(){
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Chart/Export",
+            data: '{"imageData":"' + image + '"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+
+        });
+    }
+</script>
+
+

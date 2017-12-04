@@ -1,0 +1,11 @@
+﻿@model Dunfoss.Models.User
+
+@using (Html.BeginForm("LogIn", "Home", FormMethod.Post))
+{
+    @Html.Label("Name")
+    @Html.TextBoxFor(x => x.Name)
+    @Html.Label("Password")
+    @Html.PasswordFor(x => x.Password)
+    <span class="button"><input type="submit" value="Login" /></span>
+    @Html.ActionLink("Sign up", "Registration", "Home")
+}

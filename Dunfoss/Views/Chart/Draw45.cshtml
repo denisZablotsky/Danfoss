@@ -1,0 +1,17 @@
+﻿@using System.Collections.Generic;
+@model IEnumerable<string>
+
+
+@using (Ajax.BeginForm((string)ViewBag.Function, "Chart", new {min = ViewBag.min, max = ViewBag.max }, new AjaxOptions { UpdateTargetId = "chart45" }))
+{
+    <div id="reasons-list">
+        @foreach (string reason in Model)
+        {
+            <label><input type="checkbox" name="checkedValues" value="@reason">@reason</label> <br />
+
+        }
+    </div>
+    <div class="chart-options-submit"><input type="submit" value="Перестроить" /></div>
+}
+
+<div id="chart45"></div>

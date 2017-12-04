@@ -1,0 +1,130 @@
+﻿.main-content{
+    width: 80%;
+    min-height:500px;
+    margin: auto;
+}
+
+.header-main-container{
+    width: 100%;
+}
+.navbar-header{
+    margin-left: 10%;
+}
+
+
+.devis{
+    font-size: 16px;
+    width: 250px;
+    float: left;
+    padding-top: 15px;
+    padding-left: 5px;
+    font-weight: 500;
+}
+.devis:hover{
+    color:white;
+    text-decoration:none;
+}
+.devis:active{
+    text-decoration:none;
+}
+.devis:visited{
+    text-decoration:none;
+    color:white;
+}
+
+.logo{
+    padding:0;
+    margin: 0;
+}
+
+/* Menu */
+
+#menu-item{
+    color:white;
+}
+.menu-link{
+    color: white;
+}
+
+.navigation{
+    text-align: center;
+}
+
+.login-link{
+    margin-right: 10%;
+    margin-top: 15px;
+    float: right;
+}
+.navbar-default{
+    background-color: #e2000E;
+}
+.content{
+    color: #E2000E;
+}
+.content a{
+    color: #E2000E;
+}
+.content li{
+    list-style-type:none;
+}
+
+.menu-btn{
+    background-color: #E2000E;
+    border-color: white;
+}
+.navbar-toggle {
+    border-color: #fff;
+}
+.menu-btn:active{
+    background-color: #E2000E;
+}
+.icon-bar{
+    background-color: #000;
+}
+
+
+.login-container{
+    text-align: center;
+}
+
+.horizontal-menu{
+    width: 350px;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+.horizontal-menu-ul{
+    padding:0;
+    list-style-type: none;
+}
+
+
+.horizontal-menu-ul a{
+    text-decoration: none;
+    color: #E2000E;
+}
+.horizontal-menu a:hover{
+    text-decoration: none;
+}
+.horizontal-menu a:active{
+    text-decoration:none;
+}
+
+@media (min-width: 1200px){
+    .navigation{
+        padding-left: 100px;
+    }
+}
+@media(max-width:768px) {
+   .menu{
+        margin-left: 0;
+    }
+
+   .login-link{
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        float:none;
+        text-align: center;
+    }
+}

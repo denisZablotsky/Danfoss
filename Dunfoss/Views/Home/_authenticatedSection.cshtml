@@ -1,0 +1,7 @@
+﻿@model Dunfoss.Models.User
+
+@using (Html.BeginForm("Logout", "Home", FormMethod.Post))
+{
+    @Html.ActionLink(@Model.Name, "Index", "Home")
+    <span class="button"><input type="submit" value="Logout" /></span>
+}

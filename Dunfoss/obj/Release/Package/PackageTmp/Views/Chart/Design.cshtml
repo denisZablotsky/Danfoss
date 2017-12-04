@@ -1,0 +1,111 @@
+﻿<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+@{
+    ViewBag.Title = "Design";
+}
+
+<div class="chart-options">
+    @using (Ajax.BeginForm("DesignDraw", "Chart", new AjaxOptions { UpdateTargetId = "chart-draw" }))
+    {
+        <select id="ChartType" name="ChartType">
+            <option value="1" selected>Показатели скорости закрытия задач по неделям</option>
+            <option value="2">Показатели скорости закрытия задач по офисам</option>
+            
+        </select>
+        <br />
+        <span>Тип графика</span>
+        <select id="designType" name="designType">
+            <option value="O" selected>O - orders(заказы)</option>
+            <option value="P">P - projects(проекты)</option>
+            <option value="S">S - standartization(стандартизация)</option>
+        </select>
+        <br />
+        <div id="FilterType">
+            <span>Фильтрация: </span>
+            <select id="filterType" name="filterType" class="option-chart-filter">
+                <option value="1" selected>По месяцам</option>
+                <option value="2">По неделям</option>
+            </select>
+        </div>
+
+        <div id="WeekFilter" style="display: none;" class="option-chart-filter">
+            <span class="chart-options-opt">Фильтрация по неделям: с</span><input type="number" value="1" max="52" min="1" name="weekMin" />
+            <span> по </span><input type="number" value="52" max="52" min="1" name="weekMax" />
+            <br />
+        </div>
+
+        <div id="MonthFilter" class="option-chart-filter">
+
+            <span>
+                C:
+                <select id="chartNumber" name="monthMin">
+                    <option value="1" selected>Января</option>
+                    <option value="2">Февраля</option>
+                    <option value="3">Марта</option>
+                    <option value="4">Апреля</option>
+                    <option value="5">Мая</option>
+                    <option value="6">Июня</option>
+                    <option value="7">Июля</option>
+                    <option value="8">Августа</option>
+                    <option value="9">Сентября</option>
+                    <option value="10">Октября</option>
+                    <option value="11">Ноября</option>
+                    <option value="12">Декабря</option>
+                </select>
+            </span>
+            <br />
+            <br />
+            <span>
+                По:
+                <select id="chartNumber" name="monthMax">
+                    <option value="1">Январь</option>
+                    <option value="2">Февраль</option>
+                    <option value="3">Март</option>
+                    <option value="4">Апрель</option>
+                    <option value="5">Май</option>
+                    <option value="6">Июнь</option>
+                    <option value="7">Июль</option>
+                    <option value="8">Август</option>
+                    <option value="9">Сентябрь</option>
+                    <option value="10">Октябрь</option>
+                    <option value="11">Ноябрь</option>
+                    <option value="12" selected>Декабрь</option>
+                </select>
+            </span>
+            <br />
+        </div>
+        <div class="chart-options-submit"><input type="submit" value="Построить" /></div>
+
+    }
+
+</div>
+
+<script type="text/javascript">
+    
+    $("#filterType").change(function () {
+        if ($(this).val() == 2) {
+            Week();
+        }
+        else {
+            Month();
+        }
+    });
+
+    function Week() {
+        $('#MonthFilter').hide();
+        $('#WeekFilter').show();
+    }
+    function Month() {
+        $('#WeekFilter').hide();
+        $('#MonthFilter').show();
+    }
+    function CloseAll() {
+        $("#FilterType").hide();
+        $("#WeekFilter").hide();
+        $("#MonthFilter").hide();
+    }
+</script>
+
+<div id="chart-draw">
+</div>
+
+

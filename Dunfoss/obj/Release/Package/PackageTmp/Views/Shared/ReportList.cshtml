@@ -1,0 +1,9 @@
+﻿@model System.Linq.IQueryable<Dunfoss.Models.Report>
+
+@{ 
+    foreach(Dunfoss.Models.Report report in Model)
+    {
+        <a href="/Report/GetReportById/?id=@report.Id">@report.Date.Day @report.Date.Month @report.Date.Year @report.Date.Hour : @report.Date.Minute @report.Id</a>
+        <br/>
+    }
+}

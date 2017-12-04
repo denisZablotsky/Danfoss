@@ -1,0 +1,21 @@
+﻿@model Dunfoss.Models.User
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="login-form">
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    @Html.Label("Логин", new { @clas = "login-form-name-label" })
+    <br />
+    @Html.TextBoxFor(x => x.Name, new { @clas = "login-form-name-field login-field" })
+    <br />
+    <br />
+    @Html.Label("Пароль", new { @clas = "login-form-password-label" })
+    <br />
+    @Html.PasswordFor(x => x.Password, new { @clas = "login-form-password-field login-field" })
+    <br />
+    <br />
+    <input class="login-btn" type="submit" value="Войти" />
+    <br />
+}
+</div>

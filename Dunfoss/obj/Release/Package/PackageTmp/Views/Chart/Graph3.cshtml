@@ -1,0 +1,76 @@
+﻿<div id="chart_div" style="width: 100%; height: 600px;"></div>
+<a id="export" href="#" style="display: none" onclick="ExportToServer()">Export as Image</a>
+<script type="text/javascript">
+
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawStacked);
+
+
+    var exportData;
+
+    function drawStacked() {
+        var med = @Html.Raw(Json.Encode(@ViewBag.Med));
+        var good = @Html.Raw(Json.Encode(@ViewBag.Good));
+        var poor = @Html.Raw(Json.Encode(@ViewBag.Poor));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.Titles));
+
+        var dataN = new Array(titles.length + 1);
+        var count = 1;
+        var flag = 1;
+        dataN[0] = ["Неделя", "Good", { role: "annotation" }, "Medium", { role: "annotation" }, "Poor", { role: "annotation" }];
+        for(var i = 0; i < titles.length; i++){
+            if(good[i] != 0 || med[i] != 0 || poor[i] != 0){
+                var goodAn = "";
+                if(good[i] != 0) goodAn = good[i];
+                var medAn = "";
+                if(medAn != 0) medAn = med[i];
+                var poorAn = "";
+                if(poor[i] != 0) poorAn = poor[i];
+                dataN[count] = [titles[i], good[i], goodAn, med[i], medAn, poor[i], poorAn];
+                count++;
+                if (flag == 1)
+                    flag = 0;
+            }
+        }
+        if(titles.length - count >= 0)
+            dataN.splice(count, (titles.length + 1) - count );
+
+        if(flag == 1){
+            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+        }
+
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var options = {
+                title: 'Новые расчеты БТП',
+                isStacked: true,
+                hAxis: {
+                    title: 'Номер недели',
+                    format: 'W'
+                },
+                hAxis: {title: "Количество расчетов", slantedText:true, slantedTextAngle: 270 },
+                colors: ['#92d14f', '#E20011', '#333333']
+            };
+
+
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(view, options);
+        exportData = chart.getImageURI();
+    }
+
+
+
+    function ExportToServer(){
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Chart/Export",
+            data: '{"imageData":"' + image + '"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+
+        });
+    }
+</script>

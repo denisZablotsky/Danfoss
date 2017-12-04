@@ -1,0 +1,60 @@
+﻿<div id="chart_div" style="width: 100%; height: 600px;"></div>
+<a id="export" href="#" style="display: none" onclick="ExportToServer()">Export as Image</a>
+<script type="text/javascript">
+
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawStacked);
+
+
+    var exportData;
+
+    function drawStacked() {
+        var allValues = @Html.Raw(Json.Encode(@ViewBag.Good));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.Titles));
+        var dataN;
+        if(allValues != null)
+            dataN = new Array(allValues.length + 1);
+        else{
+            dataN = new Array(titles.length + 1);
+            $("#chart_div").text("Данных по заданному фильтру нет");
+            return;
+        }
+        var count = 1;
+        var flag = 1;
+        dataN[0] = ["Дизайнер", "Средняя оценка", { role: "annotation" }];
+        for(var i = 0; i < titles.length; i++){
+            if(allValues[i] != 0){
+                dataN[count] = [titles[i], allValues[i], allValues[i]];
+                count++;
+                if (flag == 1)
+                    flag = 0;
+            }
+        }
+        if(titles.length - count >= 0)
+            dataN.splice(count, (titles.length + 1) - count );
+
+        if(flag == 1){
+            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+        }
+
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var options = {
+                title: 'Средняя оценка дизайнеров',
+                isStacked: true,
+                hAxis: {
+                    title: 'Дизайнер',
+                    format: 'W'
+                },
+                hAxis: { slantedText:true, slantedTextAngle:60 },
+                colors: ['#92d14f', '#E20011']
+            };
+        
+        
+
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(view, options);
+        exportData = chart.getImageURI();
+    }
+</script>

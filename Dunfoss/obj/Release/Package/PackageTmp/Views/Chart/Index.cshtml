@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="upload-form">
+    <div class="upload-file-item">
+        <input type="file" name="file1" id="uploadFile1" /><button class="upload-btn" id="upload-btn-1">Загрузить</button>
+        <div style="display:none;" class="circularGh" id="circularG1">
+            <div id="circularG_1" class="circularG"></div>
+            <div id="circularG_2" class="circularG"></div>
+            <div id="circularG_3" class="circularG"></div>
+            <div id="circularG_4" class="circularG"></div>
+            <div id="circularG_5" class="circularG"></div>
+            <div id="circularG_6" class="circularG"></div>
+            <div id="circularG_7" class="circularG"></div>
+            <div id="circularG_8" class="circularG"></div>
+        </div><img id="done-1" class="done" src="~/Images/success.png" style="display:none" height="50" />
+        </div>
+    <div class="upload-file-item">
+        <input type="file" name="file2" id="uploadFile2" /><button class="upload-btn" id="upload-btn-2">Загрузить</button>
+        <div style="display:none;" class="circularGh" id="circularG2">
+            <div id="circularG_1" class="circularG"></div>
+            <div id="circularG_2" class="circularG"></div>
+            <div id="circularG_3" class="circularG"></div>
+            <div id="circularG_4" class="circularG"></div>
+            <div id="circularG_5" class="circularG"></div>
+            <div id="circularG_6" class="circularG"></div>
+            <div id="circularG_7" class="circularG"></div>
+            <div id="circularG_8" class="circularG"></div>
+        </div><img id="done-2" class="done" src="~/Images/success.png" style="display:none" height="50" />
+    </div>
+    <div class="upload-file-item">
+        <input type="file" name="file3" id="uploadFile3" /><button class="upload-btn" id="upload-btn-3">Загрузить</button>
+        <div style="display:none" class="circularGh" id="circularG3">
+            <div id="circularG_1" class="circularG"></div>
+            <div id="circularG_2" class="circularG"></div>
+            <div id="circularG_3" class="circularG"></div>
+            <div id="circularG_4" class="circularG"></div>
+            <div id="circularG_5" class="circularG"></div>
+            <div id="circularG_6" class="circularG"></div>
+            <div id="circularG_7" class="circularG"></div>
+            <div id="circularG_8" class="circularG"></div>
+        </div><img id="done-3" class="done" src="~/Images/success.png" style="display:none" height="50" />
+    </div>  
+</div>
+
+<script type="text/javascript">
+
+    $('#upload-btn-1').on('click', function (event) {
+        $("#circularG1").show();
+        event.preventDefault();
+        var files = document.getElementById('uploadFile1').files;
+        if (files.length > 0) {
+            if (window.FormData !== undefined) {
+                var data = new FormData();
+                for (var i = 0; i < files.length; i++) {
+                    data.append("file1", files[i]);
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("UploadAjax","Chart")',
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: function (result) {
+                        $("#circularG1").hide();
+                        $("#done-1").show();
+                    },
+                    error: function (xhr, status, p3) {
+                        alert(xhr.responseText);
+                    }
+                });
+            } else {
+                alert("Ваш браузер не поддерживает Html5!");
+            }
+        }
+    });
+
+    $('#upload-btn-2').on('click', function (event) {
+        $("#circularG2").show();
+        event.preventDefault();
+        var files = document.getElementById('uploadFile2').files;
+        if (files.length > 0) {
+            if (window.FormData !== undefined) {
+                var data = new FormData();
+                for (var i = 0; i < files.length; i++) {
+                    data.append("file2", files[i]);
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("UploadAjax","Chart")',
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: function (result) {
+                        $("#circularG2").hide();
+                        $("#done-2").show();
+                    },
+                    error: function (xhr, status, p3) {
+                        alert(xhr.responseText);
+                    }
+                });
+            } else {
+                alert("Ваш браузер не поддерживает Html5!");
+            }
+        }
+    });
+
+    $('#upload-btn-3').on('click', function (event) {
+        $("#circularG3").show();
+        event.preventDefault();
+        var files = document.getElementById('uploadFile3').files;
+        if (files.length > 0) {
+            if (window.FormData !== undefined) {
+                var data = new FormData();
+                for (var i = 0; i < files.length; i++) {
+                    data.append("file3", files[i]);
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("UploadAjax","Chart")',
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: function (result) {
+                        $("#circularG3").hide();
+                        $("#done-3").show();
+                    },
+                    error: function (xhr, status, p3) {
+                        alert(xhr.responseText);
+                    }
+                });
+            } else {
+                alert("Ваш браузер не поддерживает Html5!");
+            }
+        }
+    });
+
+</script>
+
+<div class="gochart">
+    @Html.ActionLink("Вернуться в меню", "GetNav", "Chart")
+</div>

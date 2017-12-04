@@ -1,0 +1,11 @@
+﻿@model IQueryable<Dunfoss.Models.File> 
+@{
+    ViewBag.Title = "GetFileList";
+    Layout = "";
+}
+
+@foreach (Dunfoss.Models.File file in Model)
+{
+    <a href="/Home/Change/?id=@file.Id">@file.Name</a><br />
+}
+

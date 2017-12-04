@@ -1,0 +1,50 @@
+﻿<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="chart-options">
+    @using (Ajax.BeginForm("Formatting", "Letter", new AjaxOptions { UpdateTargetId = "chart-draw", OnBegin = "ShowLoad" }))
+    {
+        
+        
+        <div id="MonthFilter" class="option-chart-filter">
+            <span class="chart-options-opt">Месяц: </span>
+            <select id="chartNumber" name="month">
+                    <option value="1" selected>Январь</option>
+                    <option value="2">Февраль</option>
+                    <option value="3">Март</option>
+                    <option value="4">Апрель</option>
+                    <option value="5">Май</option>
+                    <option value="6">Июнь</option>
+                    <option value="7">Июль</option>
+                    <option value="8">Август</option>
+                    <option value="9">Сентябрь</option>
+                    <option value="10">Октябрь</option>
+                    <option value="11">Ноябрь</option>
+                    <option value="12">Декабрь</option>
+                </select>
+            <br />
+        </div>
+        <div class="chart-options-submit"><input type="submit" value="Сформировать" /></div>
+    }
+</div>
+<div style="margin: auto; display: none; float: none; margin-top: 10px;" class="circularGh" id="circularG1">
+    <div id="circularG_1" class="circularG"></div>
+    <div id="circularG_2" class="circularG"></div>
+    <div id="circularG_3" class="circularG"></div>
+    <div id="circularG_4" class="circularG"></div>
+    <div id="circularG_5" class="circularG"></div>
+    <div id="circularG_6" class="circularG"></div>
+    <div id="circularG_7" class="circularG"></div>
+    <div id="circularG_8" class="circularG"></div>
+</div>
+<div id="chart-draw" class="chart-draw">
+</div>
+<script type="text/javascript">
+    function ShowLoad() {
+        $("#circularG1").show();
+    }
+    
+</script>
+

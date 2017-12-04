@@ -1,0 +1,81 @@
+﻿<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div id="chart_div" style="width: 1200px; height: 600px;"></div>
+<a id="export" href="#" style="display: none" onclick="ExportToServer()">Export as Image</a>
+<script type="text/javascript">
+
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawStacked);
+
+
+    var exportData;
+
+    function drawStacked() {
+        var dataN = new Array(len + 1);
+        var count = 1;
+        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }];
+
+        
+
+        for(var i = 0; i < len; i++){
+            if(allValues[i] != null){
+                var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(1);
+                dataN[count] = [titles[i], goodValues[i], goodValues[i], (allValues[i] - goodValues[i]), (allValues[i] - goodValues[i]) + "(" + percent + "%)"];
+                count++;
+            }
+        }
+        if(allValues.length - count > 0)
+            dataN.splice(count, (allValues.length + 2) - count );
+        dataN = @Html.Raw(Json.Encode(@ViewBag.Data));
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var option;
+        if(titles[0] == 1){
+            options = {
+                title: 'Новые расчеты БТП',
+                isStacked: true,
+                hAxis: {
+                    title: 'Номер месяца',
+                    format: "W",
+
+                },
+                vAxis: {
+                    title: 'Количество расчетов',
+                    format: "M",
+                },
+                colors: ['#009081', '#E20011']
+            };
+        }
+        else{
+            options = {
+                title: 'Новые расчеты БТП',
+                isStacked: true,
+                hAxis: {
+                    title: 'Номер недели',
+                },
+                hAxis: {title: "Количество расчетов" , direction:-1, slantedText:true, slantedTextAngle:60 },
+                colors: ['#009081', '#E20011']
+            };
+        }
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(view, options);
+
+        exportData = chart.getImageURI();
+    }
+
+
+
+    function ExportToServer(){
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Chart/Export",
+            data: '{"imageData":"' + image + '"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+
+        });
+    }
+</script>
+
