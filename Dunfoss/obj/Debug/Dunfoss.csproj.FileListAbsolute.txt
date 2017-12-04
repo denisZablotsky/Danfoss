@@ -252,3 +252,4 @@ C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dun
 C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dunfoss.csproj.GenerateResource.Cache
 C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dunfoss.dll
 C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dunfoss.pdb
+C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dunfoss.Migrations.FileCurrentFileRel.resources

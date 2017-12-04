@@ -9,5 +9,6 @@ namespace Dunfoss.Data
         IQueryable<Report> Reports { get; }
         Report GetReportById(int id);
         Report CreateReport(Report report);
+        void RemoveReport(int id);
     }
 }

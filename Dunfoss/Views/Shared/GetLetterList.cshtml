@@ -1,6 +1,29 @@
 ﻿@model System.Linq.IQueryable<Dunfoss.Models.Letter>
 
-@foreach(Dunfoss.Models.Letter letter in Model){
-    <a href="~/Letter/GetLetterById/?id=@letter.Id">@letter.Date.Day @letter.Date.Month @letter.Date.Year @letter.Date.Hour:@letter.Date.Minute:@letter.Date.Second @letter.Division</a>
-    <br />
+@foreach (Dunfoss.Models.Letter letter in Model)
+{
+    <div class="remove">
+        @using (Ajax.BeginForm("Remove", "Letter", new { id = letter.Id }, new AjaxOptions { UpdateTargetId = "letters-list-div" }))
+                {
+            <input type="submit" value="" />
+        }
+        <a href="~/Letter/GetLetterById/?id=@letter.Id">@letter.Date.Day @letter.Date.Month @letter.Date.Year @letter.Date.Hour:@letter.Date.Minute:@letter.Date.Second @letter.Division</a>
+    </div>
+    
 }
+
+<style>
+    .remove a {
+        margin-left: 10px;
+    }
+
+    .remove input {
+        margin-top: 3px;
+        border: none;
+        background-image: url("/Images/rem.png");
+        background-color: transparent;
+        float: left;
+        width: 15px;
+        height: 15px;
+    }
+</style>

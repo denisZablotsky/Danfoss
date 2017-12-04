@@ -67,5 +67,26 @@ namespace Dunfoss.Data
             current.Path3 = path;
             Context.SaveChanges();
         }
+
+        public void UpdateFileID1(int id)
+        {
+            CurrentFile current = Context.CurrentFiles.Find(1);
+            current.FileId1 = id;
+            Context.SaveChanges();
+        }
+
+        public void UpdateFileID2(int id)
+        {
+            CurrentFile current = Context.CurrentFiles.Find(1);
+            current.FileId2 = id;
+            Context.SaveChanges();
+        }
+
+        public void UpdateFileID3(int id)
+        {
+            CurrentFile current = Context.CurrentFiles.Find(1);
+            current.FileId3 = id;
+            Context.SaveChanges();
+        }
     }
 }

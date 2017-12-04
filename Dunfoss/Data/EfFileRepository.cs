@@ -34,5 +34,11 @@ namespace Dunfoss.Data
             return Context.Files.Find(id);
         }
 
+        public void RemoveFile(int id)
+        {
+            File f = Context.Files.Find(id);
+            Context.Files.Remove(f);
+            Context.SaveChanges();
+        }
     }
 }

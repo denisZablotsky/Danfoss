@@ -93,25 +93,30 @@ namespace Dunfoss.Controllers
                 if(upload != null)
                 {
                     filename = HostingEnvironment.ApplicationPhysicalPath + "/xls/" + upload.FileName;
+                    fileModel.Path = "/xls/" + upload.FileName;
+                    fileModel.Name = upload.FileName;
+                    Models.File f = fileRep.CreateFile(fileModel);
+
                     if (file == "file1")
                     {
                         fileModel.Type = 1;
                         currentFile.UpdateFile1("/xls/" + upload.FileName);
+                        currentFile.UpdateFileID1(f.Id);
                     }
                     else if (file == "file2")
                     {
                         fileModel.Type = 2;
                         currentFile.UpdateFile2("/xls/" + upload.FileName);
+                        currentFile.UpdateFileID2(f.Id);
                     }
                     else
                     {
                         fileModel.Type = 3;
                         currentFile.UpdateFile3("/xls/" + upload.FileName);
+                        currentFile.UpdateFileID3(f.Id);
                     }
 
-                    fileModel.Path = "/xls/" + upload.FileName;
-                    fileModel.Name = upload.FileName;
-                    fileRep.CreateFile(fileModel);
+                    
                     upload.SaveAs(filename);
                 }
             }

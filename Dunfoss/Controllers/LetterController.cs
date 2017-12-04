@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Dunfoss.Charts;
 using Dunfoss.Models;
 using Dunfoss.Data;
+using System.Web.Hosting;
 
 namespace Dunfoss.Controllers
 {
@@ -75,6 +76,19 @@ namespace Dunfoss.Controllers
             ViewBag.Division = letter.Division;
             ViewBag.Month = months[letter.month - 1];
             return View();
+        }
+
+        [HttpPost]
+        public PartialViewResult Remove(int id)
+        {
+            Letter let = letterRepository.GetLetterById(id);
+            System.IO.File.Delete(HostingEnvironment.ApplicationPhysicalPath + let.Chart1);
+            System.IO.File.Delete(HostingEnvironment.ApplicationPhysicalPath + let.Chart2);
+            letterRepository.RemoveLetter(id);
+
+            IQueryable<Letter> list = letterRepository.Letter;
+            list = list.OrderByDescending(x => x.Date);
+            return PartialView("GetLetterList", list);
         }
 
         public ActionResult LetterList()

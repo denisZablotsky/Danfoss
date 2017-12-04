@@ -16,14 +16,18 @@
     </div>
     <div class="window-files">
         <h4>Информационные письма</h4>
-        @{
-            Html.RenderAction("GetLetterList", "Letter");
-        }
-    </div>
+        <div id="letters-list-div">
+            @{
+                Html.RenderAction("GetLetterList", "Letter");
+            }
+            </div>
+        </div>
     <div class="window-reports">
         <h4>Отчеты</h4>
+        <div id="report-list-div">
         @{
             Html.RenderAction("GetReportList", "Report");
         }
+        </div>   
     </div>
 </div>

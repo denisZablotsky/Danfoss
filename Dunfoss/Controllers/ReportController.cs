@@ -6,6 +6,7 @@ using Dunfoss.Charts;
 using System.IO;
 using Dunfoss.Models;
 using Dunfoss.Data;
+using System.Web.Hosting;
 
 namespace Dunfoss.Controllers
 {
@@ -192,6 +193,21 @@ namespace Dunfoss.Controllers
             ViewBag.TitlesC = cities;
 
             return PartialView();
+        }
+
+        [HttpPost]
+        public PartialViewResult Remove(int id)
+        {
+            Report r = reportReporsitory.GetReportById(id);
+            System.IO.File.Delete(HostingEnvironment.ApplicationPhysicalPath + r.image1);
+            System.IO.File.Delete(HostingEnvironment.ApplicationPhysicalPath + r.image2);
+            System.IO.File.Delete(HostingEnvironment.ApplicationPhysicalPath + r.image3);
+            System.IO.File.Delete(HostingEnvironment.ApplicationPhysicalPath + r.image4);
+            System.IO.File.Delete(HostingEnvironment.ApplicationPhysicalPath + r.image5);
+            System.IO.File.Delete(HostingEnvironment.ApplicationPhysicalPath + r.image6);
+            System.IO.File.Delete(HostingEnvironment.ApplicationPhysicalPath + r.image7);
+            reportReporsitory.RemoveReport(id);
+            return PartialView("ReportList", reportReporsitory.Reports);
         }
 
         [HttpPost]

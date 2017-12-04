@@ -11,6 +11,9 @@ namespace Dunfoss.Models
         public string Path1 { get; set; }
         public string Path2 { get; set; }
         public string Path3 { get; set; }
+        public int FileId1 { get; set; }
+        public int FileId2 { get; set; }
+        public int FileId3 { get; set; }
 
     }
 }

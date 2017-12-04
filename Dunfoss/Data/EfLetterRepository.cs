@@ -33,5 +33,12 @@ namespace Dunfoss.Data
         {
             return Context.Letters.Find(id);
         }
+
+        public void RemoveLetter(int id)
+        {
+            Letter l = Context.Letters.Find(id);
+            Context.Letters.Remove(l);
+            Context.SaveChanges();
+        }
     }
 }

@@ -12,5 +12,6 @@ namespace Dunfoss.Data
         IQueryable<Letter> Letter { get; }
         Letter CreateLetter(Letter letter);
         Letter GetLetterById(int id);
+        void RemoveLetter(int id);
     }
 }

@@ -34,14 +34,17 @@ namespace Dunfoss.Controllers
             if(file.Type == 1)
             {
                 current.UpdateFile1(file.Path);
+                current.UpdateFileID1(id);
             }
             else if (file.Type == 2)
             {
                 current.UpdateFile2(file.Path);
+                current.UpdateFileID2(id);
             }
             else
             {
                 current.UpdateFile3(file.Path);
+                current.UpdateFileID3(id);
             }
 
             return View("GetNav");
@@ -50,7 +53,17 @@ namespace Dunfoss.Controllers
         public ActionResult GetFileList()
         {
             IQueryable<Dunfoss.Models.File> list = fileRep.Files;
-            return View(list);
+            List<Dunfoss.Models.File> list2 = new List<Dunfoss.Models.File>();
+            int id1 = current.GetCurrentFile().FileId1;
+            int id2 = current.GetCurrentFile().FileId2;
+            int id3 = current.GetCurrentFile().FileId3;
+            foreach(Models.File file in list)
+            {
+                if (file.Id != id1 && file.Id != id2 && file.Id != id3)
+                    list2.Add(file);
+            }
+            
+            return View(list2.AsQueryable<Models.File>());
         }
 
         public HomeController(IUserRepository userRep)

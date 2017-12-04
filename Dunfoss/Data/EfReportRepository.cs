@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Dunfoss.Models;
 
 namespace Dunfoss.Data
@@ -29,6 +30,13 @@ namespace Dunfoss.Data
         {
             Report report = Context.Reports.Find(id);
             return report;
+        }
+
+        public void RemoveReport(int id)
+        {
+            Report report = Context.Reports.Find(id);
+            Context.Reports.Remove(report);
+            Context.SaveChanges();
         }
     }
 }

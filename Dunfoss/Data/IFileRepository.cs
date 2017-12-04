@@ -9,6 +9,6 @@ namespace Dunfoss.Data
         IQueryable<File> Files { get; }
         File CreateFile(File file);
         File GetFileById(int id);
-        
+        void RemoveFile(int id);
     }
 }

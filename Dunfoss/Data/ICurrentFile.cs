@@ -13,5 +13,8 @@ namespace Dunfoss.Data
         void UpdateFile1(string path);
         void UpdateFile2(string path);
         void UpdateFile3(string path);
+        void UpdateFileID1(int id);
+        void UpdateFileID2(int id);
+        void UpdateFileID3(int id);
     }
 }
