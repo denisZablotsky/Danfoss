@@ -276,6 +276,7 @@
     <Content Include="Views\Letter\GetLetterById.cshtml" />
     <Content Include="Views\Home\GetFileList.cshtml" />
     <Content Include="Views\Shared\GetNav.cshtml" />
+    <Content Include="Views\Home\GetCurrentFiles.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

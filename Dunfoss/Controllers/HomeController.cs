@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.Mvc;
 
 namespace Dunfoss.Controllers
@@ -27,6 +28,33 @@ namespace Dunfoss.Controllers
             //EfUserRepository efUserRep = new EfUserRepository();
             //efUserRep.CreateUser(user);
         }
+
+        public PartialViewResult GetCurrentFiles()
+        {
+            CurrentFile cur = current.GetCurrentFile();
+            string[] list = { cur.Path1.Split('/')[cur.Path1.Split('/').Length - 1], cur.Path2.Split('/')[cur.Path2.Split('/').Length - 1], cur.Path3.Split('/')[cur.Path3.Split('/').Length - 1] };
+            return PartialView(list);
+        }
+
+        [HttpPost]
+        public PartialViewResult RemoveFile(int id)
+        {
+            Models.File file = fileRep.GetFileById(id);
+            System.IO.File.Delete(HostingEnvironment.ApplicationPhysicalPath + file.Path);
+            fileRep.RemoveFile(id);
+            IQueryable<Dunfoss.Models.File> list = fileRep.Files;
+            List<Dunfoss.Models.File> list2 = new List<Dunfoss.Models.File>();
+            int id1 = current.GetCurrentFile().FileId1;
+            int id2 = current.GetCurrentFile().FileId2;
+            int id3 = current.GetCurrentFile().FileId3;
+            foreach (Models.File f in list)
+            {
+                if (f.Id != id1 && f.Id != id2 && f.Id != id3)
+                    list2.Add(f);
+            }
+            return PartialView("GetFileList", list2.AsQueryable<Models.File>());
+        }
+
         [HttpGet]
         public ActionResult Change(int id)
         {

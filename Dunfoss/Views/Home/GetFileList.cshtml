@@ -6,6 +6,28 @@
 
 @foreach (Dunfoss.Models.File file in Model)
 {
-    <a href="/Home/Change/?id=@file.Id">@file.Name</a><br />
+    <div class="remove">
+        @using (Ajax.BeginForm("RemoveFile", "Home", new { id = file.Id }, new AjaxOptions { UpdateTargetId = "files-list" }))
+                {
+            <input type="submit" value="" />
+        }
+        <a href="/Home/Change/?id=@file.Id">@file.Name</a>
+    </div>
+    
 }
 
+<style>
+    .remove a {
+        margin-left: 10px;
+    }
+
+    .remove input {
+        margin-top: 3px;
+        border: none;
+        background-image: url("/Images/rem.png");
+        background-color: transparent;
+        float: left;
+        width: 15px;
+        height: 15px;
+    }
+</style>
