@@ -207,7 +207,9 @@ namespace Dunfoss.Controllers
             System.IO.File.Delete(HostingEnvironment.ApplicationPhysicalPath + r.image6);
             System.IO.File.Delete(HostingEnvironment.ApplicationPhysicalPath + r.image7);
             reportReporsitory.RemoveReport(id);
-            return PartialView("ReportList", reportReporsitory.Reports);
+            IQueryable<Report> list = reportReporsitory.Reports;
+            list = list.OrderByDescending(x => x.Date);
+            return PartialView("ReportList", list);
         }
 
         [HttpPost]
