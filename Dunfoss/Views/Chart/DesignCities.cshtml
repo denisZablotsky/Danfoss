@@ -1,7 +1,7 @@
 ﻿@using System.Collections.Generic;
 @model IEnumerable<string>
 
-
+<div  style="width:500px; margin: auto; padding-top: 15px;"><label><input type="checkbox" name="SelectAll" id="selectAll">Выбрать все офисы</label></div>
 @using (Ajax.BeginForm("DesignCities", "Chart", new {filterType = ViewBag.filterType, designType = ViewBag.designType, min = ViewBag.min, max = ViewBag.max }, new AjaxOptions { UpdateTargetId = "chart45" }))
 {
     <div id="reasons-list">
@@ -11,7 +11,17 @@
 
         }
     </div>
-    <div class="chart-options-submit"><input type="submit" value="Построить" /></div>
+    <div class="chart-options"><div class="chart-options-submit"><input type="submit" value="Построить" /></div></div>
 }
 
 <div id="chart45"></div>
+<script type="text/javascript">
+        $("#selectAll").change(function () {
+            var checked = $("#selectAll").is(':checked');
+            if (checked) {
+                $("input[name=checkedValues]").prop('checked', true);
+            } else {
+               $("input[name=checkedValues]").prop('checked', false);
+            }
+        });
+    </script>

@@ -29,7 +29,7 @@
         }
         if(allValues.length - count >= 0)
             dataN.splice(count, (allValues.length + 1) - count );
-
+        
         if(flag == 1){
             dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
         }
@@ -42,7 +42,7 @@
                 title: '@ViewBag.MainTitle',
                 isStacked: true,
                 hAxis: {
-                    title: 'Номер месяца',
+                    title: 'Месяц',
                     format: 'W'
                 },
                 vAxis: {
@@ -53,7 +53,7 @@
         }
         else if (@ViewBag.Type == 3){
             options = {
-                title: '@ViewBag.MainTitle',
+				title: '@ViewBag.MainTitle',
                 isStacked: true,
                 hAxis: {title: "Офис", slantedText:true, slantedTextAngle:60 },
                 vAxis: {
@@ -83,7 +83,7 @@
         exportData = chart.getImageURI();
     }
 
-
+    
 
     function ExportToServer(){
         var string = exportData;
