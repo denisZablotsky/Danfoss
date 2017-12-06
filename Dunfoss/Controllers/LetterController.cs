@@ -13,6 +13,17 @@ namespace Dunfoss.Controllers
     public class LetterController : Controller
     {
         ILetterRepository letterRepository;
+
+        LetterChart chart;
+        LetterChart2 chart2 ;
+
+        string[] Cities = new string[]{ "Краснодар - HE", "Ростов-на-Дону - HE", "Волгоград - HE", "Саратов - HE",
+            "Владивосток - HE", "Хабаровск - HE", "Иркутск - HE", "Красноярск - HE",
+            "Новосибирск - HE", "Омск - HE", "Санкт-Петербург - HE", "Екатеринбург - HE", "Ижевск - HE", "Пермь - HE",
+            "Тюмень - HE", "Челябинск - HE", "Москва - HE", "Казань - HE", "Самара - HE", "Уфа - HE", "Н.Новгород - HE",
+            "Воронеж - HE", "Ярославль - HE"
+        , "Тула - HE"};
+
         string[] months = new string[] { "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
         string[] DivisionJug = new string[] { "Краснодар - HE", "Ростов-на-Дону - HE", "Волгоград - HE", "Саратов - HE" };
         string[] DivisionDalniiVostok = new string[] { "Владивосток - HE", "Хабаровск - HE", "Иркутск - HE", "Красноярск - HE" };
@@ -27,6 +38,8 @@ namespace Dunfoss.Controllers
         // GET: Letter
         public LetterController()
         {
+            chart = new LetterChart();
+            chart2 = new LetterChart2();
             letterRepository = new EfLetterRepository();
         }
         public ActionResult Index()
@@ -105,8 +118,6 @@ namespace Dunfoss.Controllers
 
         public PartialViewResult Formatting(int month)
         {
-            LetterChart chart = new LetterChart();
-            LetterChart2 chart2 = new LetterChart2();
             int[] all = null, good = null;
 
             //Юг
@@ -190,6 +201,16 @@ namespace Dunfoss.Controllers
             ViewBag.TitlesC = DivisionCentr;
             ViewBag.divisionC = divisions[8];
 
+            //Все
+            chart.CreateFirstGraph(month, Cities, out all, out good);
+            ViewBag.all1All = all;
+            ViewBag.good1All = good;
+            chart2.CreateFirstGraph(month, Cities, out all, out good);
+            ViewBag.all2All = all;
+            ViewBag.good2All = good;
+            ViewBag.TitlesAll = Cities;
+            ViewBag.divisionAll = "Все";
+            
             return PartialView();
         }
 
@@ -218,9 +239,9 @@ namespace Dunfoss.Controllers
                 cities = DivisionPovolje;
             else if (Division == "Центр")
                 cities = DivisionCentr;
+            else if (Division == "Все")
+                cities = Cities;
 
-            LetterChart chart = new LetterChart();
-            LetterChart2 chart2 = new LetterChart2();
             int[] all = null;
             float[] good = null;
             all = chart.CreateFirstTableValues(month, cities);
