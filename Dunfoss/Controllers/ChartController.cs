@@ -7,6 +7,7 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using Dunfoss.Data;
+using Dunfoss.Services;
 
 // Название графиков
 // Значение оценок добавлены вручную
@@ -16,6 +17,7 @@ namespace Dunfoss.Controllers
     
     public class ChartController : Controller
     {
+        ISecurityService _security;
         IFileRepository fileRep = new EfFileRepository();
         ICurrentFile currentFile = new EfCurrentFile();
         private string path; // Сделать ссылку у User
@@ -40,24 +42,37 @@ namespace Dunfoss.Controllers
         string[] DivisionCentr = new string[] { "Воронеж - HE", "Ярославль - HE", "Тула - HE" };
         string[] divisions = new string[] {"Все", "Юг", "Дальний Восток", "Западная Сибирь", "Северо-Запад", "Урал", "Москва", "Поволжье", "Центр"};
 
+        public ChartController()
+        {
+            _security = new SecurityService();
+        }
+
         // GET: Chart
         public ActionResult Index()
         {
+            if (!_security.IsAuthenticate())
+                return RedirectToAction("Login", "Home");
             return View();
         }
 
         public ActionResult Search()
         {
+            if (!_security.IsAuthenticate())
+                return RedirectToAction("Login", "Home");
             return View();
         }
 
         public ActionResult GetNav()
         {
+            if (!_security.IsAuthenticate())
+                return RedirectToAction("Login", "Home");
             return View();
         }
 
         public ActionResult Info()
         {
+            if (!_security.IsAuthenticate())
+                return RedirectToAction("Login", "Home");
             TableInfo info = new TableInfo();
             int q = 0, d = 0, ag = 0, f = 0;
             info.Get_Total_Info(out q, out d, out ag, out f);
@@ -131,6 +146,8 @@ namespace Dunfoss.Controllers
 
         public ActionResult ViewForm()
         {
+            if (!_security.IsAuthenticate())
+                return RedirectToAction("Login", "Home");
             return View("ChartFormatting");
         }
 
@@ -151,17 +168,22 @@ namespace Dunfoss.Controllers
 
         public ActionResult Design()
         {
-
+            if (!_security.IsAuthenticate())
+                return RedirectToAction("Login", "Home");
             return View();
         }
 
         public ActionResult ChartFormatting()
         {
+            if (!_security.IsAuthenticate())
+                return RedirectToAction("Login", "Home");
             return View();
         }
 
-        public ViewResult DesignersChart()
+        public ActionResult DesignersChart()
         {
+            if (!_security.IsAuthenticate())
+                return RedirectToAction("Login", "Home");
             return View();
         }
 

@@ -20,6 +20,8 @@ namespace Dunfoss.Controllers
         // GET: Home
         public HomeController()
         {
+            _security = new SecurityService();
+            userRepository = new EfUserRepository();
             //currentFile = new EfCurrentFile();
             //currentFile.InitializeCurrentFile(new CurrentFile());
             //User user = new Models.User();
@@ -117,12 +119,17 @@ namespace Dunfoss.Controllers
         
         public ActionResult Login()
         {
-            //if (!_security.Authenticate(user.Name, user.Password))
-            //    return RedirectToAction("LogIn", "Home");
-            //user = userRepository.GetUserByName(user.Name);
-            // _security.Login(user);
-            // return RedirectToAction("Index", "Home");
-            return View("LogIn");
+            return PartialView("LogIn", new User());
+        }
+
+        [HttpPost]
+        public ActionResult Login(User user)
+        {
+            if (!_security.Authenticate(user.Name, user.Password))
+                return RedirectToAction("Login");
+            user = userRepository.GetUserByName(user.Name);
+                _security.Login(user);
+            return RedirectToAction("Index", "Home");
         }
         [HttpPost]
         public ActionResult Logout(User user)
@@ -134,8 +141,10 @@ namespace Dunfoss.Controllers
         {
             return View("PhoneNumbersOfStaff");
         }
-        public ViewResult StatisticsOfGroup()
+        public ActionResult StatisticsOfGroup()
         {
+            if (!_security.IsAuthenticate())
+                return RedirectToAction("Login");
             return View("StatisticsOfGroup");
         }
         public ViewResult LoadOfGroup()
