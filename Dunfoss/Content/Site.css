@@ -1,4 +1,4 @@
-﻿body {
+﻿﻿body {
     padding-top: 0px;
     padding-bottom: 0px;
 }
@@ -58,6 +58,16 @@ textarea {
     border-radius: 3px;
     color: #aaa;
 }
+
+/* Подписи к выбору файлов */
+.upload-form-label{
+	color: #333;
+	font-size: 16px;
+	font-weight: 550;
+	margin-bottom: 10px;
+}
+
+
 
 
 /* Форма авторизации */
@@ -380,18 +390,29 @@ textarea {
     width: 300px;
     float: right;
 }
+
+
+.upload-file-item{
+	margin-top: 6px;
+}
+.upload-form{
+	margin-bottom: 50px;
+}
+
 #go-to-charts{
-    width: 200px;
-    float: left;
+	width: 220px;
+	margin: 0;
+	margin-top: 15px;
+	float: left;
 }
 
 #go-to-charts a{
-    color: #E2000E;
+	padding: 10px 8px;
+    color: white;
+    background-color: #E2000E;
+    border-radius: 3px;
 }
+
 #go-to-charts a:hover{
-    color: #E2000E;
-    text-decoration: none;
-}
-#go-to-charts a:active{
-    color: #E2000E;
+	color: white;
 }
