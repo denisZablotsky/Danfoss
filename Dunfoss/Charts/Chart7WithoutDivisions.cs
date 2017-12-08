@@ -1,10 +1,12 @@
-﻿using ExcelDataReader;
+﻿using Dunfoss.Data;
+using ExcelDataReader;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 
 namespace Dunfoss.Charts
 {
@@ -30,6 +32,7 @@ namespace Dunfoss.Charts
 
         public Chart7WithoutDivisions()
         {
+            ICurrentFile currentFile = new EfCurrentFile();
             EndMonth.Add(January);
             EndMonth.Add(February);
             EndMonth.Add(March);
@@ -42,7 +45,7 @@ namespace Dunfoss.Charts
             EndMonth.Add(Oktober);
             EndMonth.Add(November);
             EndMonth.Add(December);
-            string path = @"C:\Users\Kirill\Desktop\ZAKAZY__Pokazateli_po_zadacham_work_-_23_10_17.xls";
+            string path = HostingEnvironment.ApplicationPhysicalPath + currentFile.GetCurrentFile().Path2;
             FileStream stream = File.Open(path, FileMode.Open, FileAccess.Read);
 
             IExcelDataReader dataReader = null;

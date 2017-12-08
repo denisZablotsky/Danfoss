@@ -335,7 +335,7 @@ namespace Dunfoss.Controllers
         }
 
         [HttpPost]
-        public PartialViewResult ChartDraw(string filename, int min, int max, string chartNumber, int minMonth, int maxMonth, int month, string division, string tp, string filterType)
+        public PartialViewResult ChartDraw(string filename, int min, int max, string chartNumber, int minMonth, int maxMonth, int month, string division, string tp, string filterType, string spin)
         {
             int[] ALLWeekvalues = null;
             int[] GoodWeekvalues = null;
@@ -448,103 +448,253 @@ namespace Dunfoss.Controllers
             }
             else if (chartNumber == "7")
             {
-                ChartFormat7 chart7 = new ChartFormat7();
-                int ty = 0;
-                string[] cities = null;
-                if (division == divisions[0])
+                if(spin == "with")
                 {
-                    cities = Cities;
-                }
-                if (division == divisions[1])
-                {
-                    cities = DivisionJug;
-                }
-                else if (division == divisions[2])
-                {
-                    cities = DivisionDalniiVostok;
-                }
-                else if (division == divisions[3])
-                {
-                    cities = DivisionZapadnayaSibir;
-                }
-                else if (division == divisions[4])
-                {
-                    cities = DivisionSeveroZapad;
-                }
-                else if (division == divisions[5])
-                {
-                    cities = DivisionUral;
-                }
-                else if (division == divisions[6])
-                {
-                    cities = DivisionMoskva;
-                }
-                else if (division == divisions[7])
-                {
-                    cities = DivisionPovolje;
-                }
-                else if (division == divisions[8])
-                {
-                    cities = DivisionCentr;
-                }
-                List<int> all = null;
-                List<int> good = null;
-                
-                if (tp == "задачи")
-                {
-                    ViewBag.OyTitle = "Количество кодовых номеров";
-                    
-                    if (filterType == "2") {
-                        good = chart7.return_good_values_per_week_SUM(min, max, cities);
-                        all = chart7.return_all_values_per_week_SUM(min, max, cities);
-                        
+                    ChartFormat7 chart7 = new ChartFormat7();
+                    int ty = 0;
+                    string[] cities = null;
+                    if (division == divisions[0])
+                    {
+                        cities = Cities;
                     }
-                    //chart7.CreateGraphWithWeekFilterSumY(out ALLWeekvalues, out GoodWeekvalues, min, max);
-                    else {
-                        all = chart7.return_all_values_per_month_SUM(minMonth, maxMonth, cities);
-                        good = chart7.return_good_values_per_month_SUM(minMonth, maxMonth, cities);
-                        
+                    if (division == divisions[1])
+                    {
+                        cities = DivisionJug;
                     }
-                    ty = 3;
-                       // chart7.CreateGraphWithMonthFilterSumY(out ALLWeekvalues, out GoodWeekvalues, minMonth, maxMonth);
+                    else if (division == divisions[2])
+                    {
+                        cities = DivisionDalniiVostok;
+                    }
+                    else if (division == divisions[3])
+                    {
+                        cities = DivisionZapadnayaSibir;
+                    }
+                    else if (division == divisions[4])
+                    {
+                        cities = DivisionSeveroZapad;
+                    }
+                    else if (division == divisions[5])
+                    {
+                        cities = DivisionUral;
+                    }
+                    else if (division == divisions[6])
+                    {
+                        cities = DivisionMoskva;
+                    }
+                    else if (division == divisions[7])
+                    {
+                        cities = DivisionPovolje;
+                    }
+                    else if (division == divisions[8])
+                    {
+                        cities = DivisionCentr;
+                    }
+                    List<int> all = null;
+                    List<int> good = null;
+
+                    if (tp == "задачи")
+                    {
+                        ViewBag.OyTitle = "Количество кодовых номеров";
+
+                        if (filterType == "2")
+                        {
+                            good = chart7.return_good_values_per_week_SUM(min, max, cities);
+                            all = chart7.return_all_values_per_week_SUM(min, max, cities);
+
+                        }
+                        //chart7.CreateGraphWithWeekFilterSumY(out ALLWeekvalues, out GoodWeekvalues, min, max);
+                        else
+                        {
+                            all = chart7.return_all_values_per_month_SUM(minMonth, maxMonth, cities);
+                            good = chart7.return_good_values_per_month_SUM(minMonth, maxMonth, cities);
+
+                        }
+                        ty = 3;
+                        // chart7.CreateGraphWithMonthFilterSumY(out ALLWeekvalues, out GoodWeekvalues, minMonth, maxMonth);
+                    }
+                    else
+                    {
+                        ViewBag.OyTitle = "Количество задач";
+                        if (filterType == "2")
+                        {
+                            all = chart7.return_all_values_per_week_COUNT(min, max, cities);
+                            good = chart7.return_good_values_per_week_COUNT(min, max, cities);
+
+                        }
+                        //chart7.CreateGraphWithWeekFilterCountY(out ALLWeekvalues, out GoodWeekvalues, min, max);
+                        else
+                        {
+                            all = chart7.return_all_values_per_month_COUNT(minMonth, maxMonth, cities);
+                            good = chart7.return_good_values_per_month_COUNT(minMonth, maxMonth, cities);
+
+                        }
+                        ty = 3;
+                    }
+                    ALLWeekvalues = new int[all.Count];
+                    GoodWeekvalues = new int[good.Count];
+
+                    for (int i = 0; i < ALLWeekvalues.Length; i++)
+                    {
+                        ALLWeekvalues[i] = all[i];
+                        GoodWeekvalues[i] = good[i];
+                    }
+
+
+
+                    ViewBag.GoodValuesWeek = GoodWeekvalues;
+                    ViewBag.AllValuesWeek = ALLWeekvalues;
+                    ViewBag.Titles = cities;
+                    ViewBag.Type = ty;
+                    MainTitle = "Заказы БТП";
+                    ViewBag.MainTitle = MainTitle;
+                    return PartialView("ChartDraw");
                 }
                 else
                 {
-                    ViewBag.OyTitle = "Количество задач";
-                    if (filterType == "2") {
-                        all = chart7.return_all_values_per_week_COUNT(min, max, cities);
-                        good = chart7.return_good_values_per_week_COUNT(min, max, cities);
-                       
+                    Chart7WithoutDivisions chart7 = new Chart7WithoutDivisions();
+                    int ty = 0;
+                    string[] cities = null;
+                    if (division == divisions[0])
+                    {
+                        cities = Cities;
                     }
-                    //chart7.CreateGraphWithWeekFilterCountY(out ALLWeekvalues, out GoodWeekvalues, min, max);
+                    if (division == divisions[1])
+                    {
+                        cities = DivisionJug;
+                    }
+                    else if (division == divisions[2])
+                    {
+                        cities = DivisionDalniiVostok;
+                    }
+                    else if (division == divisions[3])
+                    {
+                        cities = DivisionZapadnayaSibir;
+                    }
+                    else if (division == divisions[4])
+                    {
+                        cities = DivisionSeveroZapad;
+                    }
+                    else if (division == divisions[5])
+                    {
+                        cities = DivisionUral;
+                    }
+                    else if (division == divisions[6])
+                    {
+                        cities = DivisionMoskva;
+                    }
+                    else if (division == divisions[7])
+                    {
+                        cities = DivisionPovolje;
+                    }
+                    else if (division == divisions[8])
+                    {
+                        cities = DivisionCentr;
+                    }
+                    List<int> all = null;
+                    List<int> good = null;
+
+                    if (tp == "задачи")
+                    {
+                        ViewBag.OyTitle = "Количество кодовых номеров";
+
+                        if (filterType == "2")
+                        {
+                            good = chart7.return_good_values_per_week_SUM(min, max, cities);
+                            all = chart7.return_all_values_per_week_SUM(min, max, cities);
+
+                        }
+                        //chart7.CreateGraphWithWeekFilterSumY(out ALLWeekvalues, out GoodWeekvalues, min, max);
+                        else
+                        {
+                            all = chart7.return_all_values_per_month_SUM(minMonth, maxMonth, cities);
+                            good = chart7.return_good_values_per_month_SUM(minMonth, maxMonth, cities);
+
+                        }
+                        ty = 3;
+                        // chart7.CreateGraphWithMonthFilterSumY(out ALLWeekvalues, out GoodWeekvalues, minMonth, maxMonth);
+                    }
                     else
                     {
-                        all = chart7.return_all_values_per_month_COUNT(minMonth, maxMonth, cities);
-                        good = chart7.return_good_values_per_month_COUNT(minMonth, maxMonth, cities);
-                        
-                    }
-                    ty = 3;
-                }
-                ALLWeekvalues = new int[all.Count];
-                GoodWeekvalues = new int[good.Count];
+                        ViewBag.OyTitle = "Количество задач";
+                        if (filterType == "2")
+                        {
+                            all = chart7.return_all_values_per_week_COUNT(min, max, cities);
+                            good = chart7.return_good_values_per_week_COUNT(min, max, cities);
 
-                for(int i = 0; i < ALLWeekvalues.Length; i++)
+                        }
+                        //chart7.CreateGraphWithWeekFilterCountY(out ALLWeekvalues, out GoodWeekvalues, min, max);
+                        else
+                        {
+                            all = chart7.return_all_values_per_month_COUNT(minMonth, maxMonth, cities);
+                            good = chart7.return_good_values_per_month_COUNT(minMonth, maxMonth, cities);
+
+                        }
+                        ty = 3;
+                    }
+                    ALLWeekvalues = new int[all.Count];
+                    GoodWeekvalues = new int[good.Count];
+
+                    for (int i = 0; i < ALLWeekvalues.Length; i++)
+                    {
+                        ALLWeekvalues[i] = all[i];
+                        GoodWeekvalues[i] = good[i];
+                    }
+
+                    string[] tit = null;
+
+                    if(filterType == "1")
+                    {
+                        tit = new string[maxMonth - minMonth + 1];
+                        for (int i = 0; i < titlesMonth.Length; i++)
+                        {
+                            tit[i] = months[i + minMonth - 1];
+
+                        }
+                    }
+                    else
+                    {
+                        tit = new string[max - min + 1];
+                        for(int i = 0; i < tit.Length; i++)
+                        {
+                            tit[i] = "W" + (min + i).ToString();
+                        }
+                    }
+
+
+                    ViewBag.GoodValuesWeek = GoodWeekvalues;
+                    ViewBag.AllValuesWeek = ALLWeekvalues;
+                    ViewBag.Titles = tit;
+                    ViewBag.Type = ty;
+                    MainTitle = "Заказы БТП";
+                    ViewBag.MainTitle = MainTitle;
+                    return PartialView("ChartDraw");
+                }
+                
+            }
+            else if (chartNumber == "8")
+            {
+                TheLastChart lastChart = new TheLastChart();
+                IEnumerable<string> surnames = new List<string>();
+                if(filterType == "1")
                 {
-                    ALLWeekvalues[i] = all[i];
-                    GoodWeekvalues[i] = good[i];
+                    surnames = lastChart.Get_Surnames_Per_Month(minMonth, maxMonth);
+                    ViewBag.Type = 1;
+                    ViewBag.min = minMonth;
+                    ViewBag.max = maxMonth;
+                }
+                else
+                {
+                    surnames = lastChart.Get_Surnames_Per_Week(min, max);
+                    ViewBag.Type = 2;
+                    ViewBag.min = min;
+                    ViewBag.max = max;
                 }
 
                 
 
-                ViewBag.GoodValuesWeek = GoodWeekvalues;
-                ViewBag.AllValuesWeek = ALLWeekvalues;
-                ViewBag.Titles = cities;
-                ViewBag.Type = ty;
-                MainTitle = "Заказы БТП";
-                ViewBag.MainTitle = MainTitle;
-                return PartialView("ChartDraw");
+                return PartialView("LastDraw", surnames);
             }
-            int t = 0;
+                int t = 0;
             // First Chart
             if (filterType == "2")
             {
@@ -574,6 +724,109 @@ namespace Dunfoss.Controllers
             return PartialView("ChartDraw");
         }
 
+
+        [HttpPost]
+        public PartialViewResult LastChart(int type, int min, int max, string[] checkedValues, string graphType, string typeCountSum)
+        {
+            TheLastChart lastChart = new TheLastChart();
+            int[] all = null, bad = null, good = null;
+            if(graphType == "1")
+            {
+                ViewBag.MainTitle = "Новые расчеты";
+                if (typeCountSum == "count")
+                {
+                    if(type == 1)
+                    {
+                        lastChart.First_Type_Graph_Per_Month_Count(min, max, out good, out bad, checkedValues);
+                    }
+                    else
+                    {
+                        lastChart.First_Type_Graph_Per_Week_Count(min, max, out good, out bad, checkedValues);
+                    }
+                }
+                else
+                {
+                    if (type == 1)
+                    {
+                        lastChart.First_Type_Graph_Per_Month_Sum(min, max, out good, out bad, checkedValues);
+                    }
+                    else
+                    {
+                        lastChart.First_Type_Graph_Per_Week_Sum(min, max, out good, out bad, checkedValues);
+                    }
+                }
+            }
+            else if(graphType == "2")
+            {
+                ViewBag.MainTitle = "Корректировки расчетов";
+                if (typeCountSum == "count")
+                {
+                    if (type == 1)
+                    {
+                        lastChart.Second_Type_Graph_Per_Month_Count(min, max, out good, out bad, checkedValues);
+                    }
+                    else
+                    {
+                        lastChart.Second_Type_Graph_Per_Week_Count(min, max, out good, out bad, checkedValues);
+                    }
+                }
+                else
+                {
+                    if (type == 1)
+                    {
+                        lastChart.Second_Type_Graph_Per_Month_Sum(min, max, out good, out bad, checkedValues);
+                    }
+                    else
+                    {
+                        lastChart.Second_Type_Graph_Per_Week_Sum(min, max, out good, out bad, checkedValues);
+                    }
+                }
+            }
+            else
+            {
+                ViewBag.MainTitle = "Сумма новых и корректировок";
+                if (typeCountSum == "count")
+                {
+                    if (type == 1)
+                    {
+                        lastChart.Third_Type_Graph_Per_Month_Count(min, max, out good, out bad, checkedValues);
+                    }
+                    else
+                    {
+                        lastChart.Third_Type_Graph_Per_Week_Count(min, max, out good, out bad, checkedValues);
+                    }
+                }
+                else
+                {
+                    if (type == 1)
+                    {
+                        lastChart.Third_Type_Graph_Per_Month_Sum(min, max, out good, out bad, checkedValues);
+                    }
+                    else
+                    {
+                        lastChart.Third_Type_Graph_Per_Week_Sum(min, max, out good, out bad, checkedValues);
+                    }
+                }
+            }
+            all = new int[good.Length];
+            for(int i = 0; i < all.Length; i++)
+            {
+                all[i] = good[i] + bad[i];
+            }
+            ViewBag.AllValuesWeek = all;
+            ViewBag.GoodValuesWeek = good;
+            ViewBag.Titles = checkedValues;
+            ViewBag.Type = 6;
+            if (typeCountSum == "count")
+            {
+                ViewBag.OyTitle = "Количество единичных расчетов в задачах";
+            }
+            else
+            {
+                ViewBag.OyTitle = "Количество задач";
+            } 
+            return PartialView("ChartDrawLast");
+        }
 
         [HttpPost]
         public PartialViewResult ChartDraw45(string[] checkedValues, int min, int max)

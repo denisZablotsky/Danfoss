@@ -2,22 +2,22 @@
 @{
     ViewBag.Title = "ChartFormatting";
 }
-
 <div class="chart-options">
     @using (Ajax.BeginForm("ChartDraw", "Chart", new { filename = ViewBag.Filename }, new AjaxOptions { UpdateTargetId = "chart-draw" }))
     {
         <span>Тип графика</span>
         <select id="chartNumber" name="chartNumber">
-            <option value="1" selected>Новые расчеты БТП</option>
+            <option value="1" selected>Новыу расчеты БТП</option>
             <option value="2">Корректировки расчетов</option>
             <option value="3">Новые расчеты и корректировки БТП</option>
             <option value="4">Причины просроченных задач</option>
             <option value="5">Причины корректировок</option>
             <option value="6">Расчеты БТП по дивизионам</option>
             <option value="7">Заказы БТП</option>
+            <option value="8">Скорость закрытия задач по расчетчикам</option>
         </select>
         <br />
-        <div id="FilterType" >
+        <div id="FilterType">
             <span>Фильтрация: </span>
             <select id="filterType" name="filterType" class="option-chart-filter">
                 <option value="1" selected>По месяцам</option>
@@ -30,7 +30,7 @@
             <br />
         </div>
         <div id="MonthFilter" class="option-chart-filter">
-            
+
             <span>
                 C:
                 <select id="chartNumber" name="minMonth">
@@ -53,7 +53,7 @@
             <span>
                 По:
                 <select id="chartNumber" name="maxMonth">
-                    <option value="1" >Январь</option>
+                    <option value="1">Январь</option>
                     <option value="2">Февраль</option>
                     <option value="3">Март</option>
                     <option value="4">Апрель</option>
@@ -70,23 +70,24 @@
             <br />
         </div>
         <div id="MonthNumber" style="display: none;" class="option-chart-filter">
-            <span>Месяц:
-<select id="chartNumber" name="month">
-    <option value="1" selected>Январь</option>
-    <option value="2">Февраль</option>
-    <option value="3">Март</option>
-    <option value="4">Апрель</option>
-    <option value="5">Май</option>
-    <option value="6">Июнь</option>
-    <option value="7">Июль</option>
-    <option value="8">Август</option>
-    <option value="9">Сентябрь</option>
-    <option value="10">Октябрь</option>
-    <option value="11">Ноябрь</option>
-    <option value="12">Декабрь</option>
-</select>
+            <span>
+                Месяц:
+                <select id="chartNumber" name="month">
+                    <option value="1" selected>Январь</option>
+                    <option value="2">Февраль</option>
+                    <option value="3">Март</option>
+                    <option value="4">Апрель</option>
+                    <option value="5">Май</option>
+                    <option value="6">Июнь</option>
+                    <option value="7">Июль</option>
+                    <option value="8">Август</option>
+                    <option value="9">Сентябрь</option>
+                    <option value="10">Октябрь</option>
+                    <option value="11">Ноябрь</option>
+                    <option value="12">Декабрь</option>
+                </select>
             </span>
-<br />
+            <br />
         </div>
         <div id="Division" style="display: none;" class="option-chart-filter">
             <span>Дивизионы :</span>
@@ -108,11 +109,10 @@
             @Html.RadioButton("tp", "задачи")<span>По кол-ву кодовых номеров</span><br />
         </div>
         <div class="chart-options-submit"><input type="submit" value="Построить" /></div>
-        
-    }
-    
-</div>
 
+    }
+
+</div>
 <script type="text/javascript">
     $("#chartNumber").change(function () {
         if ($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3) {
@@ -127,6 +127,9 @@
         else if ($(this).val() == 7) {
             Chart7();
         }
+        else if ($(this).val() == 8) {
+            Chart8();
+        }
     });
     $("#filterType").change(function () {
         if ($(this).val() == 2) {
@@ -134,7 +137,7 @@
         }
         else {
             Month();
-        }  
+        }
     });
     function Chart13(){
         CloseAll();
@@ -167,6 +170,16 @@
             Month();
         }
     }
+    function Chart8() {
+        CloseAll();
+        $('#FilterType').show();
+        if ($("#filterType").val() == 2) {
+            Week();
+        }
+        else {
+            Month();
+        }
+    }
     function Week() {
         $('#MonthFilter').hide();
         $('#WeekFilter').show();
@@ -184,10 +197,7 @@
         $("#FilterType7").hide();
     }
 </script>
-
 <div id="chart-draw" class="chart-draw">
-   
+
 </div>
-
-
 

@@ -172,6 +172,7 @@
     <Compile Include="Charts\ReasonsChart.cs" />
     <Compile Include="Charts\Search.cs" />
     <Compile Include="Charts\TableInfo.cs" />
+    <Compile Include="Charts\TheLastChart.cs" />
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LetterController.cs" />
@@ -251,7 +252,7 @@
     <Content Include="Views\Home\StatusCRM.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
     <Content Include="Views\Chart\Show.cshtml" />
-    <Content Include="Views\Shared\ChartFormatting.cshtml" />
+    <Content Include="Views\Shared\Chartf.cshtml" />
     <Content Include="Views\Chart\ChartDraw.cshtml" />
     <Content Include="Views\Chart\Draw45.cshtml" />
     <Content Include="Views\Chart\Chart45.cshtml" />
@@ -277,6 +278,9 @@
     <Content Include="Views\Home\GetFileList.cshtml" />
     <Content Include="Views\Shared\GetNav.cshtml" />
     <Content Include="Views\Home\GetCurrentFiles.cshtml" />
+    <Content Include="Views\Chart\ChartFormatting.cshtml" />
+    <Content Include="Views\Chart\LastDraw.cshtml" />
+    <Content Include="Views\Chart\ChartDrawLast.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
