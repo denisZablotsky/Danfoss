@@ -136,61 +136,93 @@ namespace Dunfoss.Controllers
             ViewBag.all6 = ALLWeekvalues;
             ViewBag.titlesR2 = reasons.ToArray();
             // ------- 7 ----------
-            string[] cities = null;
-            if (division == divisions[0])
-            {
-                cities = Cities;
-            }
-            if (division == divisions[1])
-            {
-                cities = DivisionJug;
-            }
-            else if (division == divisions[2])
-            {
-                cities = DivisionDalniiVostok;
-            }
-            else if (division == divisions[3])
-            {
-                cities = DivisionZapadnayaSibir;
-            }
-            else if (division == divisions[4])
-            {
-                cities = DivisionSeveroZapad;
-            }
-            else if (division == divisions[5])
-            {
-                cities = DivisionUral;
-            }
-            else if (division == divisions[6])
-            {
-                cities = DivisionMoskva;
-            }
-            else if (division == divisions[7])
-            {
-                cities = DivisionPovolje;
-            }
-            else if (division == divisions[8])
-            {
-                cities = DivisionCentr;
-            }
-            List<int> all = null;
-            List<int> good = null;
-            ChartFormat7 chart7 = new ChartFormat7();
-            all = chart7.return_all_values_per_week_COUNT(min, max, cities);
-            good = chart7.return_good_values_per_week_COUNT(min, max, cities);
+            //string[] cities = null;
+            //if (division == divisions[0])
+            //{
+            //    cities = Cities;
+            //}
+            //if (division == divisions[1])
+            //{
+            //    cities = DivisionJug;
+            //}
+            //else if (division == divisions[2])
+            //{
+            //    cities = DivisionDalniiVostok;
+            //}
+            //else if (division == divisions[3])
+            //{
+            //    cities = DivisionZapadnayaSibir;
+            //}
+            //else if (division == divisions[4])
+            //{
+            //    cities = DivisionSeveroZapad;
+            //}
+            //else if (division == divisions[5])
+            //{
+            //    cities = DivisionUral;
+            //}
+            //else if (division == divisions[6])
+            //{
+            //    cities = DivisionMoskva;
+            //}
+            //else if (division == divisions[7])
+            //{
+            //    cities = DivisionPovolje;
+            //}
+            //else if (division == divisions[8])
+            //{
+            //    cities = DivisionCentr;
+            //}
+            //List<int> all = null;
+            //List<int> good = null;
+            //ChartFormat7 chart7 = new ChartFormat7();
+            //all = chart7.return_all_values_per_week_COUNT(min, max, cities);
+            //good = chart7.return_good_values_per_week_COUNT(min, max, cities);
+
+            //ALLWeekvalues = new int[all.Count];
+            //GoodWeekvalues = new int[good.Count];
+
+            //for (int i = 0; i < ALLWeekvalues.Length; i++)
+            //{
+            //    ALLWeekvalues[i] = all[i];
+            //    GoodWeekvalues[i] = good[i];
+            //}
+
+            //ViewBag.all7 = ALLWeekvalues;
+            //ViewBag.good7 = GoodWeekvalues;
+            //ViewBag.TitlesC = cities;
+
+            Chart7WithoutDivisions chart7 = new Chart7WithoutDivisions();
+            List<int> all = new List<int>(), good = new List<int>();
+            ViewBag.OyTitle = "Количество кодовых номеров";
+            good = chart7.return_good_values_per_week_SUM(min, max, null);
+            all = chart7.return_all_values_per_week_SUM(min, max, null);
 
             ALLWeekvalues = new int[all.Count];
             GoodWeekvalues = new int[good.Count];
+            for(int i = 0; i < ALLWeekvalues.Length; i++)
+            {
+                ALLWeekvalues[i] = all[i];
+                GoodWeekvalues[i] = good[i];
+            }
+            ViewBag.all7 = ALLWeekvalues;
+            ViewBag.good7 = GoodWeekvalues;
 
+            // ------ 7_2-----------------
+            ViewBag.OyTitle = "Количество задач";
+            all = chart7.return_all_values_per_week_COUNT(min, max, null);
+            good = chart7.return_good_values_per_week_COUNT(min, max, null);
+
+            ALLWeekvalues = new int[all.Count];
+            GoodWeekvalues = new int[good.Count];
             for (int i = 0; i < ALLWeekvalues.Length; i++)
             {
                 ALLWeekvalues[i] = all[i];
                 GoodWeekvalues[i] = good[i];
             }
+            ViewBag.all72 = ALLWeekvalues;
+            ViewBag.good72 = GoodWeekvalues;
 
-            ViewBag.all7 = ALLWeekvalues;
-            ViewBag.good7 = GoodWeekvalues;
-            ViewBag.TitlesC = cities;
 
             return PartialView();
         }
@@ -231,7 +263,7 @@ namespace Dunfoss.Controllers
         }
 
         [HttpPost]
-        public JsonResult GetImages(string image1, string image2, string image3, string image4, string image5, string image6, string image7, Report report)
+        public JsonResult GetImages(string image1, string image2, string image3, string image4, string image5, string image6, string image7, string image72, Report report)
         {
             Report model = new Report();
             model.Date = DateTime.Now;
@@ -242,6 +274,7 @@ namespace Dunfoss.Controllers
             model.image5 = image5;
             model.image6 = image6;
             model.image7 = image7;
+            model.image72 = image72;
             Report rep = reportReporsitory.CreateReport(model);
 
             return Json(rep.Id, JsonRequestBehavior.AllowGet);

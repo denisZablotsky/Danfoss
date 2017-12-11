@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201712040628193_FileCurrentFileRel.Designer.cs">
       <DependentUpon>201712040628193_FileCurrentFileRel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712110542360_report-update.cs" />
+    <Compile Include="Migrations\201712110542360_report-update.Designer.cs">
+      <DependentUpon>201712110542360_report-update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CurrentFile.cs" />
     <Compile Include="Models\File.cs" />
@@ -314,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712040628193_FileCurrentFileRel.resx">
       <DependentUpon>201712040628193_FileCurrentFileRel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712110542360_report-update.resx">
+      <DependentUpon>201712110542360_report-update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

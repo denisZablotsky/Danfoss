@@ -554,42 +554,42 @@ namespace Dunfoss.Controllers
                     Chart7WithoutDivisions chart7 = new Chart7WithoutDivisions();
                     int ty = 0;
                     string[] cities = null;
-                    if (division == divisions[0])
-                    {
-                        cities = Cities;
-                    }
-                    if (division == divisions[1])
-                    {
-                        cities = DivisionJug;
-                    }
-                    else if (division == divisions[2])
-                    {
-                        cities = DivisionDalniiVostok;
-                    }
-                    else if (division == divisions[3])
-                    {
-                        cities = DivisionZapadnayaSibir;
-                    }
-                    else if (division == divisions[4])
-                    {
-                        cities = DivisionSeveroZapad;
-                    }
-                    else if (division == divisions[5])
-                    {
-                        cities = DivisionUral;
-                    }
-                    else if (division == divisions[6])
-                    {
-                        cities = DivisionMoskva;
-                    }
-                    else if (division == divisions[7])
-                    {
-                        cities = DivisionPovolje;
-                    }
-                    else if (division == divisions[8])
-                    {
-                        cities = DivisionCentr;
-                    }
+                    //if (division == divisions[0])
+                    //{
+                    //    cities = Cities;
+                    //}
+                    //if (division == divisions[1])
+                    //{
+                    //    cities = DivisionJug;
+                    //}
+                    //else if (division == divisions[2])
+                    //{
+                    //    cities = DivisionDalniiVostok;
+                    //}
+                    //else if (division == divisions[3])
+                    //{
+                    //    cities = DivisionZapadnayaSibir;
+                    //}
+                    //else if (division == divisions[4])
+                    //{
+                    //    cities = DivisionSeveroZapad;
+                    //}
+                    //else if (division == divisions[5])
+                    //{
+                    //    cities = DivisionUral;
+                    //}
+                    //else if (division == divisions[6])
+                    //{
+                    //    cities = DivisionMoskva;
+                    //}
+                    //else if (division == divisions[7])
+                    //{
+                    //    cities = DivisionPovolje;
+                    //}
+                    //else if (division == divisions[8])
+                    //{
+                    //    cities = DivisionCentr;
+                    //}
                     List<int> all = null;
                     List<int> good = null;
 

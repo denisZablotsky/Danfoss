@@ -14,5 +14,6 @@ namespace Dunfoss.Models
         public string image5 { get; set; }
         public string image6 { get; set; }
         public string image7 { get; set; }
+        public string image72 { get; set; }
     }
 }
