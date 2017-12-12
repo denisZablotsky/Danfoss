@@ -47,6 +47,9 @@ namespace Dunfoss.Controllers
         [HttpPost]
         public PartialViewResult Formatting(int min, int max, string division)
         {
+            ViewBag.min = min;
+            ViewBag.max = max;
+
             int[] ALLWeekvalues = null;
             int[] GoodWeekvalues = null;
             string[] titles = null;
@@ -263,7 +266,7 @@ namespace Dunfoss.Controllers
         }
 
         [HttpPost]
-        public JsonResult GetImages(string image1, string image2, string image3, string image4, string image5, string image6, string image7, string image72, Report report)
+        public JsonResult GetImages(string image1, string image2, string image3, string image4, string image5, string image6, string image7, string image72, int min, int max, Report report)
         {
             Report model = new Report();
             model.Date = DateTime.Now;
@@ -275,6 +278,8 @@ namespace Dunfoss.Controllers
             model.image6 = image6;
             model.image7 = image7;
             model.image72 = image72;
+            model.from = min;
+            model.to = max;
             Report rep = reportReporsitory.CreateReport(model);
 
             return Json(rep.Id, JsonRequestBehavior.AllowGet);

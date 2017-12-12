@@ -223,6 +223,10 @@
     <Compile Include="Migrations\201712110542360_report-update.Designer.cs">
       <DependentUpon>201712110542360_report-update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712121212316_report-range.cs" />
+    <Compile Include="Migrations\201712121212316_report-range.Designer.cs">
+      <DependentUpon>201712121212316_report-range.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CurrentFile.cs" />
     <Compile Include="Models\File.cs" />
@@ -285,6 +289,8 @@
     <Content Include="Views\Chart\ChartFormatting.cshtml" />
     <Content Include="Views\Chart\LastDraw.cshtml" />
     <Content Include="Views\Chart\ChartDrawLast.cshtml" />
+    <Content Include="Views\Shared\_auth.cshtml" />
+    <Content Include="Views\Shared\_logout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -321,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712110542360_report-update.resx">
       <DependentUpon>201712110542360_report-update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712121212316_report-range.resx">
+      <DependentUpon>201712121212316_report-range.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

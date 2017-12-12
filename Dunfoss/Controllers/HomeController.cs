@@ -131,8 +131,15 @@ namespace Dunfoss.Controllers
                 _security.Login(user);
             return RedirectToAction("Index", "Home");
         }
+        public PartialViewResult isAuth()
+        {
+            if (_security.IsAuthenticate())
+                return PartialView("_logout", _security.GetCurrentUser());
+            else
+                return PartialView("_auth");
+        }
         [HttpPost]
-        public ActionResult Logout(User user)
+        public ActionResult Logout()
         {
             _security.Logout();
             return RedirectToAction("Index", "Home");

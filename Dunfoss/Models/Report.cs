@@ -7,6 +7,8 @@ namespace Dunfoss.Models
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
+        public int from { get; set; }
+        public int to { get; set; }
         public string image1 { get; set; }
         public string image2 { get; set; }
         public string image3 { get; set; }

@@ -1,5 +1,7 @@
 @model System.Linq.IQueryable<Dunfoss.Models.Letter>
-
+    @{ 
+        string[] monts = new string[] { "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" };
+    }
 @foreach (Dunfoss.Models.Letter letter in Model)
 {
     <div class="remove">
@@ -7,7 +9,7 @@
                 {
             <input type="submit" value="" />
         }
-        <a href="~/Letter/GetLetterById/?id=@letter.Id">@letter.Date.Day @letter.Date.Month @letter.Date.Year @letter.Date.Hour:@letter.Date.Minute:@letter.Date.Second @letter.Division</a>
+        <a href="~/Letter/GetLetterById/?id=@letter.Id">@letter.Division - @monts[letter.month-1] (@letter.Date.Day<span>.</span>@letter.Date.Month<span>.</span>@letter.Date.Year)</a>
     </div>
     
 }
