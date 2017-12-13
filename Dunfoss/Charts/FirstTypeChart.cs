@@ -148,7 +148,7 @@ namespace Dunfoss.Charts
             List<DataRow> lol = new List<DataRow>();
             Dictionary<int, int> MontH_CounT = new Dictionary<int, int>();
             List<object> obj = new List<object>();
-            for (int i = RangA; i <= RangB && i < 12; i++)
+            for (int i = RangA; i <= RangB && i <= 12; i++)
             {
                 obj.Clear();
                 lol.Clear();
@@ -187,7 +187,7 @@ namespace Dunfoss.Charts
             List<DataRow> lol = new List<DataRow>();
             Dictionary<int, int> MontH_CounT = new Dictionary<int, int>();
             List<object> obj = new List<object>();
-            for (int i = RangA; i <= RangB && i < 12; i++)
+            for (int i = RangA; i <= RangB && i <= 12; i++)
             {
                 obj.Clear();
                 lol.Clear();

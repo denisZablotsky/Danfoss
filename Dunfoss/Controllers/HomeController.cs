@@ -138,15 +138,15 @@ namespace Dunfoss.Controllers
             else
                 return PartialView("_auth");
         }
-        [HttpPost]
+
         public ActionResult Logout()
         {
             _security.Logout();
             return RedirectToAction("Index", "Home");
         }
-        public ViewResult PhoneNumbersOfStaff()
+        public RedirectResult PhoneNumbersOfStaff()
         {
-            return View("PhoneNumbersOfStaff");
+            return Redirect("http://ruecom-intru.danfoss.net/CCRS/rcptMain.aspx");
         }
         public ActionResult StatisticsOfGroup()
         {
