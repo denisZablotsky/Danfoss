@@ -138,7 +138,7 @@ namespace Dunfoss.Controllers
 
 
             ViewBag.all6 = ALLWeekvalues;
-            ViewBag.titlesR2 = reasons.ToArray();
+            ViewBag.titlesR2 = r;
             // ------- 7 ----------
             //string[] cities = null;
             //if (division == divisions[0])
