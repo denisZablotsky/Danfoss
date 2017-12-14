@@ -6,13 +6,15 @@
 <div class="chart-options">
     @using (Ajax.BeginForm("DesignDraw", "Chart", new AjaxOptions { UpdateTargetId = "chart-draw" }))
     {
+	<span>Тип графика</span>
         <select id="ChartType" name="ChartType">
             <option value="1" selected>Показатели скорости закрытия задач по неделям</option>
             <option value="2">Показатели скорости закрытия задач по офисам</option>
             
         </select>
         <br />
-        <span>Тип графика</span>
+		<br/>
+        <span>Тип фильтра</span>
         <select id="designType" name="designType">
             <option value="O" selected>O - orders(заказы)</option>
             <option value="P">P - projects(проекты)</option>
@@ -36,8 +38,8 @@
         <div id="MonthFilter" class="option-chart-filter">
 
             <span>
-                C:
-                <select id="chartNumber" name="monthMin">
+                C :
+                <select id="chartNumber" name="monthMin" style="width: 90px;">
                     <option value="1" selected>Января</option>
                     <option value="2">Февраля</option>
                     <option value="3">Марта</option>
@@ -52,11 +54,9 @@
                     <option value="12">Декабря</option>
                 </select>
             </span>
-            <br />
-            <br />
             <span>
                 По:
-                <select id="chartNumber" name="monthMax">
+                <select id="chartNumber" name="monthMax" style="width: 90px;">
                     <option value="1">Январь</option>
                     <option value="2">Февраль</option>
                     <option value="3">Март</option>

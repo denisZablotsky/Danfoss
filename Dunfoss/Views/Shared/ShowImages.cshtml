@@ -2,7 +2,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model Dunfoss.Models.Report
-<h4 style="text-align: center;">Собрание группы БТП @Model.Date.Day<span>.</span>@Model.Date.Month<span>.</span>@Model.Date.Year</h4>
+<h4 style="text-align: center;">Презентация к собранию группы БТП. Период W<span>@Model.from</span>-W<span>@Model.to</span></h4>
+<h4 style="text-align: center;">Дата проведения собрания: @Model.Date.Day<span>.</span>@Model.Date.Month<span>.</span>@Model.Date.Year</h4>
 <div id="report-list">
     <img src="@Model.image1"/>
     <img src="@Model.image2"/>

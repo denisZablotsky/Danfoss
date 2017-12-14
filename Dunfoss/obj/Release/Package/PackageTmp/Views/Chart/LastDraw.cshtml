@@ -1,0 +1,41 @@
+﻿@using System.Collections.Generic;
+@model IEnumerable<string>
+
+<div style="width:500px; margin: auto; padding-top: 15px;"><label><input type="checkbox" name="SelectAll" id="selectAll">Выбрать всех</label></div>
+@using (Ajax.BeginForm("LastChart", "Chart", new { type = ViewBag.Type, min = ViewBag.min, max = ViewBag.max }, new AjaxOptions { UpdateTargetId = "chart45" }))
+{
+    
+        <div id="reasons-list">
+            @foreach (string reason in Model)
+            {
+                <label><input type="checkbox" name="checkedValues" value="@reason">@reason</label> <br />
+
+            }
+        </div>
+        <div style="width:500px; margin: auto; padding-top: 15px;">
+            <select name="graphType">
+                <option value="1">Новые расчеты</option>
+                <option value="2">Корректировки расчетов</option>
+                <option value="3">Сумма новых и корректировок</option>
+            </select>
+        </div>
+        <div style="width:500px; margin: auto; padding-top: 15px;">
+            @Html.RadioButton("typeCountSum", "count", true)<span>Количество единичных расчетов в задачах</span><br />
+            @Html.RadioButton("typeCountSum", "sum")<span>Количество задач</span><br />
+        </div>
+        <div class="chart-options"><div class="chart-options-submit"><input type="submit" value="Перестроить" /></div></div>
+        }
+    
+
+        <div id="chart45"></div>
+
+        <script type="text/javascript">
+            $("#selectAll").change(function () {
+                var checked = $("#selectAll").is(':checked');
+                if (checked) {
+                    $("input[name=checkedValues]").prop('checked', true);
+                } else {
+                    $("input[name=checkedValues]").prop('checked', false);
+                }
+            });
+        </script>

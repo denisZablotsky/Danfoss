@@ -1,0 +1,72 @@
+﻿
+<div id="chart_div" style="width: 100%; height: 600px;"></div>
+<a id="export" href="#" style="display: none" onclick="ExportToServer()">Export as Image</a>
+<script type="text/javascript">
+
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawStacked);
+
+
+    var exportData;
+
+    function drawStacked() {
+        var allValues = @Html.Raw(Json.Encode(@ViewBag.AllValuesWeek));
+        var goodValues = @Html.Raw(Json.Encode(@ViewBag.GoodValuesWeek));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.Titles));
+
+        var dataN = new Array(allValues.length + 1);
+        var count = 1;
+        var flag = 1;
+        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        for(var i = 0; i < allValues.length; i++){
+            if(allValues[i] != 0){
+                var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
+                dataN[count] = [titles[i], goodValues[i], goodValues[i], (allValues[i] - goodValues[i]), (allValues[i] - goodValues[i]), percent + "%"];
+                count++;
+                if (flag == 1)
+                    flag = 0;
+            }
+        }
+        if(allValues.length - count >= 0)
+            dataN.splice(count, (allValues.length + 1) - count );
+
+        if(flag == 1){
+            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+        }
+
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var options = {
+				title: '@ViewBag.MainTitle',
+                isStacked: true,
+                hAxis: {title: "Расчетчик", slantedText:true, slantedTextAngle:60 },
+                vAxis: {
+                    title: '@ViewBag.OyTitle',
+                },
+                colors: ['#92d14f', '#E20011']
+            };
+        
+
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(view, options);
+        exportData = chart.getImageURI();
+    }
+
+
+
+    function ExportToServer(){
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Chart/Export",
+            data: '{"imageData":"' + image + '"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+
+        });
+    }
+</script>
+
+

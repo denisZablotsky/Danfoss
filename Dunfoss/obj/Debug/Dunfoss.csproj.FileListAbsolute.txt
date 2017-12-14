@@ -255,3 +255,7 @@ C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dun
 C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dunfoss.Migrations.FileCurrentFileRel.resources
 C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dunfoss.Migrations.reportupdate.resources
 C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dunfoss.Migrations.reportrange.resources
+C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dunfoss.Resources.Resource.resources
+C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\bin\en\Dunfoss.resources.dll
+C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dunfoss.Resources.Resource.en.resources
+C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\en\Dunfoss.resources.dll

@@ -39,10 +39,10 @@
         var option;
         if(@ViewBag.Type == 2){
             options = {
-                
+                title: '@ViewBag.MainTitle',
                 isStacked: true,
                 hAxis: {
-                    title: 'Номер месяца',
+                    title: 'Месяц',
                     format: 'W'
                 },
                 vAxis: {
@@ -53,6 +53,7 @@
         }
         else if (@ViewBag.Type == 3){
             options = {
+				title: '@ViewBag.MainTitle',
                 isStacked: true,
                 hAxis: {title: "Офис", slantedText:true, slantedTextAngle:60 },
                 vAxis: {
@@ -63,7 +64,7 @@
         }
         else{
             options = {
-                
+                title: '@ViewBag.MainTitle',
                 isStacked: true,
                 hAxis: {
                     title: 'Номер недели',

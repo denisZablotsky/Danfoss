@@ -1,9 +1,30 @@
-п»ї@model System.Linq.IQueryable<Dunfoss.Models.Report>
+@model System.Linq.IQueryable<Dunfoss.Models.Report>
+    @{
+        foreach (Dunfoss.Models.Report report in Model)
+        {
+            <div class="remove">
+                @using (Ajax.BeginForm("Remove", "Report", new { id = report.Id }, new AjaxOptions { UpdateTargetId = "report-list-div" }))
+                {
+                    <input type="submit" value="" />
+                }
+                <a href="/Report/GetReportById/?id=@report.Id">Презентация к собранию группы БТП. Период W<span>@report.from</span>-W<span>@report.to</span></a>
 
-@{ 
-    foreach(Dunfoss.Models.Report report in Model)
-    {
-        <a href="/Report/GetReportById/?id=@report.Id">@report.Date.Day @report.Date.Month @report.Date.Year @report.Date.Hour : @report.Date.Minute @report.Id</a>
-        <br/>
+                
+            </div>
+        }
     }
-}
+
+<style>
+    .remove a{
+        margin-left: 10px;
+    }
+    .remove input{
+        margin-top: 3px;
+        border:none;
+        background-image: url("/Images/rem.png");
+        background-color: transparent;
+        float: left;
+        width: 15px;
+        height: 15px;
+    }
+</style>

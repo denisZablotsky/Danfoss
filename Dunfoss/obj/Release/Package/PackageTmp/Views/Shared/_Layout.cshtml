@@ -44,7 +44,9 @@
                             
                             <li>@Html.ActionLink("Контакты", "Contacts", "Home", new { area = "" }, new { @class = "menu-link", @id = "menu-item" })</li>
                         </ul>
-                        <div class="login-container">@Html.ActionLink("Вход в личный кабинет", "LogIn", "Home", new { area = "" }, new { @class = "login-link menu-link", @id = "menu-item" })</div>
+                        <div class="login-container">@{
+                            Html.RenderAction("isAuth", "Home");
+                        }</div>
                     </div>
                     
                 </div>

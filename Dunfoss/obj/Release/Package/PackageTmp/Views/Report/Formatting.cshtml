@@ -13,7 +13,7 @@
 
     function drawStacked() {
         // ---------------------- 1 --------------------------------------------------------------------
-        var imagesAr = new Array(7);
+        var imagesAr = new Array(8);
         var allValues = @Html.Raw(Json.Encode(@ViewBag.all1));
         var goodValues = @Html.Raw(Json.Encode(@ViewBag.good1));
         var titles = @Html.Raw(Json.Encode(@ViewBag.Titles));
@@ -45,8 +45,12 @@
                 'height':800,
                 title: 'Новые расчеты БТП',
                 isStacked: true,
-                hAxis: {                    
+                hAxis: {
+                    title: 'Номер недели',
                     format: 'W'
+                },
+                vAxis: {
+                    title: 'Количество расчетов',
                 },
                 colors: ['#92d14f', '#E20011']
             };
@@ -111,7 +115,11 @@
             title: 'Корректировки расчетов БТП',
             isStacked: true,
             hAxis: {
+                title: 'Номер недели',
                 format: 'W'
+            },
+            vAxis: {
+                title: 'Количество расчетов',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -170,7 +178,11 @@
             title: 'Новые расчеты и корректировки БТП',
             isStacked: true,
             hAxis: {
+                title: 'Номер недели',
                 format: 'W'
+            },
+            vAxis: {
+                title: 'Количество расчетов',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -229,9 +241,12 @@
             title: 'Новые расчеты и корректировки БТП',
             isStacked: true,
             hAxis: {
-                
+                title: 'Номер недели',
                 format: 'W'
-            },            
+            },
+            vAxis: {
+                title: 'Количество расчетов',
+            },           
             colors: ['#92d14f', '#E20011']
         };/////4
 
@@ -274,6 +289,9 @@
             'width':1600,
             'height':800,
             title: 'Причины просроченных задач',
+            hAxis: {
+                title: 'Количество штук',
+            },
             colors: ['#9b2d30']
         };
 
@@ -315,6 +333,9 @@
             'width':1600,
             'height':800,
             title: 'Причины корректировок',
+            hAxis: {
+                title: 'Количество штук',
+            },
             colors: ['#00008b']
         };//6
 
@@ -341,7 +362,7 @@
     function Draw7(imagesAr){
         var allValues = @Html.Raw(Json.Encode(@ViewBag.all7));
         var goodValues = @Html.Raw(Json.Encode(@ViewBag.good7));
-        var titles = @Html.Raw(Json.Encode(@ViewBag.TitlesC));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.Titles));
 
         var dataN = new Array(allValues.length + 1);
         var count = 1;
@@ -371,8 +392,11 @@
             title: 'Заказы БТП',
             isStacked: true,
             hAxis: {
-                
+                title: 'Номер недели',
                 format: 'W'
+            },
+            vAxis: {
+                title: 'Количество задач',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -392,6 +416,69 @@
             dataType: "json",
             success: function (result) {
                 imagesAr[6] = result;
+                Draw72(imagesAr);
+            }
+        });
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////
+    function Draw72(imagesAr){
+        var allValues = @Html.Raw(Json.Encode(@ViewBag.all72));
+        var goodValues = @Html.Raw(Json.Encode(@ViewBag.good72));
+        var titles = @Html.Raw(Json.Encode(@ViewBag.Titles));
+
+        var dataN = new Array(allValues.length + 1);
+        var count = 1;
+        var flag = 1;
+        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        for(var i = 0; i < allValues.length; i++){
+            if(allValues[i] != 0){
+                var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(1);
+                dataN[count] = [titles[i], goodValues[i], goodValues[i], (allValues[i] - goodValues[i]), (allValues[i] - goodValues[i]), percent + "%"];
+                count++;
+                if (flag == 1)
+                    flag = 0;
+            }
+        }
+        if(allValues.length - count >= 0)
+            dataN.splice(count, (allValues.length + 1) - count );
+
+        if(flag == 1){
+            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+        }
+
+        var data = google.visualization.arrayToDataTable(dataN);
+        var view = new google.visualization.DataView(data);
+        var options = {
+            'width':1600,
+            'height':800,
+            title: 'Заказы БТП',
+            isStacked: true,
+            hAxis: {
+                title: 'Номер недели',
+                format: 'W'
+            },
+            vAxis: {
+                title: 'Количество кодовых номеров',
+            },
+            colors: ['#92d14f', '#E20011']
+        };
+
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(view, options);
+        exportData = chart.getImageURI();
+
+        var string = exportData;
+        var image = string.replace("data:image/png;base64,", "");
+        $.ajax({
+            type: "POST",
+            url: "/Report/Export",
+            data: '{"imageData":"' + image + '", "number": "7-2"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                imagesAr[7] = result;
                 $.ajax({
                     type: "POST",
                     url: "/Report/GetImages",
@@ -409,9 +496,11 @@
                             image4: imagesAr[3],
                             image5: imagesAr[4],
                             image6: imagesAr[5],
-                            image7: imagesAr[6]
-                        })
-                    ,
+                            image7: imagesAr[6],
+                            image72: imagesAr[7],
+                            min: @ViewBag.min,
+                            date: '@ViewBag.date',
+                            max: @ViewBag.max}),
                     contentType: "application/json; charset=utf-8"
                 });
             }
