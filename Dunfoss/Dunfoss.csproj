@@ -188,6 +188,7 @@
     <Compile Include="Data\ILetterRepository.cs" />
     <Compile Include="Data\IReportRepository.cs" />
     <Compile Include="Data\IUserRepository.cs" />
+    <Compile Include="Filters\CultureAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

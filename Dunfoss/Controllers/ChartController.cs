@@ -8,13 +8,14 @@ using System;
 using System.Collections.Generic;
 using Dunfoss.Data;
 using Dunfoss.Services;
+using Dunfoss.Filters;
 
 // Название графиков
 // Значение оценок добавлены вручную
 
 namespace Dunfoss.Controllers
 {
-    
+    [Culture]
     public class ChartController : Controller
     {
         ISecurityService _security;

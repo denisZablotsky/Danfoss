@@ -4,9 +4,9 @@
 
 
 <div class="upload-form">
-	<span class="upload-form-label">Показатели по расчетам</span>
+	<span class="upload-form-label">@Resource.HasteCalc</span>
     <div class="upload-file-item">
-        <input type="file" name="file1" id="uploadFile1" /><button class="upload-btn" id="upload-btn-1">Загрузить</button>
+        <input type="file" name="file1" id="uploadFile1" /><button class="upload-btn" id="upload-btn-1">@Resource.LoadBtn</button>
         <div style="display:none;" class="circularGh" id="circularG1">
             <div id="circularG_1" class="circularG"></div>
             <div id="circularG_2" class="circularG"></div>
@@ -18,9 +18,9 @@
             <div id="circularG_8" class="circularG"></div>
         </div><img id="done-1" class="done" src="~/Images/success.png" style="display:none" height="50" />
         </div>
-	<span class="upload-form-label">Показатели по заказам</span>
+	<span class="upload-form-label">@Resource.HasteCalc</span>
     <div class="upload-file-item">
-        <input type="file" name="file2" id="uploadFile2" /><button class="upload-btn" id="upload-btn-2">Загрузить</button>
+        <input type="file" name="file2" id="uploadFile2" /><button class="upload-btn" id="upload-btn-2">@Resource.LoadBtn</button>
         <div style="display:none;" class="circularGh" id="circularG2">
             <div id="circularG_1" class="circularG"></div>
             <div id="circularG_2" class="circularG"></div>
@@ -32,9 +32,9 @@
             <div id="circularG_8" class="circularG"></div>
         </div><img id="done-2" class="done" src="~/Images/success.png" style="display:none" height="50" />
     </div>
-	<span class="upload-form-label">Таблица для 3Д дизайна</span>
+	<span class="upload-form-label">@Resource.Table3d</span>
     <div class="upload-file-item">
-        <input type="file" name="file3" id="uploadFile3" /><button class="upload-btn" id="upload-btn-3">Загрузить</button>
+        <input type="file" name="file3" id="uploadFile3" /><button class="upload-btn" id="upload-btn-3">@Resource.LoadBtn</button>
         <div style="display:none" class="circularGh" id="circularG3">
             <div id="circularG_1" class="circularG"></div>
             <div id="circularG_2" class="circularG"></div>
@@ -146,5 +146,5 @@
 </script>
 
 <div class="gochart">
-    @Html.ActionLink("Вернуться в меню", "GetNav", "Chart")
+    @Html.ActionLink(Resource.BackMenu, "GetNav", "Chart")
 </div>
