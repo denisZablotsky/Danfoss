@@ -106,6 +106,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Построить.
+        /// </summary>
+        public static string CreateBtn {
+            get {
+                return ResourceManager.GetString("CreateBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Построение графиков.
         /// </summary>
         public static string CreateGraph {

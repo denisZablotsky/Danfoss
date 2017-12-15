@@ -156,7 +156,7 @@
     <value>Common informations about models</value>
   </data>
   <data name="LoadBtn" xml:space="preserve">
-    <value>Load file</value>
+    <value>Load the file</value>
   </data>
   <data name="LoadFiles" xml:space="preserve">
     <value>Load files</value>
