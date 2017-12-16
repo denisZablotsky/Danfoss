@@ -126,6 +126,12 @@
   <data name="BackMenu" xml:space="preserve">
     <value>Get back to the menu</value>
   </data>
+  <data name="CalcDivGraph" xml:space="preserve">
+    <value>Calculations substations in divisions</value>
+  </data>
+  <data name="CausesGraph" xml:space="preserve">
+    <value>Causes corrections</value>
+  </data>
   <data name="Choose" xml:space="preserve">
     <value>Choose</value>
     <comment>Надпись на кнопке выбора локализации</comment>
@@ -139,6 +145,9 @@
   </data>
   <data name="Contacts" xml:space="preserve">
     <value>Contacts</value>
+  </data>
+  <data name="CorrectGraph" xml:space="preserve">
+    <value>Correction calculations</value>
   </data>
   <data name="CreateBtn" xml:space="preserve">
     <value>Create</value>
@@ -157,6 +166,18 @@
   </data>
   <data name="CurrentFiles" xml:space="preserve">
     <value>Used files</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filter type</value>
+  </data>
+  <data name="FilterMonth" xml:space="preserve">
+    <value>Filter by month</value>
+  </data>
+  <data name="FilterWeek" xml:space="preserve">
+    <value>Filter by week</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>from</value>
   </data>
   <data name="HasteCalc" xml:space="preserve">
     <value>Haste by calculations</value>
@@ -182,11 +203,26 @@
   <data name="Logout" xml:space="preserve">
     <value>Logout</value>
   </data>
+  <data name="Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="MonthNumber" xml:space="preserve">
+    <value>MonthNumber</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="NewCalcGraph" xml:space="preserve">
+    <value>New calculations substations</value>
+  </data>
+  <data name="NewCorrGraph" xml:space="preserve">
+    <value>New calculations and correction substations</value>
+  </data>
   <data name="News" xml:space="preserve">
     <value>News</value>
+  </data>
+  <data name="OrdersGraph" xml:space="preserve">
+    <value>Orders substations</value>
   </data>
   <data name="OtherDocs" xml:space="preserve">
     <value>Other files</value>
@@ -194,8 +230,17 @@
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="QCode" xml:space="preserve">
+    <value>Quantity of code numbers</value>
+  </data>
+  <data name="QTasks" xml:space="preserve">
+    <value>Quantity of tasks in CRM</value>
+  </data>
   <data name="Rating" xml:space="preserve">
     <value>Rating of the designers and average execution speed of the model</value>
+  </data>
+  <data name="ReasonsGraph" xml:space="preserve">
+    <value>Reasons for overdue tasks</value>
   </data>
   <data name="ReportTitle" xml:space="preserve">
     <value>Meeting presentation group substations. The period</value>
@@ -205,6 +250,9 @@
   </data>
   <data name="SiteTitle" xml:space="preserve">
     <value>Russian portal calculations and orders substations</value>
+  </data>
+  <data name="SpeedGraph" xml:space="preserve">
+    <value>The speed of closure tasks the engineers calculations</value>
   </data>
   <data name="StatisticsLink" xml:space="preserve">
     <value>Statistics on the tasks of the group substations</value>
@@ -218,7 +266,22 @@
   <data name="TelephoneList" xml:space="preserve">
     <value>List of phone numbers of the group</value>
   </data>
+  <data name="To" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="TypeGraph" xml:space="preserve">
+    <value>Type of graph</value>
+  </data>
   <data name="ViewGroupLink" xml:space="preserve">
     <value>View employment group</value>
+  </data>
+  <data name="Week" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="WithDiv" xml:space="preserve">
+    <value>With the divisions</value>
+  </data>
+  <data name="WithoutDiv" xml:space="preserve">
+    <value>Without divisions</value>
   </data>
 </root>

@@ -88,6 +88,24 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Расчеты БТП по дивизионам.
+        /// </summary>
+        public static string CalcDivGraph {
+            get {
+                return ResourceManager.GetString("CalcDivGraph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Причины корректировок.
+        /// </summary>
+        public static string CausesGraph {
+            get {
+                return ResourceManager.GetString("CausesGraph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Выбрать.
         /// </summary>
         public static string Choose {
@@ -120,6 +138,15 @@ namespace Dunfoss.Resources {
         public static string Contacts {
             get {
                 return ResourceManager.GetString("Contacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Корректировки расчетов.
+        /// </summary>
+        public static string CorrectGraph {
+            get {
+                return ResourceManager.GetString("CorrectGraph", resourceCulture);
             }
         }
         
@@ -174,6 +201,42 @@ namespace Dunfoss.Resources {
         public static string CurrentFiles {
             get {
                 return ResourceManager.GetString("CurrentFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Фильтрация.
+        /// </summary>
+        public static string Filter {
+            get {
+                return ResourceManager.GetString("Filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Фильтрация по месяцам.
+        /// </summary>
+        public static string FilterMonth {
+            get {
+                return ResourceManager.GetString("FilterMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Фильтрация по неделям.
+        /// </summary>
+        public static string FilterWeek {
+            get {
+                return ResourceManager.GetString("FilterWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на c.
+        /// </summary>
+        public static string From {
+            get {
+                return ResourceManager.GetString("From", resourceCulture);
             }
         }
         
@@ -250,6 +313,24 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на По месяцам.
+        /// </summary>
+        public static string Month {
+            get {
+                return ResourceManager.GetString("Month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Номер месяца.
+        /// </summary>
+        public static string MonthNumber {
+            get {
+                return ResourceManager.GetString("MonthNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Логин.
         /// </summary>
         public static string Name {
@@ -259,11 +340,38 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Новые расчеты БТП.
+        /// </summary>
+        public static string NewCalcGraph {
+            get {
+                return ResourceManager.GetString("NewCalcGraph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Новые расчеты и корректировки БТП.
+        /// </summary>
+        public static string NewCorrGraph {
+            get {
+                return ResourceManager.GetString("NewCorrGraph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Новости.
         /// </summary>
         public static string News {
             get {
                 return ResourceManager.GetString("News", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Заказы БТП.
+        /// </summary>
+        public static string OrdersGraph {
+            get {
+                return ResourceManager.GetString("OrdersGraph", resourceCulture);
             }
         }
         
@@ -286,11 +394,38 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на По кол-ву кодовых номеров.
+        /// </summary>
+        public static string QCode {
+            get {
+                return ResourceManager.GetString("QCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на По кол-ву задач.
+        /// </summary>
+        public static string QTasks {
+            get {
+                return ResourceManager.GetString("QTasks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 3Д Дизайн. Оценки по дизайнерам и Средняя скорость выполнения модели.
         /// </summary>
         public static string Rating {
             get {
                 return ResourceManager.GetString("Rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Причины просроченных задач.
+        /// </summary>
+        public static string ReasonsGraph {
+            get {
+                return ResourceManager.GetString("ReasonsGraph", resourceCulture);
             }
         }
         
@@ -318,6 +453,15 @@ namespace Dunfoss.Resources {
         public static string SiteTitle {
             get {
                 return ResourceManager.GetString("SiteTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Скорость закрытия задач по расчетчикам.
+        /// </summary>
+        public static string SpeedGraph {
+            get {
+                return ResourceManager.GetString("SpeedGraph", resourceCulture);
             }
         }
         
@@ -358,11 +502,56 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на по.
+        /// </summary>
+        public static string To {
+            get {
+                return ResourceManager.GetString("To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тип графика.
+        /// </summary>
+        public static string TypeGraph {
+            get {
+                return ResourceManager.GetString("TypeGraph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Посмотреть загрузку группы БТП.
         /// </summary>
         public static string ViewGroupLink {
             get {
                 return ResourceManager.GetString("ViewGroupLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на По неделям.
+        /// </summary>
+        public static string Week {
+            get {
+                return ResourceManager.GetString("Week", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на С дивизионами.
+        /// </summary>
+        public static string WithDiv {
+            get {
+                return ResourceManager.GetString("WithDiv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Без дивизионов.
+        /// </summary>
+        public static string WithoutDiv {
+            get {
+                return ResourceManager.GetString("WithoutDiv", resourceCulture);
             }
         }
     }

@@ -6,37 +6,37 @@
 <div class="chart-options">
     @using (Ajax.BeginForm("ChartDraw", "Chart", new { filename = ViewBag.Filename }, new AjaxOptions { UpdateTargetId = "chart-draw" }))
     {
-        <span>Тип графика</span>
+        <span>@Resource.TypeGraph</span>
         <select id="chartNumber" name="chartNumber">
-            <option value="1" selected>Новые расчеты БТП</option>
-            <option value="2">Корректировки расчетов</option>
-            <option value="3">Новые расчеты и корректировки БТП</option>
-            <option value="4">Причины просроченных задач</option>
-            <option value="5">Причины корректировок</option>
-            <option value="6">Расчеты БТП по дивизионам</option>
-            <option value="7">Заказы БТП</option>
-            <option value="8">Скорость закрытия задач по расчетчикам</option>
+            <option value="1" selected>@Resource.NewCalcGraph</option>
+            <option value="2">@Resource.CorrectGraph</option>
+            <option value="3">@Resource.NewCorrGraph</option>
+            <option value="4">@Resource.ReasonsGraph</option>
+            <option value="5">@Resource.CausesGraph</option>
+            <option value="6">@Resource.CalcDivGraph</option>
+            <option value="7">@Resource.OrdersGraph</option>
+            <option value="8">@Resource.SpeedGraph</option>
         </select>
         <br />
         <div id="FilterType" >
-            <span>Фильтрация: </span>
+            <span>@Resource.Filter: </span>
             <select id="filterType" name="filterType" class="option-chart-filter">
-                <option value="1" selected>По месяцам</option>
-                <option value="2">По неделям</option>
+                <option value="1" selected>@Resource.Month</option>
+                <option value="2">@Resource.Week</option>
             </select>
         </div>
         <div id="WeekFilter" style="display: none;" class="option-chart-filter">
-            <span class="chart-options-opt">Фильтрация по неделям: с</span><input type="number" value="1" max="52" min="1" name="min" />
+            <span class="chart-options-opt">@Resource.FilterWeek: с</span><input type="number" value="1" max="52" min="1" name="min" />
             <span> по </span><input type="number" value="52" max="52" min="1" name="max" />
             <br />
         </div>
         <div id="MonthFilter" class="option-chart-filter">
-            <span class="chart-options-opt">Фильтрация по месяцам: с</span><input type="number" value="1" max="12" min="1" name="minMonth" />
-            <span> по </span><input type="number" value="12" max="12" min="1" name="maxMonth" />
+            <span class="chart-options-opt">@Resource.FilterWeek: @Resource.From</span><input type="number" value="1" max="12" min="1" name="minMonth" />
+            <span> @Resource.To </span><input type="number" value="12" max="12" min="1" name="maxMonth" />
             <br />
         </div>
         <div id="MonthNumber" style="display: none;" class="option-chart-filter">
-            <span class="chart-options-opt">Номер месяца: </span><input type="number" value="0" max="12" min="0" name="month" />
+            <span class="chart-options-opt">@Resource.MonthNumber: </span><input type="number" value="0" max="12" min="0" name="month" />
             <br />
         </div>
         <div id="Division" style="display: none;" class="option-chart-filter">
@@ -55,12 +55,12 @@
             <br />
         </div>
         <div id="spin-filter" style="display: none;" class="option-chart-filter">
-            @Html.RadioButton("spin", "with", true)<span>С дивизионами</span><br />
-            @Html.RadioButton("spin", "without")<span>Без дивизионов</span><br />
+            @Html.RadioButton("spin", "with", true)<span>@Resource.WithDiv</span><br />
+            @Html.RadioButton("spin", "without")<span>@Resource.WithoutDiv</span><br />
         </div>
         <div id="FilterType7" style="display: none;" class="option-chart-filter">
-            @Html.RadioButton("tp", "номера", true)<span>По кол-ву задач</span><br />
-            @Html.RadioButton("tp", "задачи")<span>По кол-ву кодовых номеров</span><br />
+            @Html.RadioButton("tp", "номера", true)<span>@Resource.QTasks</span><br />
+            @Html.RadioButton("tp", "задачи")<span>@Resource.QCode</span><br />
         </div>
         <div class="chart-options-submit"><input type="submit" value="@Resource.CreateBtn" /></div>
         
