@@ -61,6 +61,24 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Информационные письма.
+        /// </summary>
+        public static string AcchiveLetters {
+            get {
+                return ResourceManager.GetString("AcchiveLetters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Собрания группы БТП.
+        /// </summary>
+        public static string ArchivePresentations {
+            get {
+                return ResourceManager.GetString("ArchivePresentations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вернуться в меню.
         /// </summary>
         public static string BackMenu {
@@ -147,6 +165,15 @@ namespace Dunfoss.Resources {
         public static string CreatePresentation {
             get {
                 return ResourceManager.GetString("CreatePresentation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Текущие документы.
+        /// </summary>
+        public static string CurrentFiles {
+            get {
+                return ResourceManager.GetString("CurrentFiles", resourceCulture);
             }
         }
         
@@ -241,6 +268,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Важные документы.
+        /// </summary>
+        public static string OtherDocs {
+            get {
+                return ResourceManager.GetString("OtherDocs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Пароль.
         /// </summary>
         public static string Password {
@@ -255,6 +291,15 @@ namespace Dunfoss.Resources {
         public static string Rating {
             get {
                 return ResourceManager.GetString("Rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Презентация к собранию группы БТП. Период.
+        /// </summary>
+        public static string ReportTitle {
+            get {
+                return ResourceManager.GetString("ReportTitle", resourceCulture);
             }
         }
         
@@ -286,6 +331,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Узнать статус выполнения задачи в CRM.
+        /// </summary>
+        public static string StatusLink {
+            get {
+                return ResourceManager.GetString("StatusLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Таблица для 3Д дизайна.
         /// </summary>
         public static string Table3d {
@@ -300,6 +354,15 @@ namespace Dunfoss.Resources {
         public static string TelephoneList {
             get {
                 return ResourceManager.GetString("TelephoneList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Посмотреть загрузку группы БТП.
+        /// </summary>
+        public static string ViewGroupLink {
+            get {
+                return ResourceManager.GetString("ViewGroupLink", resourceCulture);
             }
         }
     }

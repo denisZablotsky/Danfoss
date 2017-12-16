@@ -1,6 +1,6 @@
 ﻿ <div class="horizontal-menu">
-        <ul class="horizontal-menu-ul"> <li><big>@Html.ActionLink("Список телефонов сотрудников группы БТП", "PhoneNumbersOfStaff", "Home")</big> </li> 
-        <li class="active"><big>@Html.ActionLink("Посмотреть загрузку группы БТП", "LoadOfGroup", "Home") </big></li> 
+        <ul class="horizontal-menu-ul"> <li><big>@Html.ActionLink(Resource.TelephoneList, "PhoneNumbersOfStaff", "Home")</big> </li> 
+        <li class="active"><big>@Html.ActionLink(Resource.ViewGroupLink, "LoadOfGroup", "Home") </big></li> 
         <li> <big>@Html.ActionLink(Resource.StatisticsLink, "StatisticsOfGroup", "Home")</big></li> 
-        <li><big> @Html.ActionLink("Узнать статус выполнения задачи в CRM", "StatusCRM", "Home")</big></li> </ul>
+        <li><big> @Html.ActionLink(Resource.StatusLink, "StatusCRM", "Home")</big></li> </ul>
  </div>

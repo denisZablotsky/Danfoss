@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AcchiveLetters" xml:space="preserve">
+    <value>Archive of newsletters for the sales group</value>
+  </data>
+  <data name="ArchivePresentations" xml:space="preserve">
+    <value>Archive presenetations to meetings</value>
+  </data>
   <data name="BackMenu" xml:space="preserve">
     <value>Get back to the menu</value>
   </data>
@@ -149,6 +155,9 @@
   <data name="CreatePresentation" xml:space="preserve">
     <value>Create presentation</value>
   </data>
+  <data name="CurrentFiles" xml:space="preserve">
+    <value>Used files</value>
+  </data>
   <data name="HasteCalc" xml:space="preserve">
     <value>Haste by calculations</value>
   </data>
@@ -179,11 +188,17 @@
   <data name="News" xml:space="preserve">
     <value>News</value>
   </data>
+  <data name="OtherDocs" xml:space="preserve">
+    <value>Other files</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
   <data name="Rating" xml:space="preserve">
     <value>Rating of the designers and average execution speed of the model</value>
+  </data>
+  <data name="ReportTitle" xml:space="preserve">
+    <value>Meeting presentation group substations. The period</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search info on code number</value>
@@ -194,10 +209,16 @@
   <data name="StatisticsLink" xml:space="preserve">
     <value>Statistics on the tasks of the group substations</value>
   </data>
+  <data name="StatusLink" xml:space="preserve">
+    <value>The task's execution status in CRM</value>
+  </data>
   <data name="Table3d" xml:space="preserve">
     <value>Table for 3d design</value>
   </data>
   <data name="TelephoneList" xml:space="preserve">
-    <value>Telephones of employees of the group substations</value>
+    <value>List of phone numbers of the group</value>
+  </data>
+  <data name="ViewGroupLink" xml:space="preserve">
+    <value>View employment group</value>
   </data>
 </root>
