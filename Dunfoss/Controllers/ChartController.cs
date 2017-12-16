@@ -111,6 +111,23 @@ namespace Dunfoss.Controllers
                     filename = HostingEnvironment.ApplicationPhysicalPath + "/xls/" + upload.FileName;
                     fileModel.Path = "/xls/" + upload.FileName;
                     fileModel.Name = upload.FileName;
+
+                    if (file == "file1")
+                    {
+                        fileModel.Type = 1;
+                        
+                    }
+                    else if (file == "file2")
+                    {
+                        fileModel.Type = 2;
+                        
+                    }
+                    else
+                    {
+                        fileModel.Type = 3;
+                        
+                    }
+
                     Models.File f = fileRep.CreateFile(fileModel);
 
                     if (file == "file1")
@@ -731,6 +748,7 @@ namespace Dunfoss.Controllers
         {
             TheLastChart lastChart = new TheLastChart();
             int[] all = null, bad = null, good = null;
+            
             if(graphType == "1")
             {
                 ViewBag.MainTitle = "Новые расчеты";
@@ -814,6 +832,26 @@ namespace Dunfoss.Controllers
             {
                 all[i] = good[i] + bad[i];
             }
+
+            for(int i = 0; i < all.Length - 1; i++)
+            {
+                for(int j = 0; j < all.Length - 1; j++)
+                {
+                    if(all[j] < all[j + 1])
+                    {
+                        int temp = all[j];
+                        all[j] = all[j + 1];
+                        all[j + 1] = temp;
+                        temp = good[j];
+                        good[j] = good[j + 1];
+                        good[j + 1] = temp;
+                        string t = checkedValues[j];
+                        checkedValues[j] = checkedValues[j + 1];
+                        checkedValues[j + 1] = t;
+                    }
+                }
+            }
+
             ViewBag.AllValuesWeek = all;
             ViewBag.GoodValuesWeek = good;
             ViewBag.Titles = checkedValues;

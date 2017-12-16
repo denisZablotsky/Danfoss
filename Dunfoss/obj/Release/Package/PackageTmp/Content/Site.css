@@ -416,3 +416,23 @@ textarea {
 #go-to-charts a:hover{
 	color: white;
 }
+
+#lang{
+    width: 160px;
+    height: 40px;
+    float:right;
+    margin-top: 13px;
+}
+#lang input,select{
+    height: 25px;
+}
+#lang input{
+    color: white;
+    background-color: #009081;
+    border-radius: 2px;
+    border: 1px solid #20b0a1;
+}
+#lang select{
+    border-radius: 2px;
+}
+

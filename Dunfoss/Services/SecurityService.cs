@@ -28,6 +28,7 @@ namespace Dunfoss.Services
         {
             _context = new EfDbContext();
             _session = session ?? HttpContext.Current.Session;
+            _session.Timeout = 120;
         }
 
         public bool Authenticate(string name, string password)

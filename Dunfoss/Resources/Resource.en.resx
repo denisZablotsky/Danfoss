@@ -134,6 +134,9 @@
   <data name="Contacts" xml:space="preserve">
     <value>Contacts</value>
   </data>
+  <data name="CreateBtn" xml:space="preserve">
+    <value>Create</value>
+  </data>
   <data name="CreateGraph" xml:space="preserve">
     <value>Create graphics</value>
   </data>

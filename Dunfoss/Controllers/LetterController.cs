@@ -7,9 +7,11 @@ using Dunfoss.Charts;
 using Dunfoss.Models;
 using Dunfoss.Data;
 using System.Web.Hosting;
+using Dunfoss.Filters;
 
 namespace Dunfoss.Controllers
 {
+    [Culture]
     public class LetterController : Controller
     {
         ILetterRepository letterRepository;
@@ -29,7 +31,7 @@ namespace Dunfoss.Controllers
         string[] DivisionDalniiVostok = new string[] { "Владивосток - HE", "Хабаровск - HE", "Иркутск - HE", "Красноярск - HE" };
         string[] DivisionZapadnayaSibir = new string[] { "Новосибирск - HE", "Омск - HE" };
         string[] DivisionSeveroZapad = new string[] { "Санкт-Петербург - HE" };
-        string[] DivisionUral = new string[] { "Екатеринбург - HE", "Ижевск - HE  ", "Пермь - HE",
+        string[] DivisionUral = new string[] { "Екатеринбург - HE", "Ижевск - HE", "Пермь - HE",
             "Тюмень - HE", "Челябинск - HE" };
         string[] DivisionMoskva = new string[] { "Москва - HE" };
         string[] DivisionPovolje = new string[] { "Казань - HE", "Самара - HE", "Уфа - HE", "Н.Новгород - HE" };

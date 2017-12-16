@@ -33,7 +33,7 @@ namespace Dunfoss.Charts
         int[] Goodint;
         string[] Cities = new string[]{ "Краснодар - HE", "Ростов-на-Дону - HE", "Волгоград - HE", "Саратов - HE",
             "Владивосток - HE", "Хабаровск - HE", "Иркутск - HE", "Красноярск - HE",
-            "Новосибирск - HE", "Омск - HE", "Санкт-Петербург - HE", "Екатеринбург - HE", "Ижевск - HE  ", "Пермь - HE",
+            "Новосибирск - HE", "Омск - HE", "Санкт-Петербург - HE", "Екатеринбург - HE", "Ижевск - HE", "Пермь - HE",
             "Тюмень - HE", "Челябинск - HE", "Москва - HE", "Казань - HE", "Самара - HE", "Уфа - HE", "Н.Новгород - HE",
             "Воронеж - HE", "Ярославль - HE"
         , "Тула - HE"};
@@ -41,7 +41,7 @@ namespace Dunfoss.Charts
         string[] DivisionDalniiVostok = new string[] { "Владивосток - HE", "Хабаровск - HE", "Иркутск - HE", "Красноярск - HE" };
         string[] DivisionZapadnayaSibir = new string[] { "Новосибирск - HE", "Омск - HE" };
         string[] DivisionSeveroZapad = new string[] { "Санкт-Петербург - HE" };
-        string[] DivisionUral = new string[] { "Екатеринбург - HE", "Ижевск - HE  ", "Пермь - HE",
+        string[] DivisionUral = new string[] { "Екатеринбург - HE", "Ижевск - HE", "Пермь - HE",
             "Тюмень - HE", "Челябинск - HE" };
         string[] DivisionMoskva = new string[] { "Москва - HE" };
         string[] DivisionPovolje = new string[] { "Казань - HE", "Самара - HE", "Уфа - HE", "Н.Новгород - HE" };
@@ -110,7 +110,7 @@ namespace Dunfoss.Charts
             {
                 foreach (var item in foundRows)
                 {
-                    if (((item.ItemArray[13] is DateTime) && (item.ItemArray[0].ToString() == elem) && ((DateTime)item.ItemArray[13] >= StartMonth[MonthNumber - 1]) && ((DateTime)item.ItemArray[13]) < EndMonth[MonthNumber - 1])) { Sum21++; }
+                    if (((item.ItemArray[13] is DateTime) && (item.ItemArray[0].ToString().TrimEnd(' ') == elem) && ((DateTime)item.ItemArray[13] >= StartMonth[MonthNumber - 1]) && ((DateTime)item.ItemArray[13]) < EndMonth[MonthNumber - 1])) { Sum21++; }
                 }
             }
             //////////
@@ -123,7 +123,7 @@ namespace Dunfoss.Charts
             {
                 foreach (var item in foundRows)
                 {
-                    if (((item.ItemArray[13] is DateTime) && (item.ItemArray[0].ToString() == elem) && ((DateTime)item.ItemArray[13] >= StartMonth[MonthNumber - 1]) && ((DateTime)item.ItemArray[13]) < EndMonth[MonthNumber - 1]) && (item.ItemArray[39].ToString() != "")) { Sum22 += Convert.ToInt32(item.ItemArray[39]); }
+                    if (((item.ItemArray[13] is DateTime) && (item.ItemArray[0].ToString().TrimEnd(' ') == elem) && ((DateTime)item.ItemArray[13] >= StartMonth[MonthNumber - 1]) && ((DateTime)item.ItemArray[13]) < EndMonth[MonthNumber - 1]) && (item.ItemArray[39].ToString() != "")) { Sum22 += Convert.ToInt32(item.ItemArray[39]); }
                 }
             }
             int[] valuesforfirsttable = new int[4];
@@ -149,8 +149,9 @@ namespace Dunfoss.Charts
         {
             int Value11 = return_good_values_in_month_range(MonthNumber, MonthNumber, Division);
 
-            int Value21 = return_bad_values_in_month_range(MonthNumber, MonthNumber, Division);
+            int V21 = return_all_values_in_month_range(MonthNumber, MonthNumber, Division);
 
+            int Value21 = V21 - Value11;
             float Value12 = 0;
             float Value22 = 0;
             if (Value11 + Value21 != 0)
@@ -169,11 +170,11 @@ namespace Dunfoss.Charts
 
 
         #region
-        private int return_bad_values_in_month_range(int RangA, int RangB, string[] Division)
+        private int return_all_values_in_month_range(int RangA, int RangB, string[] Division)
         {
             DataRow[] foundRows;
             int Sum = 0;
-            foundRows = ds.Tables[1].Select("[column18] NOT IN ('1day', '2day', '3day')");
+            foundRows = ds.Tables[1].Select();
             foreach (var elem in Division)
             {
                 for (int i = RangA; i <= RangB; i++)
@@ -227,7 +228,7 @@ namespace Dunfoss.Charts
                 {
                     foreach (var item in foundRows)
                     {
-                        if ((item.ItemArray[0].ToString() == elem) && (item.ItemArray[39].ToString() != "") && ((DateTime)item.ItemArray[13] >= StartMonth[i - 1]) && (item.ItemArray[39].ToString() != "") && ((DateTime)item.ItemArray[13]) < EndMonth[i - 1]) { Sum += Convert.ToInt32(item.ItemArray[39]); }
+                        if ((item.ItemArray[0].ToString().TrimEnd(' ') == elem) && (item.ItemArray[39].ToString() != "") && ((DateTime)item.ItemArray[13] >= StartMonth[i - 1]) && (item.ItemArray[39].ToString() != "") && ((DateTime)item.ItemArray[13]) < EndMonth[i - 1]) { Sum += Convert.ToInt32(item.ItemArray[39]); }
                     }
                 }
                 values.Add(Sum);
@@ -248,7 +249,7 @@ namespace Dunfoss.Charts
                 {
                     foreach (var item in foundRows)
                     {
-                        if ((item.ItemArray[0].ToString() == elem) && (item.ItemArray[39].ToString() != "") && ((DateTime)item.ItemArray[13] >= StartMonth[i - 1]) && (item.ItemArray[39].ToString() != "") && ((DateTime)item.ItemArray[13]) < EndMonth[i - 1]) { Sum += Convert.ToInt32(item.ItemArray[39]); }
+                        if ((item.ItemArray[0].ToString().TrimEnd(' ') == elem) && (item.ItemArray[39].ToString() != "") && ((DateTime)item.ItemArray[13] >= StartMonth[i - 1]) && (item.ItemArray[39].ToString() != "") && ((DateTime)item.ItemArray[13]) < EndMonth[i - 1]) { Sum += Convert.ToInt32(item.ItemArray[39]); }
                     }
                 }
                 values.Add(Sum);

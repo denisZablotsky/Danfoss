@@ -134,6 +134,9 @@
   <data name="Contacts" xml:space="preserve">
     <value>Контакты</value>
   </data>
+  <data name="CreateBtn" xml:space="preserve">
+    <value>Построить</value>
+  </data>
   <data name="CreateGraph" xml:space="preserve">
     <value>Построение графиков</value>
   </data>
