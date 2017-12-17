@@ -59,6 +59,13 @@ textarea {
     color: #aaa;
 }
 
+#go-to-letter-list{
+    padding: 10px 8px;
+    color: white;
+    background-color: #009081;
+    border-radius: 3px;
+}
+
 /* Подписи к выбору файлов */
 .upload-form-label{
 	color: #333;

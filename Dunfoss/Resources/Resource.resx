@@ -188,6 +188,9 @@
   <data name="Info" xml:space="preserve">
     <value>Общая информация о загрузке</value>
   </data>
+  <data name="kek" xml:space="preserve">
+    <value>Посмотреть загрузку группы БТП</value>
+  </data>
   <data name="LoadBtn" xml:space="preserve">
     <value>Загрузить</value>
   </data>
@@ -203,11 +206,50 @@
   <data name="Logout" xml:space="preserve">
     <value>Выйти</value>
   </data>
+  <data name="MApr" xml:space="preserve">
+    <value>Апрель</value>
+  </data>
+  <data name="MAug" xml:space="preserve">
+    <value>Август</value>
+  </data>
+  <data name="MDec" xml:space="preserve">
+    <value>Декабрь</value>
+  </data>
+  <data name="MFeb" xml:space="preserve">
+    <value>Февраль</value>
+  </data>
+  <data name="MJan" xml:space="preserve">
+    <value>Январьm</value>
+  </data>
+  <data name="MJul" xml:space="preserve">
+    <value>Июль</value>
+  </data>
+  <data name="MJun" xml:space="preserve">
+    <value>Июнь</value>
+  </data>
+  <data name="MMar" xml:space="preserve">
+    <value>Март</value>
+  </data>
+  <data name="MMay" xml:space="preserve">
+    <value>Май</value>
+  </data>
+  <data name="MNov" xml:space="preserve">
+    <value>Ноябрь</value>
+  </data>
+  <data name="Mnth" xml:space="preserve">
+    <value>Месяц</value>
+  </data>
+  <data name="MOkt" xml:space="preserve">
+    <value>Октябрь</value>
+  </data>
   <data name="Month" xml:space="preserve">
     <value>По месяцам</value>
   </data>
   <data name="MonthNumber" xml:space="preserve">
     <value>Номер месяца</value>
+  </data>
+  <data name="MSep" xml:space="preserve">
+    <value>Сентябрь</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Логин</value>
@@ -284,5 +326,29 @@
   </data>
   <data name="WithoutDiv" xml:space="preserve">
     <value>Без дивизионов</value>
+  </data>
+  <data name="ClosureByOffice" xml:space="preserve">
+    <value>Показатели скорости закрытия задач по офисам</value>
+  </data>
+  <data name="ClosureByWeek" xml:space="preserve">
+    <value>Показатели скорости закрытия задач по неделям</value>
+  </data>
+  <data name="DateMeeting" xml:space="preserve">
+    <value>Дата проведения</value>
+  </data>
+  <data name="GoPresBtn" xml:space="preserve">
+    <value>Перейти к отчету</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="SearchBtn" xml:space="preserve">
+    <value>Найти</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="WeekNumber" xml:space="preserve">
+    <value>Номер недели</value>
   </data>
 </root>

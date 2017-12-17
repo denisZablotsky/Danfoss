@@ -125,7 +125,7 @@ namespace Dunfoss.Charts
             {
                 foreach (var item in foundRows)
                 {
-                    if (((item.ItemArray[13] is DateTime) && (item.ItemArray[0].ToString().TrimEnd(' ') == elem) && ((DateTime)item.ItemArray[13] >= StartMonth[MonthNumber - 1]) && ((DateTime)item.ItemArray[13]) < EndMonth[MonthNumber - 1])) { Sum22 += Convert.ToInt32(item.ItemArray[17]); }
+                    if (((item.ItemArray[12] is DateTime) && (item.ItemArray[0].ToString().TrimEnd(' ') == elem) && ((DateTime)item.ItemArray[12] >= StartMonth[MonthNumber - 1]) && ((DateTime)item.ItemArray[12]) < EndMonth[MonthNumber - 1])) { Sum22 += Convert.ToInt32(item.ItemArray[17]); }
                 }
             }
             int[] valuesforfirsttable = new int[4];
@@ -150,7 +150,9 @@ namespace Dunfoss.Charts
         {
             int Value11 = return_good_values_in_month_range(MonthNumber, MonthNumber, Division);
 
-            int Value21 = return_bad_values_in_month_range(MonthNumber, MonthNumber, Division);
+            int V21 = return_all_values_in_month_range(MonthNumber, MonthNumber, Division);
+
+            int Value21 = V21 - Value11;
 
             float Value12 = 0;
             float Value22 = 0;
@@ -168,12 +170,12 @@ namespace Dunfoss.Charts
             return valuesforfirsttable;
         }
         #region
-        private int return_bad_values_in_month_range(int RangA, int RangB, string[] Division)
+        private int return_all_values_in_month_range(int RangA, int RangB, string[] Division)
         {
             DataRow[] foundRows;
             int Sum = 0;
 
-            foundRows = ds.Tables[1].Select("[column16] NOT IN ('время закрытия задачи','1day', '2day', '3day')");
+            foundRows = ds.Tables[1].Select();
             foreach (var elem in Division)
             {
                 for (int i = RangA; i <= RangB; i++)
@@ -196,7 +198,7 @@ namespace Dunfoss.Charts
         {
             DataRow[] foundRows;
             int Sum = 0;
-            foundRows = ds.Tables[1].Select("[column16] IN ('1day', '2day', '3day')");
+            foundRows = ds.Tables[1].Select("[column16] IN ('0day', '1day', '2day')");
             foreach (var elem in Division)
             {
                 for (int i = RangA; i <= RangB; i++)

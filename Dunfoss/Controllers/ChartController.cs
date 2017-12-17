@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Dunfoss.Data;
 using Dunfoss.Services;
 using Dunfoss.Filters;
+using Dunfoss.Resources;
 
 // Название графиков
 // Значение оценок добавлены вручную
@@ -24,7 +25,7 @@ namespace Dunfoss.Controllers
         private string path; // Сделать ссылку у User
         private string[] chartNames = {"Новые расчеты БТП", "Корректировки расчетов", "Новые расчеты и корректировки БТП", "Причины просроченных задач", "Причины корректировок", "Расчеты БТП по дивизионам", "Заказы БТП" };
         private string filename;
-        string[] months = new string[] { "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" };
+        string[] months;
 
         string[] Cities = new string[]{ "Краснодар - HE", "Ростов-на-Дону - HE", "Волгоград - HE", "Саратов - HE",
             "Владивосток - HE", "Хабаровск - HE", "Иркутск - HE", "Красноярск - HE",
@@ -45,6 +46,8 @@ namespace Dunfoss.Controllers
 
         public ChartController()
         {
+            months = new string[] { Resource.MJan, Resource.MFeb, Resource.MMar, Resource.MApr, Resource.MMay,
+            Resource.MJun, Resource.MJul, Resource.MAug, Resource.MSep, Resource.MOkt, Resource.MNov, Resource.MDec };
             _security = new SecurityService();
         }
 

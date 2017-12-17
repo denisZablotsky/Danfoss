@@ -133,6 +133,24 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Показатели скорости закрытия задач по офисам.
+        /// </summary>
+        public static string ClosureByOffice {
+            get {
+                return ResourceManager.GetString("ClosureByOffice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Показатели скорости закрытия задач по неделям.
+        /// </summary>
+        public static string ClosureByWeek {
+            get {
+                return ResourceManager.GetString("ClosureByWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Контакты.
         /// </summary>
         public static string Contacts {
@@ -205,6 +223,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Дата проведения.
+        /// </summary>
+        public static string DateMeeting {
+            get {
+                return ResourceManager.GetString("DateMeeting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Фильтрация.
         /// </summary>
         public static string Filter {
@@ -241,6 +268,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Перейти к отчету.
+        /// </summary>
+        public static string GoPresBtn {
+            get {
+                return ResourceManager.GetString("GoPresBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Показатели по расчетам.
         /// </summary>
         public static string HasteCalc {
@@ -264,6 +300,15 @@ namespace Dunfoss.Resources {
         public static string Info {
             get {
                 return ResourceManager.GetString("Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Посмотреть загрузку группы БТП.
+        /// </summary>
+        public static string kek {
+            get {
+                return ResourceManager.GetString("kek", resourceCulture);
             }
         }
         
@@ -313,6 +358,114 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Апрель.
+        /// </summary>
+        public static string MApr {
+            get {
+                return ResourceManager.GetString("MApr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Август.
+        /// </summary>
+        public static string MAug {
+            get {
+                return ResourceManager.GetString("MAug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Декабрь.
+        /// </summary>
+        public static string MDec {
+            get {
+                return ResourceManager.GetString("MDec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Февраль.
+        /// </summary>
+        public static string MFeb {
+            get {
+                return ResourceManager.GetString("MFeb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Январьm.
+        /// </summary>
+        public static string MJan {
+            get {
+                return ResourceManager.GetString("MJan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Июль.
+        /// </summary>
+        public static string MJul {
+            get {
+                return ResourceManager.GetString("MJul", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Июнь.
+        /// </summary>
+        public static string MJun {
+            get {
+                return ResourceManager.GetString("MJun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Март.
+        /// </summary>
+        public static string MMar {
+            get {
+                return ResourceManager.GetString("MMar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Май.
+        /// </summary>
+        public static string MMay {
+            get {
+                return ResourceManager.GetString("MMay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ноябрь.
+        /// </summary>
+        public static string MNov {
+            get {
+                return ResourceManager.GetString("MNov", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Месяц.
+        /// </summary>
+        public static string Mnth {
+            get {
+                return ResourceManager.GetString("Mnth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Октябрь.
+        /// </summary>
+        public static string MOkt {
+            get {
+                return ResourceManager.GetString("MOkt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на По месяцам.
         /// </summary>
         public static string Month {
@@ -327,6 +480,15 @@ namespace Dunfoss.Resources {
         public static string MonthNumber {
             get {
                 return ResourceManager.GetString("MonthNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сентябрь.
+        /// </summary>
+        public static string MSep {
+            get {
+                return ResourceManager.GetString("MSep", resourceCulture);
             }
         }
         
@@ -363,6 +525,15 @@ namespace Dunfoss.Resources {
         public static string News {
             get {
                 return ResourceManager.GetString("News", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Номер.
+        /// </summary>
+        public static string Number {
+            get {
+                return ResourceManager.GetString("Number", resourceCulture);
             }
         }
         
@@ -444,6 +615,24 @@ namespace Dunfoss.Resources {
         public static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Найти.
+        /// </summary>
+        public static string SearchBtn {
+            get {
+                return ResourceManager.GetString("SearchBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выбрать все.
+        /// </summary>
+        public static string SelectAll {
+            get {
+                return ResourceManager.GetString("SelectAll", resourceCulture);
             }
         }
         
@@ -534,6 +723,15 @@ namespace Dunfoss.Resources {
         public static string Week {
             get {
                 return ResourceManager.GetString("Week", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Номер недели.
+        /// </summary>
+        public static string WeekNumber {
+            get {
+                return ResourceManager.GetString("WeekNumber", resourceCulture);
             }
         }
         

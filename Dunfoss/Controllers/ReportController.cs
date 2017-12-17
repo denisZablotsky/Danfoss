@@ -7,9 +7,11 @@ using System.IO;
 using Dunfoss.Models;
 using Dunfoss.Data;
 using System.Web.Hosting;
+using Dunfoss.Filters;
 
 namespace Dunfoss.Controllers
 {
+    [Culture]
     public class ReportController : Controller
     {
         string[] Cities = new string[]{ "Краснодар - HE", "Ростов-на-Дону - HE", "Волгоград - HE", "Саратов - HE",

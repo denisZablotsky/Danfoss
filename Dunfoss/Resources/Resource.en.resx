@@ -188,6 +188,9 @@
   <data name="Info" xml:space="preserve">
     <value>Common informations about models</value>
   </data>
+  <data name="kek" xml:space="preserve">
+    <value>View employment group</value>
+  </data>
   <data name="LoadBtn" xml:space="preserve">
     <value>Load the file</value>
   </data>
@@ -203,11 +206,50 @@
   <data name="Logout" xml:space="preserve">
     <value>Logout</value>
   </data>
+  <data name="MApr" xml:space="preserve">
+    <value>April</value>
+  </data>
+  <data name="MAug" xml:space="preserve">
+    <value>August</value>
+  </data>
+  <data name="MDec" xml:space="preserve">
+    <value>December</value>
+  </data>
+  <data name="MFeb" xml:space="preserve">
+    <value>February</value>
+  </data>
+  <data name="MJan" xml:space="preserve">
+    <value>January</value>
+  </data>
+  <data name="MJul" xml:space="preserve">
+    <value>July</value>
+  </data>
+  <data name="MJun" xml:space="preserve">
+    <value>June</value>
+  </data>
+  <data name="MMar" xml:space="preserve">
+    <value>March</value>
+  </data>
+  <data name="MMay" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="MNov" xml:space="preserve">
+    <value>November</value>
+  </data>
+  <data name="Mnth" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="MOkt" xml:space="preserve">
+    <value>Oсtober</value>
+  </data>
   <data name="Month" xml:space="preserve">
     <value>Month</value>
   </data>
   <data name="MonthNumber" xml:space="preserve">
     <value>MonthNumber</value>
+  </data>
+  <data name="MSep" xml:space="preserve">
+    <value>September</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Login</value>
@@ -283,5 +325,29 @@
   </data>
   <data name="WithoutDiv" xml:space="preserve">
     <value>Without divisions</value>
+  </data>
+  <data name="ClosureByOffice" xml:space="preserve">
+    <value>Haste of closure tasks by office</value>
+  </data>
+  <data name="ClosureByWeek" xml:space="preserve">
+    <value>Haste of closure tasks by week</value>
+  </data>
+  <data name="DateMeeting" xml:space="preserve">
+    <value>Date of the meeting</value>
+  </data>
+  <data name="GoPresBtn" xml:space="preserve">
+    <value>Open the presentation</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="SearchBtn" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="WeekNumber" xml:space="preserve">
+    <value>Week number</value>
   </data>
 </root>

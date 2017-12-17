@@ -1,7 +1,7 @@
 ﻿@using System.Collections.Generic;
 @model IEnumerable<string>
 
-<div style="width:500px; margin: auto; padding-top: 15px;"><label><input type="checkbox" name="SelectAll" id="selectAll">Выбрать всех</label></div>
+<div style="width:500px; margin: auto; padding-top: 15px;"><label><input type="checkbox" name="SelectAll" id="selectAll">@Resource.SelectAll</label></div>
 @using (Ajax.BeginForm("LastChart", "Chart", new { type = ViewBag.Type, min = ViewBag.min, max = ViewBag.max }, new AjaxOptions { UpdateTargetId = "chart45" }))
 {
     
@@ -14,16 +14,16 @@
         </div>
         <div style="width:500px; margin: auto; padding-top: 15px;">
             <select name="graphType">
-                <option value="1">Новые расчеты</option>
-                <option value="2">Корректировки расчетов</option>
-                <option value="3">Сумма новых и корректировок</option>
+                <option value="1">@Resource.NewCalcGraph</option>
+                <option value="2">@Resource.CorrectGraph</option>
+                <option value="3">@Resource.NewCorrGraph</option>
             </select>
         </div>
         <div style="width:500px; margin: auto; padding-top: 15px;">
             @Html.RadioButton("typeCountSum", "sum", true)<span>Количество единичных расчетов в задачах</span><br />
             @Html.RadioButton("typeCountSum", "count")<span>Количество задач</span><br />
         </div>
-        <div class="chart-options"><div class="chart-options-submit"><input type="submit" value="Перестроить" /></div></div>
+        <div class="chart-options"><div class="chart-options-submit"><input type="submit" value="@Resource.CreateBtn" /></div></div>
         }
     
 

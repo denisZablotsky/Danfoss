@@ -10,12 +10,12 @@
     
     <div class="window-files">
         <div id="current-files">
-            <h4>Текущие документы</h4>
+            <h4>@Resource.CurrentFiles</h4>
             @{ 
                 Html.RenderAction("GetCurrentFiles", "Home");
             }
         </div>
-        <h4>Важные документы</h4>
+        <h4>@Resource.OtherDocs</h4>
         <div id="files-list">
             @{
                 Html.RenderAction("GetFileList", "Home");
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="window-files">
-        <h4>Информационные письма</h4>
+        <h4>@Resource.AcchiveLetters</h4>
         <div id="letters-list-div">
             @{
                 Html.RenderAction("GetLetterList", "Letter");
@@ -31,7 +31,7 @@
             </div>
         </div>
     <div class="window-reports">
-        <h4>Собрания группы БТП</h4>
+        <h4>@Resource.ArchivePresentations</h4>
         <div id="report-list-div">
         @{
             Html.RenderAction("GetReportList", "Report");
