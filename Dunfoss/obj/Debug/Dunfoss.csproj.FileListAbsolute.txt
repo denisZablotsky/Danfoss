@@ -333,3 +333,5 @@ C:\Users\Kirill\Desktop\Последний бэк\Danfoss-master\Dunfoss\obj\Deb
 C:\Users\Kirill\Desktop\Последний бэк\Danfoss-master\Dunfoss\obj\Debug\en\Dunfoss.resources.dll
 C:\Users\Kirill\Desktop\Последний бэк\Danfoss-master\Dunfoss\obj\Debug\Dunfoss.dll
 C:\Users\Kirill\Desktop\Последний бэк\Danfoss-master\Dunfoss\obj\Debug\Dunfoss.pdb
+C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dunfoss.Resources.Controllers.ChartController.resources
+C:\Users\user\Desktop\Dunfoss-testkh-01-12_7z\Dunfoss-test\Dunfoss\obj\Debug\Dunfoss.Resources.Controllers.ChartController.en.resources

@@ -11,6 +11,7 @@ using Dunfoss.Services;
 using Dunfoss.Filters;
 using Dunfoss.Resources;
 
+
 // Название графиков
 // Значение оценок добавлены вручную
 
@@ -46,8 +47,8 @@ namespace Dunfoss.Controllers
 
         public ChartController()
         {
-            months = new string[] { Resource.MJan, Resource.MFeb, Resource.MMar, Resource.MApr, Resource.MMay,
-            Resource.MJun, Resource.MJul, Resource.MAug, Resource.MSep, Resource.MOkt, Resource.MNov, Resource.MDec };
+            months = new string[] { Controllers_ChartController.Jan, Controllers_ChartController.Feb, Controllers_ChartController.Mar, Controllers_ChartController.Apr, Controllers_ChartController.May,
+            Controllers_ChartController.June, Controllers_ChartController.July, Controllers_ChartController.Aug, Controllers_ChartController.Sept, Controllers_ChartController.Oct, Controllers_ChartController.Nov, Controllers_ChartController.Dec };
             _security = new SecurityService();
         }
 
