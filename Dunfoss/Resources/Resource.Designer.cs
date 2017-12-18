@@ -79,6 +79,24 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Средняя оценка.
+        /// </summary>
+        public static string AvgRange {
+            get {
+                return ResourceManager.GetString("AvgRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Средняя оценка дизайнеров.
+        /// </summary>
+        public static string AvgRangeDes {
+            get {
+                return ResourceManager.GetString("AvgRangeDes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вернуться в меню.
         /// </summary>
         public static string BackMenu {
@@ -228,6 +246,33 @@ namespace Dunfoss.Resources {
         public static string DateMeeting {
             get {
                 return ResourceManager.GetString("DateMeeting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Просроченные задачи.
+        /// </summary>
+        public static string DelayedTasks {
+            get {
+                return ResourceManager.GetString("DelayedTasks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дизайнер.
+        /// </summary>
+        public static string Designer {
+            get {
+                return ResourceManager.GetString("Designer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Расчетчик.
+        /// </summary>
+        public static string Engineer {
+            get {
+                return ResourceManager.GetString("Engineer", resourceCulture);
             }
         }
         
@@ -529,11 +574,29 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Не просроченные задачи.
+        /// </summary>
+        public static string NormTasks {
+            get {
+                return ResourceManager.GetString("NormTasks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Номер.
         /// </summary>
         public static string Number {
             get {
                 return ResourceManager.GetString("Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Офис.
+        /// </summary>
+        public static string Office {
+            get {
+                return ResourceManager.GetString("Office", resourceCulture);
             }
         }
         
@@ -565,6 +628,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество КП в задаче.
+        /// </summary>
+        public static string PiecesOfCalc {
+            get {
+                return ResourceManager.GetString("PiecesOfCalc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на По кол-ву кодовых номеров.
         /// </summary>
         public static string QCode {
@@ -583,11 +655,74 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество расчетов.
+        /// </summary>
+        public static string QuantityCalc {
+            get {
+                return ResourceManager.GetString("QuantityCalc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество кодовых номеров.
+        /// </summary>
+        public static string QuantityCodeNumbers {
+            get {
+                return ResourceManager.GetString("QuantityCodeNumbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кол-во просроченных задач.
+        /// </summary>
+        public static string QuantityDelayedTasks {
+            get {
+                return ResourceManager.GetString("QuantityDelayedTasks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество единичных расчетов в задачах.
+        /// </summary>
+        public static string QuantitySingleCals {
+            get {
+                return ResourceManager.GetString("QuantitySingleCals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество задач.
+        /// </summary>
+        public static string QuantityTasks {
+            get {
+                return ResourceManager.GetString("QuantityTasks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 3Д Дизайн. Оценки по дизайнерам и Средняя скорость выполнения модели.
         /// </summary>
         public static string Rating {
             get {
                 return ResourceManager.GetString("Rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Причина.
+        /// </summary>
+        public static string Reason {
+            get {
+                return ResourceManager.GetString("Reason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Причины.
+        /// </summary>
+        public static string Reasons {
+            get {
+                return ResourceManager.GetString("Reasons", resourceCulture);
             }
         }
         
@@ -642,6 +777,15 @@ namespace Dunfoss.Resources {
         public static string SiteTitle {
             get {
                 return ResourceManager.GetString("SiteTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Показатели скорости закрытия задач по неделям(O, P, S).
+        /// </summary>
+        public static string SpeedClosure {
+            get {
+                return ResourceManager.GetString("SpeedClosure", resourceCulture);
             }
         }
         

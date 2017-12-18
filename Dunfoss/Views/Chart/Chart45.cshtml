@@ -14,7 +14,7 @@
         var titles = @Html.Raw(Json.Encode(@ViewBag.Titles));
 
         var dataN = new Array(allValues.length + 1);
-        dataN[0] = ["Причина", "Кол-во просроченных задач", { role: "annotation" }];
+        dataN[0] = ["@Resource.Reason", "@Resource.QuantityDelayedTasks", { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){   
             dataN[i + 1] = [titles[i], allValues[i], allValues[i]];
         }
@@ -24,7 +24,7 @@
         var view = new google.visualization.DataView(data);
         var option;
         options = {
-            title: 'Причины',
+            title: '@Resource.Reasons',
             
             colors: ['#E20011']
         };

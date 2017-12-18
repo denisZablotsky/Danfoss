@@ -5,7 +5,7 @@
 
     google.charts.load('current', {packages: ['corechart', 'bar']});
     google.charts.setOnLoadCallback(drawStacked);
-
+    var OyTitles = ["@Resource.QuantityTasks", "@Resource.QuantityCodeNumbers", "@Resource.PiecesOfCalc" , "@Resource.QuantitySingleCals"];
 
     var exportData;
 
@@ -17,7 +17,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.Week", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -39,13 +39,13 @@
         var options = {
 				title: '@ViewBag.MainTitle',
                 isStacked: true,
-                hAxis: {title: "Расчетчик", slantedText:true, slantedTextAngle:90 },
+                hAxis: {title: "@Resource.Engineer", slantedText:true, slantedTextAngle:90 },
                 vAxis: {
-                    title: '@ViewBag.OyTitle',
+                    title: OyTitles[Number(@ViewBag.OyTitle)],
                 },
                 colors: ['#92d14f', '#E20011']
             };
-        
+
 
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));

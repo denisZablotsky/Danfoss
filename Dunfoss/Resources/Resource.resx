@@ -351,4 +351,52 @@
   <data name="WeekNumber" xml:space="preserve">
     <value>Номер недели</value>
   </data>
+  <data name="AvgRange" xml:space="preserve">
+    <value>Средняя оценка</value>
+  </data>
+  <data name="AvgRangeDes" xml:space="preserve">
+    <value>Средняя оценка дизайнеров</value>
+  </data>
+  <data name="DelayedTasks" xml:space="preserve">
+    <value>Просроченные задачи</value>
+  </data>
+  <data name="Designer" xml:space="preserve">
+    <value>Дизайнер</value>
+  </data>
+  <data name="Engineer" xml:space="preserve">
+    <value>Расчетчик</value>
+  </data>
+  <data name="NormTasks" xml:space="preserve">
+    <value>Не просроченные задачи</value>
+  </data>
+  <data name="Office" xml:space="preserve">
+    <value>Офис</value>
+  </data>
+  <data name="PiecesOfCalc" xml:space="preserve">
+    <value>Количество КП в задаче</value>
+  </data>
+  <data name="QuantityCalc" xml:space="preserve">
+    <value>Количество расчетов</value>
+  </data>
+  <data name="QuantityCodeNumbers" xml:space="preserve">
+    <value>Количество кодовых номеров</value>
+  </data>
+  <data name="QuantityDelayedTasks" xml:space="preserve">
+    <value>Кол-во просроченных задач</value>
+  </data>
+  <data name="QuantitySingleCals" xml:space="preserve">
+    <value>Количество единичных расчетов в задачах</value>
+  </data>
+  <data name="QuantityTasks" xml:space="preserve">
+    <value>Количество задач</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>Причина</value>
+  </data>
+  <data name="Reasons" xml:space="preserve">
+    <value>Причины</value>
+  </data>
+  <data name="SpeedClosure" xml:space="preserve">
+    <value>Показатели скорости закрытия задач по неделям(O, P, S)</value>
+  </data>
 </root>

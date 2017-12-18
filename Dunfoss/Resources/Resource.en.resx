@@ -350,4 +350,52 @@
   <data name="WeekNumber" xml:space="preserve">
     <value>Week number</value>
   </data>
+  <data name="AvgRange" xml:space="preserve">
+    <value>Avarage range</value>
+  </data>
+  <data name="AvgRangeDes" xml:space="preserve">
+    <value>Avarage range of designers</value>
+  </data>
+  <data name="DelayedTasks" xml:space="preserve">
+    <value>3 days and more</value>
+  </data>
+  <data name="Designer" xml:space="preserve">
+    <value>Designer</value>
+  </data>
+  <data name="Engineer" xml:space="preserve">
+    <value>Engineer</value>
+  </data>
+  <data name="NormTasks" xml:space="preserve">
+    <value>1-2 days</value>
+  </data>
+  <data name="Office" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="PiecesOfCalc" xml:space="preserve">
+    <value>Pieces of calcualations</value>
+  </data>
+  <data name="QuantityCalc" xml:space="preserve">
+    <value>Quantity calculations</value>
+  </data>
+  <data name="QuantityCodeNumbers" xml:space="preserve">
+    <value>Quantity of code numbers</value>
+  </data>
+  <data name="QuantityDelayedTasks" xml:space="preserve">
+    <value>Quantity of delayed tasks</value>
+  </data>
+  <data name="QuantitySingleCals" xml:space="preserve">
+    <value>Quantity of single calculations</value>
+  </data>
+  <data name="QuantityTasks" xml:space="preserve">
+    <value>Quantity of tasks</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+  <data name="Reasons" xml:space="preserve">
+    <value>Reasons</value>
+  </data>
+  <data name="SpeedClosure" xml:space="preserve">
+    <value>The speed of closure tasks by week (O, P, S)</value>
+  </data>
 </root>

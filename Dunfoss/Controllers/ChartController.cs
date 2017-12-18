@@ -10,6 +10,7 @@ using Dunfoss.Data;
 using Dunfoss.Services;
 using Dunfoss.Filters;
 using Dunfoss.Resources;
+using System.Threading;
 
 
 // Название графиков
@@ -49,6 +50,9 @@ namespace Dunfoss.Controllers
         {
             months = new string[] { Controllers_ChartController.Jan, Controllers_ChartController.Feb, Controllers_ChartController.Mar, Controllers_ChartController.Apr, Controllers_ChartController.May,
             Controllers_ChartController.June, Controllers_ChartController.July, Controllers_ChartController.Aug, Controllers_ChartController.Sept, Controllers_ChartController.Oct, Controllers_ChartController.Nov, Controllers_ChartController.Dec };
+            
+
+            
             _security = new SecurityService();
         }
 
@@ -290,6 +294,7 @@ namespace Dunfoss.Controllers
         [HttpPost]
         public PartialViewResult DesignDraw(string ChartType, string designType, string filterType, int weekMin, int weekMax, int monthMin, int monthMax)
         {
+            ViewBag.FilterType = filterType;
             int[] ALLWeekvalues = new int[52];
             int[] GoodWeekvalues = new int[52];
             string[] titles = null;
@@ -297,7 +302,7 @@ namespace Dunfoss.Controllers
             string[] titlesMonth = new string[monthMax - monthMin + 1];
             for (int i = 0; i < titlesMonth.Length; i++)
             {
-                titlesMonth[i] = months[i + monthMin - 1];
+                titlesMonth[i] = (i + monthMin - 1).ToString();
             }
             string MainTitle = "";
             if (ChartType == "1")
@@ -327,7 +332,7 @@ namespace Dunfoss.Controllers
                 ViewBag.AllValuesWeek = ALLWeekvalues;
                 ViewBag.Titles = titles;
                 ViewBag.type = ty;
-                ViewBag.MainTitle = "Показатели скорости закрытия задач по неделям(O, P, S)";
+                ViewBag.MainTitle = 9;
                 return PartialView("ChartDraw");
             }
             else
@@ -351,7 +356,7 @@ namespace Dunfoss.Controllers
 
                 }
                 ViewBag.designType = designType;
-                ViewBag.MainTitle = "Показатели скорости закрытия задач по неделям(O, P, S)";
+                ViewBag.MainTitle = 9;
                 return PartialView("DesignCities", cities);
             }
         }
@@ -359,6 +364,8 @@ namespace Dunfoss.Controllers
         [HttpPost]
         public PartialViewResult ChartDraw(string filename, int min, int max, string chartNumber, int minMonth, int maxMonth, int month, string division, string tp, string filterType, string spin)
         {
+            ViewBag.FilterType = filterType;
+            ViewBag.MainTitle = chartNumber;
             int[] ALLWeekvalues = null;
             int[] GoodWeekvalues = null;
             string[] titles = null;
@@ -368,7 +375,7 @@ namespace Dunfoss.Controllers
             string[] titlesMonth = new string[maxMonth - minMonth + 1];
             for(int i = 0; i < titlesMonth.Length; i++)
             {
-                titlesMonth[i] = months[i + minMonth - 1];
+                titlesMonth[i] = (i + minMonth - 1).ToString();
                 
             }
 
@@ -378,17 +385,17 @@ namespace Dunfoss.Controllers
             if (chartNumber == "1")
             {               
                 chart = new FirstTypeChart(37);
-                MainTitle = "Новые расчеты БТП";
+                //MainTitle = "Новые расчеты БТП";
             }
             else if (chartNumber == "2")
             {
                 chart = new FirstTypeChart(38);
-                MainTitle = "Корректировки расчетов БТП";
+                //MainTitle = "Корректировки расчетов БТП";
             }
             else if (chartNumber == "3")
             {
                 chart = new FirstTypeChart(39);
-                MainTitle = "Новые расчеты и корректировки БТП";
+                //MainTitle = "Новые расчеты и корректировки БТП";
             }
             else if (chartNumber == "4")
             {
@@ -456,7 +463,7 @@ namespace Dunfoss.Controllers
                 {
                     cities = DivisionCentr;
                 }
-                ViewBag.OyTitle = "Количество КП в задаче";
+                ViewBag.OyTitle = 2;
                 titles = cities;
                 ALLWeekvalues = chart6.return_all_values_for_reasons_in_month_range(minMonth, maxMonth, cities);
                 GoodWeekvalues = chart6.return_good_values_for_reasons_in_month_range(minMonth, maxMonth, cities);
@@ -464,8 +471,8 @@ namespace Dunfoss.Controllers
                 ViewBag.AllValuesWeek = ALLWeekvalues;
                 ViewBag.Titles = titles;
                 ViewBag.Type = 3;
-                MainTitle = "Расчеты БТП по дивизионам";
-                ViewBag.MainTitle = MainTitle;
+                //MainTitle = "Расчеты БТП по дивизионам";
+                //ViewBag.MainTitle = MainTitle;
                 return PartialView("ChartDraw");
             }
             else if (chartNumber == "7")
@@ -516,7 +523,7 @@ namespace Dunfoss.Controllers
 
                     if (tp == "задачи")
                     {
-                        ViewBag.OyTitle = "Количество кодовых номеров";
+                        ViewBag.OyTitle = 1;
 
                         if (filterType == "2")
                         {
@@ -536,7 +543,7 @@ namespace Dunfoss.Controllers
                     }
                     else
                     {
-                        ViewBag.OyTitle = "Количество задач";
+                        ViewBag.OyTitle = 0;
                         if (filterType == "2")
                         {
                             all = chart7.return_all_values_per_week_COUNT(min, max, cities);
@@ -567,8 +574,8 @@ namespace Dunfoss.Controllers
                     ViewBag.AllValuesWeek = ALLWeekvalues;
                     ViewBag.Titles = cities;
                     ViewBag.Type = ty;
-                    MainTitle = "Заказы БТП";
-                    ViewBag.MainTitle = MainTitle;
+                    //MainTitle = "Заказы БТП";
+                    //ViewBag.MainTitle = MainTitle;
                     return PartialView("ChartDraw");
                 }
                 else
@@ -617,7 +624,7 @@ namespace Dunfoss.Controllers
 
                     if (tp == "задачи")
                     {
-                        ViewBag.OyTitle = "Количество кодовых номеров";
+                        ViewBag.OyTitle = 1;
 
                         if (filterType == "2")
                         {
@@ -637,7 +644,7 @@ namespace Dunfoss.Controllers
                     }
                     else
                     {
-                        ViewBag.OyTitle = "Количество задач";
+                        ViewBag.OyTitle = 0;
                         if (filterType == "2")
                         {
                             all = chart7.return_all_values_per_week_COUNT(min, max, cities);
@@ -687,8 +694,8 @@ namespace Dunfoss.Controllers
                     ViewBag.AllValuesWeek = ALLWeekvalues;
                     ViewBag.Titles = tit;
                     ViewBag.Type = ty;
-                    MainTitle = "Заказы БТП";
-                    ViewBag.MainTitle = MainTitle;
+                    //MainTitle = "Заказы БТП";
+                    //ViewBag.MainTitle = MainTitle;
                     return PartialView("ChartDraw");
                 }
                 
@@ -700,7 +707,7 @@ namespace Dunfoss.Controllers
                 if(filterType == "1")
                 {
                     surnames = lastChart.Get_Surnames_Per_Month(minMonth, maxMonth);
-                    ViewBag.Type = 1;
+                    ViewBag.Type = 0;
                     ViewBag.min = minMonth;
                     ViewBag.max = maxMonth;
                 }
@@ -742,7 +749,7 @@ namespace Dunfoss.Controllers
             ViewBag.AllValuesWeek = ALLWeekvalues;
             ViewBag.Titles = titles;
             ViewBag.Type = t;
-            ViewBag.MainTitle = MainTitle;
+            //ViewBag.MainTitle = MainTitle;
             return PartialView("ChartDraw");
         }
 
@@ -862,11 +869,11 @@ namespace Dunfoss.Controllers
             ViewBag.Type = 6;
             if (typeCountSum == "count")
             {
-                ViewBag.OyTitle = "Количество единичных расчетов в задачах";
+                ViewBag.OyTitle = 3;
             }
             else
             {
-                ViewBag.OyTitle = "Количество задач";
+                ViewBag.OyTitle = 0;
             } 
             return PartialView("ChartDrawLast");
         }
@@ -902,6 +909,7 @@ namespace Dunfoss.Controllers
         [HttpPost]
         public PartialViewResult DesignCities(string[] checkedValues, int min, int max, string designType, string filterType)
         {
+            ViewBag.FilterType = 3;
             DesignCities design = new Charts.DesignCities();
             int[] all = null;
             int[] good = null;
@@ -919,7 +927,7 @@ namespace Dunfoss.Controllers
             ViewBag.Titles = checkedValues;
             ViewBag.GoodValuesWeek = good;
             ViewBag.AllValuesWeek = all;
-            ViewBag.MainTitle = "Показатели скорости закрытия задач по офисам(O, P, S)";
+            ViewBag.MainTitle = 9;
             return PartialView("ChartDraw");
         }
 

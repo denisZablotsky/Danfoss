@@ -4,7 +4,7 @@
 }
 
 <div class="chart-options">
-    @using (Ajax.BeginForm("ChartDraw", "Chart", new { filename = ViewBag.Filename }, new AjaxOptions { UpdateTargetId = "chart-draw" }))
+    @using (Ajax.BeginForm("ChartDraw", "Chart", new { filename = ViewBag.Filename}, new AjaxOptions { UpdateTargetId = "chart-draw" }))
     {
         <span>@Resource.TypeGraph</span>
         <select id="chartNumber" name="chartNumber">
@@ -31,7 +31,7 @@
             <br />
         </div>
         <div id="MonthFilter" class="option-chart-filter">
-            <span class="chart-options-opt">@Resource.FilterWeek: @Resource.From</span><input type="number" value="1" max="12" min="1" name="minMonth" />
+            <span class="chart-options-opt">@Resource.FilterMonth: @Resource.From</span><input type="number" value="1" max="12" min="1" name="minMonth" />
             <span> @Resource.To </span><input type="number" value="12" max="12" min="1" name="maxMonth" />
             <br />
         </div>
