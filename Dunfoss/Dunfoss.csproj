@@ -228,6 +228,10 @@
     <Compile Include="Migrations\201712121212316_report-range.Designer.cs">
       <DependentUpon>201712121212316_report-range.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712190959116_number-type-divisions.cs" />
+    <Compile Include="Migrations\201712190959116_number-type-divisions.Designer.cs">
+      <DependentUpon>201712190959116_number-type-divisions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CurrentFile.cs" />
     <Compile Include="Models\File.cs" />
@@ -353,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712121212316_report-range.resx">
       <DependentUpon>201712121212316_report-range.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712190959116_number-type-divisions.resx">
+      <DependentUpon>201712190959116_number-type-divisions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Controllers.ChartController.en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

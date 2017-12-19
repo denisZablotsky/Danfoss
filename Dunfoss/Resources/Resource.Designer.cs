@@ -70,6 +70,33 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на На согласовании.
+        /// </summary>
+        public static string Agree {
+            get {
+                return ResourceManager.GetString("Agree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Все.
+        /// </summary>
+        public static string All {
+            get {
+                return ResourceManager.GetString("All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество штук.
+        /// </summary>
+        public static string Am {
+            get {
+                return ResourceManager.GetString("Am", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Собрания группы БТП.
         /// </summary>
         public static string ArchivePresentations {
@@ -124,6 +151,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Центр.
+        /// </summary>
+        public static string Center {
+            get {
+                return ResourceManager.GetString("Center", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Выбрать.
         /// </summary>
         public static string Choose {
@@ -169,6 +205,24 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Код RO.
+        /// </summary>
+        public static string CodeRo {
+            get {
+                return ResourceManager.GetString("CodeRo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Код RU.
+        /// </summary>
+        public static string CodeRu {
+            get {
+                return ResourceManager.GetString("CodeRu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Контакты.
         /// </summary>
         public static string Contacts {
@@ -178,7 +232,7 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Корректировки расчетов.
+        ///   Ищет локализованную строку, похожую на Корректировки расчетов БТП.
         /// </summary>
         public static string CorrectGraph {
             get {
@@ -250,6 +304,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на 3Д дизайнер.
+        /// </summary>
+        public static string DDesign {
+            get {
+                return ResourceManager.GetString("DDesign", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Просроченные задачи.
         /// </summary>
         public static string DelayedTasks {
@@ -268,11 +331,29 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на В процессе дизайна.
+        /// </summary>
+        public static string DesProc {
+            get {
+                return ResourceManager.GetString("DesProc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Расчетчик.
         /// </summary>
         public static string Engineer {
             get {
                 return ResourceManager.GetString("Engineer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дальний Восток.
+        /// </summary>
+        public static string FEast {
+            get {
+                return ResourceManager.GetString("FEast", resourceCulture);
             }
         }
         
@@ -358,6 +439,24 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество контуров, шт.
+        /// </summary>
+        public static string KolvoKonturov {
+            get {
+                return ResourceManager.GetString("KolvoKonturov", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ссылка в црм / на диск G.
+        /// </summary>
+        public static string Link {
+            get {
+                return ResourceManager.GetString("Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Загрузить.
         /// </summary>
         public static string LoadBtn {
@@ -439,7 +538,7 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Январьm.
+        ///   Ищет локализованную строку, похожую на Январь.
         /// </summary>
         public static string MJan {
             get {
@@ -529,6 +628,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Москва.
+        /// </summary>
+        public static string Moscow {
+            get {
+                return ResourceManager.GetString("Moscow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Сентябрь.
         /// </summary>
         public static string MSep {
@@ -574,6 +682,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Данных по заданному фильтру нет.
+        /// </summary>
+        public static string NoData {
+            get {
+                return ResourceManager.GetString("NoData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Не просроченные задачи.
         /// </summary>
         public static string NormTasks {
@@ -583,11 +700,29 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Северо-Запад.
+        /// </summary>
+        public static string Northwest {
+            get {
+                return ResourceManager.GetString("Northwest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Номер.
         /// </summary>
         public static string Number {
             get {
                 return ResourceManager.GetString("Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Объект(название).
+        /// </summary>
+        public static string Obj {
+            get {
+                return ResourceManager.GetString("Obj", resourceCulture);
             }
         }
         
@@ -633,6 +768,24 @@ namespace Dunfoss.Resources {
         public static string PiecesOfCalc {
             get {
                 return ResourceManager.GetString("PiecesOfCalc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Офис продаж.
+        /// </summary>
+        public static string PlaceSale {
+            get {
+                return ResourceManager.GetString("PlaceSale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Причины корректировок.
+        /// </summary>
+        public static string PrichiniKorr {
+            get {
+                return ResourceManager.GetString("PrichiniKorr", resourceCulture);
             }
         }
         
@@ -696,6 +849,15 @@ namespace Dunfoss.Resources {
         public static string QuantityTasks {
             get {
                 return ResourceManager.GetString("QuantityTasks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на В очереди.
+        /// </summary>
+        public static string Queue {
+            get {
+                return ResourceManager.GetString("Queue", resourceCulture);
             }
         }
         
@@ -781,6 +943,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Юг.
+        /// </summary>
+        public static string South {
+            get {
+                return ResourceManager.GetString("South", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Показатели скорости закрытия задач по неделям(O, P, S).
         /// </summary>
         public static string SpeedClosure {
@@ -853,11 +1024,38 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Загружена на завод.
+        /// </summary>
+        public static string UpFac {
+            get {
+                return ResourceManager.GetString("UpFac", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Урал.
+        /// </summary>
+        public static string Ural {
+            get {
+                return ResourceManager.GetString("Ural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Посмотреть загрузку группы БТП.
         /// </summary>
         public static string ViewGroupLink {
             get {
                 return ResourceManager.GetString("ViewGroupLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Поволжье.
+        /// </summary>
+        public static string Volga {
+            get {
+                return ResourceManager.GetString("Volga", resourceCulture);
             }
         }
         
@@ -876,6 +1074,24 @@ namespace Dunfoss.Resources {
         public static string WeekNumber {
             get {
                 return ResourceManager.GetString("WeekNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Неделя.
+        /// </summary>
+        public static string WeekSingle {
+            get {
+                return ResourceManager.GetString("WeekSingle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Западная Сибирь.
+        /// </summary>
+        public static string WestSib {
+            get {
+                return ResourceManager.GetString("WestSib", resourceCulture);
             }
         }
         

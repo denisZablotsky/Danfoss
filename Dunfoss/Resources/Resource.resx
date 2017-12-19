@@ -147,7 +147,7 @@
     <value>Контакты</value>
   </data>
   <data name="CorrectGraph" xml:space="preserve">
-    <value>Корректировки расчетов</value>
+    <value>Корректировки расчетов БТП</value>
   </data>
   <data name="CreateBtn" xml:space="preserve">
     <value>Построить</value>
@@ -219,7 +219,7 @@
     <value>Февраль</value>
   </data>
   <data name="MJan" xml:space="preserve">
-    <value>Январьm</value>
+    <value>Январь</value>
   </data>
   <data name="MJul" xml:space="preserve">
     <value>Июль</value>
@@ -398,5 +398,77 @@
   </data>
   <data name="SpeedClosure" xml:space="preserve">
     <value>Показатели скорости закрытия задач по неделям(O, P, S)</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>Данных по заданному фильтру нет</value>
+  </data>
+  <data name="PlaceSale" xml:space="preserve">
+    <value>Офис продаж</value>
+  </data>
+  <data name="WeekSingle" xml:space="preserve">
+    <value>Неделя</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Все</value>
+  </data>
+  <data name="Am" xml:space="preserve">
+    <value>Количество штук</value>
+  </data>
+  <data name="Center" xml:space="preserve">
+    <value>Центр</value>
+  </data>
+  <data name="FEast" xml:space="preserve">
+    <value>Дальний Восток</value>
+  </data>
+  <data name="KolvoKonturov" xml:space="preserve">
+    <value>Количество контуров, шт</value>
+  </data>
+  <data name="Moscow" xml:space="preserve">
+    <value>Москва</value>
+  </data>
+  <data name="Northwest" xml:space="preserve">
+    <value>Северо-Запад</value>
+  </data>
+  <data name="PrichiniKorr" xml:space="preserve">
+    <value>Причины корректировок</value>
+  </data>
+  <data name="South" xml:space="preserve">
+    <value>Юг</value>
+  </data>
+  <data name="Ural" xml:space="preserve">
+    <value>Урал</value>
+  </data>
+  <data name="Volga" xml:space="preserve">
+    <value>Поволжье</value>
+  </data>
+  <data name="WestSib" xml:space="preserve">
+    <value>Западная Сибирь</value>
+  </data>
+  <data name="Agree" xml:space="preserve">
+    <value>На согласовании</value>
+  </data>
+  <data name="CodeRo" xml:space="preserve">
+    <value>Код RO</value>
+  </data>
+  <data name="CodeRu" xml:space="preserve">
+    <value>Код RU</value>
+  </data>
+  <data name="DDesign" xml:space="preserve">
+    <value>3Д дизайнер</value>
+  </data>
+  <data name="DesProc" xml:space="preserve">
+    <value>В процессе дизайна</value>
+  </data>
+  <data name="Link" xml:space="preserve">
+    <value>Ссылка в црм / на диск G</value>
+  </data>
+  <data name="Obj" xml:space="preserve">
+    <value>Объект(название)</value>
+  </data>
+  <data name="Queue" xml:space="preserve">
+    <value>В очереди</value>
+  </data>
+  <data name="UpFac" xml:space="preserve">
+    <value>Загружена на завод</value>
   </data>
 </root>

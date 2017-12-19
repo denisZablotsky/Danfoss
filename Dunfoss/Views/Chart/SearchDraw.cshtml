@@ -9,10 +9,10 @@
 
         function drawTable() {
             var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Код RO');
-            data.addColumn('string', 'Код RU');
-            data.addColumn('string', '3Д дизайнер');
-            data.addColumn('string', 'Ссылка в црм / на диск G');
+            data.addColumn('string', '@Resource.CodeRo');
+            data.addColumn('string', '@Resource.CodeRu');
+            data.addColumn('string', '@Resource.DDesign');
+            data.addColumn('string', '@Resource.Link');
             data.addRow(['@Model[0]', '@Model[1]', "@Model[2]", '<a href="@Model[3]">@Model[3]</a>']);
 
             var table = new google.visualization.Table(document.getElementById('table_div'));

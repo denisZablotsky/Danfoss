@@ -10,7 +10,7 @@ namespace Dunfoss.Models
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public int month { get; set; }
-        public string Division { get; set; }
+        public int Division { get; set; }
         public string Table1 { get; set; }
         public string Chart1 { get; set; }
         public string Table2 { get; set; }

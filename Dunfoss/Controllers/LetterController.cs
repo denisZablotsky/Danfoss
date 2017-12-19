@@ -131,7 +131,7 @@ namespace Dunfoss.Controllers
             ViewBag.good2J = good;
             ViewBag.Month = month;
             ViewBag.TitlesJ = DivisionJug;
-            ViewBag.divisionJ = divisions[1];
+            ViewBag.divisionJ = 1;
 
             //Дальний Восток
             chart.CreateFirstGraph(month, DivisionDalniiVostok , out all, out good);
@@ -141,7 +141,7 @@ namespace Dunfoss.Controllers
             ViewBag.all2V = all;
             ViewBag.good2V = good;
             ViewBag.TitlesV = DivisionDalniiVostok;
-            ViewBag.divisionV = divisions[2];
+            ViewBag.divisionV = 2;
 
             //Западная Сибирь
             chart.CreateFirstGraph(month, DivisionZapadnayaSibir, out all, out good);
@@ -151,7 +151,7 @@ namespace Dunfoss.Controllers
             ViewBag.all2S = all;
             ViewBag.good2S = good;
             ViewBag.TitlesS = DivisionZapadnayaSibir;
-            ViewBag.divisionS = divisions[3];
+            ViewBag.divisionS = 3;
 
             //Северо-Запад
             chart.CreateFirstGraph(month, DivisionSeveroZapad, out all, out good);
@@ -161,7 +161,7 @@ namespace Dunfoss.Controllers
             ViewBag.all2Z = all;
             ViewBag.good2Z = good;
             ViewBag.TitlesZ = DivisionSeveroZapad;
-            ViewBag.divisionZ = divisions[4];
+            ViewBag.divisionZ = 4;
 
             //Урал
             chart.CreateFirstGraph(month, DivisionUral, out all, out good);
@@ -171,7 +171,7 @@ namespace Dunfoss.Controllers
             ViewBag.all2U = all;
             ViewBag.good2U = good;
             ViewBag.TitlesU = DivisionUral;
-            ViewBag.divisionU = divisions[5];
+            ViewBag.divisionU = 5;
 
             //Москва
             chart.CreateFirstGraph(month, DivisionMoskva, out all, out good);
@@ -181,7 +181,7 @@ namespace Dunfoss.Controllers
             ViewBag.all2M = all;
             ViewBag.good2M = good;
             ViewBag.TitlesM = DivisionMoskva;
-            ViewBag.divisionM = divisions[6];
+            ViewBag.divisionM = 6;
 
             //Поволжье
             chart.CreateFirstGraph(month, DivisionPovolje, out all, out good);
@@ -191,7 +191,7 @@ namespace Dunfoss.Controllers
             ViewBag.all2P = all;
             ViewBag.good2P = good;
             ViewBag.TitlesP = DivisionPovolje;
-            ViewBag.divisionP = divisions[7];
+            ViewBag.divisionP = 7;
 
             //Центр
             chart.CreateFirstGraph(month, DivisionCentr, out all, out good);
@@ -201,7 +201,7 @@ namespace Dunfoss.Controllers
             ViewBag.all2C = all;
             ViewBag.good2C = good;
             ViewBag.TitlesC = DivisionCentr;
-            ViewBag.divisionC = divisions[8];
+            ViewBag.divisionC = 8;
 
             //Все
             chart.CreateFirstGraph(month, Cities, out all, out good);
@@ -211,13 +211,13 @@ namespace Dunfoss.Controllers
             ViewBag.all2All = all;
             ViewBag.good2All = good;
             ViewBag.TitlesAll = Cities;
-            ViewBag.divisionAll = "Все";
+            ViewBag.divisionAll = 9;
             
             return PartialView();
         }
 
         [HttpPost]
-        public JsonResult GetLetter(Letter letter, string Chart1, string Chart2, string Division, int month)
+        public JsonResult GetLetter(Letter letter, string Chart1, string Chart2, int Division, int month)
         {
             Letter model = new Letter();
             model.Division = Division;
@@ -225,24 +225,26 @@ namespace Dunfoss.Controllers
             model.Chart2 = Chart2;
 
             string[] cities = null;
-            if (Division == "Юг")
+            if (Division == 1)
                 cities = DivisionJug;
-            else if (Division == "Дальний Восток")
+            else if (Division == 2)
                 cities = DivisionDalniiVostok;
-            else if (Division == "Западная Сибирь")
+            else if (Division == 3)
                 cities = DivisionZapadnayaSibir;
-            else if (Division == "Северо-Запад")
+            else if (Division == 4)
                 cities = DivisionSeveroZapad;
-            else if (Division == "Урал")
+            else if (Division == 5)
                 cities = DivisionUral;
-            else if (Division == "Москва")
+            else if (Division == 6)
                 cities = DivisionMoskva;
-            else if (Division == "Поволжье")
+            else if (Division == 7)
                 cities = DivisionPovolje;
-            else if (Division == "Центр")
+            else if (Division == 8)
                 cities = DivisionCentr;
-            else if (Division == "Все")
+            else if (Division == 9)
                 cities = Cities;
+
+            // var divisions = ["@Resource.South", "@Resource.FEast", "@Resource.WestSib", "@Resource.Northwest", "@Resource.Ural", "@Resource.Moscow", "@Resource.Volga", "@Resource.Center", "@Resource.All"];
 
             int[] all = null;
             float[] good = null;
