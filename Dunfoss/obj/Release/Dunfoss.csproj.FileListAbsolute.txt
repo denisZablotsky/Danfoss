@@ -347,3 +347,6 @@ C:\Users\Kirill\Desktop\Последний бэк\Danfoss-master\Dunfoss\obj\Rel
 C:\Users\Kirill\Desktop\Последний бэк\Danfoss-master\Dunfoss\obj\Release\en\Dunfoss.resources.dll
 C:\Users\Kirill\Desktop\Последний бэк\Danfoss-master\Dunfoss\obj\Release\Dunfoss.dll
 C:\Users\Kirill\Desktop\Последний бэк\Danfoss-master\Dunfoss\obj\Release\Dunfoss.pdb
+C:\Users\Kirill\Desktop\Последний бэк\Danfoss-master\Dunfoss\obj\Release\Dunfoss.Migrations.numbertypedivisions.resources
+C:\Users\Kirill\Desktop\Последний бэк\Danfoss-master\Dunfoss\obj\Release\Dunfoss.Resources.Controllers.ChartController.resources
+C:\Users\Kirill\Desktop\Последний бэк\Danfoss-master\Dunfoss\obj\Release\Dunfoss.Resources.Controllers.ChartController.en.resources

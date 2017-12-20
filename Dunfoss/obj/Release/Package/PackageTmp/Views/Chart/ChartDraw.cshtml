@@ -5,7 +5,16 @@
 
     google.charts.load('current', {packages: ['corechart', 'bar']});
     google.charts.setOnLoadCallback(drawStacked);
-
+    var OyTitles = ["@Resource.QuantityTasks", "@Resource.QuantityCodeNumbers", "@Resource.PiecesOfCalc", "@Resource.QuantitySingleCals", "@Resource.SpeedClosure"];
+    var graphTitles = ["@Resource.NewCalcGraph", "@Resource.CorrectGraph", "@Resource.NewCorrGraph", "@Resource.ReasonsGraph", "@Resource.CausesGraph", "@Resource.CalcDivGraph", "@Resource.OrdersGraph", "@Resource.SpeedGraph"];
+    var monts = ["@Controllers_ChartController.Jan", "@Controllers_ChartController.Feb", "@Controllers_ChartController.Mar", "@Controllers_ChartController.Apr", "@Controllers_ChartController.May", "@Controllers_ChartController.June", "@Controllers_ChartController.July", "@Controllers_ChartController.Aug", "@Controllers_ChartController.Sept", "@Controllers_ChartController.Oct", "@Controllers_ChartController.Nov", "@Controllers_ChartController.Dec"];
+    if(@ViewBag.FilterType == 1){
+        var temp = @Html.Raw(Json.Encode(@ViewBag.Titles));
+        var t = new Array(temp.length);
+        for(var i = 0; i < t.length; i++){
+            t[i] = monts[Number(temp[i])];
+        }
+    }
 
     var exportData;
 
@@ -13,11 +22,15 @@
         var allValues = @Html.Raw(Json.Encode(@ViewBag.AllValuesWeek));
         var goodValues = @Html.Raw(Json.Encode(@ViewBag.GoodValuesWeek));
         var titles = @Html.Raw(Json.Encode(@ViewBag.Titles));
+        if(@ViewBag.FilterType == 1 && @ViewBag.MainTitle != 7 && @ViewBag.MainTitle != 6){
+            var titles = t;
+        }
+
 
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.Week", "@Resource.DelayedTasks", { role: "annotation" }, "@Resource.NormTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -29,7 +42,7 @@
         }
         if(allValues.length - count >= 0)
             dataN.splice(count, (allValues.length + 1) - count );
-        
+
         if(flag == 1){
             dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
         }
@@ -39,39 +52,39 @@
         var option;
         if(@ViewBag.Type == 2){
             options = {
-                title: '@ViewBag.MainTitle',
+                title: graphTitles[Number(@ViewBag.MainTitle)],
                 isStacked: true,
                 hAxis: {
-                    title: 'Месяц',
+                    title: '@Resource.Month',
                     format: 'W'
                 },
                 vAxis: {
-                    title: 'Количество расчетов',
+                    title: '@Resource.QuantityCalc',
                 },
                 colors: ['#92d14f', '#E20011']
             };
         }
         else if (@ViewBag.Type == 3){
             options = {
-				title: '@ViewBag.MainTitle',
+				title: graphTitles[Number(@ViewBag.MainTitle)],
                 isStacked: true,
-                hAxis: {title: "Офис", slantedText:true, slantedTextAngle:60 },
+                hAxis: {title: "@Resource.Office", slantedText:true, slantedTextAngle:60 },
                 vAxis: {
-                    title: '@ViewBag.OyTitle',
+                    title: OyTitles[Number(@ViewBag.OyTitle)],
                 },
                 colors: ['#92d14f', '#E20011']
             };
         }
         else{
             options = {
-                title: '@ViewBag.MainTitle',
+                title: graphTitles[Number(@ViewBag.MainTitle)],
                 isStacked: true,
                 hAxis: {
-                    title: 'Номер недели',
+                    title: '@Resource.WeekNumber',
                     format: 'W'
                 },
                 vAxis: {
-                    title: 'Количество расчетов',
+                    title: '@Resource.QuantityCalc',
                 },
                 colors: ['#92d14f', '#E20011']
             };
@@ -83,7 +96,7 @@
         exportData = chart.getImageURI();
     }
 
-    
+
 
     function ExportToServer(){
         var string = exportData;

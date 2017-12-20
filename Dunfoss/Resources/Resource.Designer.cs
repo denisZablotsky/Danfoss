@@ -304,6 +304,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Дата проведения собрания.
+        /// </summary>
+        public static string DateSobr {
+            get {
+                return ResourceManager.GetString("DateSobr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 3Д дизайнер.
         /// </summary>
         public static string DDesign {
@@ -336,6 +345,15 @@ namespace Dunfoss.Resources {
         public static string DesProc {
             get {
                 return ResourceManager.GetString("DesProc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дивизионы.
+        /// </summary>
+        public static string Divisions {
+            get {
+                return ResourceManager.GetString("Divisions", resourceCulture);
             }
         }
         
@@ -871,6 +889,15 @@ namespace Dunfoss.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Оценки по дизайнерам.
+        /// </summary>
+        public static string RatingDes {
+            get {
+                return ResourceManager.GetString("RatingDes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Причина.
         /// </summary>
         public static string Reason {
@@ -957,6 +984,15 @@ namespace Dunfoss.Resources {
         public static string SpeedClosure {
             get {
                 return ResourceManager.GetString("SpeedClosure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Средняя скорость выполнения модели.
+        /// </summary>
+        public static string SpeedDes {
+            get {
+                return ResourceManager.GetString("SpeedDes", resourceCulture);
             }
         }
         

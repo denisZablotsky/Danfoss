@@ -1,9 +1,10 @@
 ﻿
 @{
     ViewBag.Title = "GetLetterById";
+    string[] divisions = { Resource.South, Resource.FEast, Resource.WestSib, Resource.Northwest, Resource.Ural, Resource.Moscow, Resource.Volga, Resource.Center, Resource.All };
 }
 <div style="width:900px; margin: auto;">
-<h4>Загрузка группы БТП. Информация по Дивизиону @ViewBag.Division.</h4>
+<h4>Загрузка группы БТП. Информация по Дивизиону @divisions[ViewBag.Division - 1].</h4>
 
 <p>Уважаемые коллеги, добрый день!</p>
 <p>Данное письмо предназначено для информирования офисов продаж Данфосс/Ридан о текущей скорости обработки задач группой БТП.
@@ -28,7 +29,7 @@
             <td>@ViewBag.Table1[1]</td>
         </tr>
         <tr>
-            <td colspan="2">Для дивизиона @ViewBag.Division</td>
+            <td colspan="2">Для дивизиона @divisions[ViewBag.Division - 1]</td>
             <td>@ViewBag.Table1[2]</td>
             <td>@ViewBag.Table1[3]</td>
         </tr>
@@ -67,7 +68,7 @@
             <td>@ViewBag.Table3[1]</td>
         </tr>
         <tr>
-            <td>Для дивизиона @ViewBag.Division</td>
+            <td>Для дивизиона @divisions[ViewBag.Division - 1]</td>
             <td>@ViewBag.Table3[2]</td>
             <td>@ViewBag.Table3[3]</td>
         </tr>

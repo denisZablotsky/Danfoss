@@ -471,4 +471,16 @@
   <data name="UpFac" xml:space="preserve">
     <value>Загружена на завод</value>
   </data>
+  <data name="DateSobr" xml:space="preserve">
+    <value>Дата проведения собрания</value>
+  </data>
+  <data name="Divisions" xml:space="preserve">
+    <value>Дивизионы</value>
+  </data>
+  <data name="RatingDes" xml:space="preserve">
+    <value>Оценки по дизайнерам</value>
+  </data>
+  <data name="SpeedDes" xml:space="preserve">
+    <value>Средняя скорость выполнения модели</value>
+  </data>
 </root>

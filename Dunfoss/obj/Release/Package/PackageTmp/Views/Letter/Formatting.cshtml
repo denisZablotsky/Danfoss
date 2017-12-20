@@ -22,7 +22,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -36,7 +36,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -47,10 +47,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество расчетов, кп',
+                title: '@Resource.QuantityCalc',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -90,7 +90,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -104,7 +104,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -116,10 +116,10 @@
             isStacked: true,
             hAxis: {
 				slantedText:true, slantedTextAngle:60,
-                title: 'Офис продаж'
+				title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество контуров, шт',
+                title: '@Resource.KolvoKonturov',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -179,7 +179,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -193,7 +193,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -204,10 +204,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество расчетов, кп',
+                title: '@Resource.QuantityCalc',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -244,7 +244,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -258,7 +258,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -269,10 +269,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество контуров, шт',
+                title: '@Resource.KolvoKonturov',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -331,7 +331,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -345,7 +345,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -356,10 +356,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество расчетов, кп',
+                title: '@Resource.QuantityCalc',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -396,7 +396,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -410,7 +410,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -421,10 +421,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество контуров, шт',
+                title: '@Resource.KolvoKonturov',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -482,7 +482,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -496,7 +496,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -507,10 +507,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество расчетов, кп',
+                title: '@Resource.QuantityCalc',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -547,7 +547,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -561,7 +561,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -572,10 +572,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество контуров, шт',
+                title: '@Resource.KolvoKonturov',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -633,7 +633,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -647,7 +647,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -658,10 +658,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество расчетов, кп',
+                title: '@Resource.QuantityCalc',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -698,7 +698,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -712,7 +712,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -723,10 +723,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество контуров, шт',
+                title: '@Resource.KolvoKonturov',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -785,7 +785,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -799,7 +799,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -810,10 +810,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество расчетов, кп',
+                title: '@Resource.QuantityCalc',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -850,7 +850,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -864,7 +864,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -875,10 +875,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество контуров, шт',
+                title: '@Resource.KolvoKonturov',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -937,7 +937,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -951,7 +951,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -962,10 +962,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество расчетов, кп',
+                title: '@Resource.QuantityCalc',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -1002,7 +1002,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -1016,7 +1016,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -1027,10 +1027,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество контуров, шт',
+                title: '@Resource.KolvoKonturov',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -1088,7 +1088,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -1102,7 +1102,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -1113,10 +1113,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество расчетов, кп',
+                title: '@Resource.QuantityCalc',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -1153,7 +1153,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -1167,7 +1167,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -1178,10 +1178,10 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж'
+                title: '@Resource.PlaceSale'
             },
             vAxis: {
-                title: 'Количество контуров, шт',
+                title: '@Resource.KolvoKonturov',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -1238,7 +1238,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -1252,7 +1252,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -1263,11 +1263,11 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж',
+                title: '@Resource.PlaceSale',
 				slantedText:true, slantedTextAngle:60
             },
             vAxis: {
-                title: 'Количество расчетов, кп',
+                title: '@Resource.QuantityCalc',
             },
             colors: ['#92d14f', '#E20011']
         };
@@ -1304,7 +1304,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Не просроченные задачи", { role: "annotation" }, "Просроченные задачи", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.WeekSingle", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
@@ -1318,7 +1318,7 @@
             dataN.splice(count, (allValues.length + 1) - count );
 
         if(flag == 1){
-            dataN[1] = [0, 0, "Данных по заданному фильтру нет", 0 , "", ""];
+            dataN[1] = [0, 0, "@Resource.NoData", 0 , "", ""];
         }
 
         var data = google.visualization.arrayToDataTable(dataN);
@@ -1329,11 +1329,11 @@
             title: '',
             isStacked: true,
             hAxis: {
-                title: 'Офис продаж',
+                title: '@Resource.PlaceSale',
 				slantedText:true, slantedTextAngle:60
             },
             vAxis: {
-                title: 'Количество контуров, шт',
+                title: '@Resource.KolvoKonturov',
             },
             colors: ['#92d14f', '#E20011']
         };

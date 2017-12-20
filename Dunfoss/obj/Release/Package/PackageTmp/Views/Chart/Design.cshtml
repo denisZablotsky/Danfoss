@@ -6,15 +6,15 @@
 <div class="chart-options">
     @using (Ajax.BeginForm("DesignDraw", "Chart", new AjaxOptions { UpdateTargetId = "chart-draw" }))
     {
-	<span>Тип графика</span>
+	<span>@Resource.TypeGraph </span>
         <select id="ChartType" name="ChartType">
-            <option value="1" selected>Показатели скорости закрытия задач по неделям</option>
-            <option value="2">Показатели скорости закрытия задач по офисам</option>
+            <option value="1" selected>@Resource.ClosureByWeek</option>
+            <option value="2">@Resource.ClosureByOffice</option>
             
         </select>
         <br />
 		<br/>
-        <span>Тип фильтра</span>
+        <span>@Resource.Filter: </span>
         <select id="designType" name="designType">
             <option value="O" selected>O - orders(заказы)</option>
             <option value="P">P - projects(проекты)</option>
@@ -22,58 +22,58 @@
         </select>
         <br />
         <div id="FilterType">
-            <span>Фильтрация: </span>
+            <span>@Resource.Filter: </span>
             <select id="filterType" name="filterType" class="option-chart-filter">
-                <option value="1" selected>По месяцам</option>
-                <option value="2">По неделям</option>
+                <option value="1" selected>@Resource.Month</option>
+                <option value="2">@Resource.Week</option>
             </select>
         </div>
 
         <div id="WeekFilter" style="display: none;" class="option-chart-filter">
-            <span class="chart-options-opt">Фильтрация по неделям: с</span><input type="number" value="1" max="52" min="1" name="weekMin" />
-            <span> по </span><input type="number" value="52" max="52" min="1" name="weekMax" />
+            <span class="chart-options-opt">@Resource.FilterWeek: @Resource.From</span><input type="number" value="1" max="52" min="1" name="weekMin" />
+            <span> @Resource.To </span><input type="number" value="52" max="52" min="1" name="weekMax" />
             <br />
         </div>
 
         <div id="MonthFilter" class="option-chart-filter">
 
             <span>
-                C :
+                @Resource.From
                 <select id="chartNumber" name="monthMin" style="width: 90px;">
-                    <option value="1" selected>Января</option>
-                    <option value="2">Февраля</option>
-                    <option value="3">Марта</option>
-                    <option value="4">Апреля</option>
-                    <option value="5">Мая</option>
-                    <option value="6">Июня</option>
-                    <option value="7">Июля</option>
-                    <option value="8">Августа</option>
-                    <option value="9">Сентября</option>
-                    <option value="10">Октября</option>
-                    <option value="11">Ноября</option>
-                    <option value="12">Декабря</option>
+                    <option value="1" selected>@Resource.MJan</option>
+                    <option value="2">@Resource.MFeb</option>
+                    <option value="3">@Resource.MMar</option>
+                    <option value="4">@Resource.MApr</option>
+                    <option value="5">@Resource.MMay</option>
+                    <option value="6">@Resource.MJun</option>
+                    <option value="7">@Resource.MJul</option>
+                    <option value="8">@Resource.MAug</option>
+                    <option value="9">@Resource.MSep</option>
+                    <option value="10">@Resource.MOkt</option>
+                    <option value="11">@Resource.MNov</option>
+                    <option value="12">@Resource.MDec</option>
                 </select>
             </span>
             <span>
-                По:
+                @Resource.To
                 <select id="chartNumber" name="monthMax" style="width: 90px;">
-                    <option value="1">Январь</option>
-                    <option value="2">Февраль</option>
-                    <option value="3">Март</option>
-                    <option value="4">Апрель</option>
-                    <option value="5">Май</option>
-                    <option value="6">Июнь</option>
-                    <option value="7">Июль</option>
-                    <option value="8">Август</option>
-                    <option value="9">Сентябрь</option>
-                    <option value="10">Октябрь</option>
-                    <option value="11">Ноябрь</option>
-                    <option value="12" selected>Декабрь</option>
+                    <option value="1">@Resource.MJan</option>
+                    <option value="2">@Resource.MFeb</option>
+                    <option value="3">@Resource.MMar</option>
+                    <option value="4">@Resource.MApr</option>
+                    <option value="5">@Resource.MMay</option>
+                    <option value="6">@Resource.MJun</option>
+                    <option value="7">@Resource.MJul</option>
+                    <option value="8">@Resource.MAug</option>
+                    <option value="9">@Resource.MSep</option>
+                    <option value="10">@Resource.MOkt</option>
+                    <option value="11">@Resource.MNov</option>
+                    <option value="12" selected>@Resource.MDec</option>
                 </select>
             </span>
             <br />
         </div>
-        <div class="chart-options-submit"><input type="submit" value="Построить" /></div>
+        <div class="chart-options-submit"><input type="submit" value="@Resource.CreateBtn" /></div>
 
     }
 

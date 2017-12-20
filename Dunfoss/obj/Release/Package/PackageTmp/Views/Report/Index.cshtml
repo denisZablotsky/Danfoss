@@ -7,27 +7,27 @@
     @using (Ajax.BeginForm("Formatting", "Report", new AjaxOptions { UpdateTargetId = "chart-draw", OnBegin = "ShowLoad" }))
     {
         <div id="WeekFilter" class="option-chart-filter">
-            <span class="chart-options-opt">Фильтрация по неделям: с</span><input type="number" value="1" max="52" min="1" name="min" />
-            <span>по</span><input type="number" value="52" max="52" min="1" name="max" />
+            <span class="chart-options-opt">@Resource.FilterWeek: @Resource.From</span><input type="number" value="1" max="52" min="1" name="min" />
+            <span>@Resource.To</span><input type="number" value="52" max="52" min="1" name="max" />
             <br />
         </div>
         <div id="Division" class="option-chart-filter" style="display: none;">
-            <span>Дивизионы :</span>
+            <span>@Resource.Divisions :</span>
             <select id="division" name="division">
-                <option>Все</option>
-                <option>Юг</option>
-                <option>Дальний Восток</option>
-                <option>Западная Сибирь</option>
-                <option>Северо-Запад</option>
-                <option>Урал</option>
-                <option>Москва</option>
-                <option>Поволжье</option>
-                <option>Центр</option>
+                <option>@Resource.All</option>
+                <option>@Resource.South</option>
+                <option>@Resource.FEast</option>
+                <option>@Resource.WestSib</option>
+                <option>@Resource.Northwest</option>
+                <option>@Resource.Ural</option>
+                <option>@Resource.Moscow</option>
+                <option>@Resource.Volga</option>
+                <option>@Resource.Center</option>
             </select>
             <br />
         </div>
-        <span>Дата проведения: </span><input type="date" name="date" value="2017-12-13" />
-        <div class="chart-options-submit"><input type="submit" value="Сформировать" /></div>
+        <span>@Resource.DateMeeting: </span><input type="date" name="date" value="2017-12-13" />
+        <div class="chart-options-submit"><input type="submit" value="@Resource.CreateBtn" /></div>
     }
 
 </div>

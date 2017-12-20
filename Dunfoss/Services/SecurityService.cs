@@ -21,6 +21,7 @@ namespace Dunfoss.Services
             set
             {
                 _session["UserId"] = value;
+                _session.Timeout = 120;
             }
         }
 

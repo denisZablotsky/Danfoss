@@ -269,10 +269,23 @@ namespace Dunfoss.Controllers
         }
 
         [HttpPost]
-        public JsonResult GetImages(string image1, string image2, string image3, string image4, string image5, string image6, string image7, string image72, int min, int max, DateTime date, Report report)
+        public JsonResult GetImages(string image1, string image2, string image3, string image4, string image5, string image6, string image7, string image72, int min, int max, string date, Report report)
         {
             Report model = new Report();
-            model.Date = date;
+            if (date.Contains('/'))
+            {
+                string[] ar = date.Split('/');
+                date = ar[1] + '.' + ar[0] + '.' +  ar[2];
+                if (date.Contains(" AM"))
+                {
+                    date = date.Replace(" AM", "");
+                }
+                else
+                {
+                    date = date.Replace(" PM", "");
+                }
+            }
+            model.Date = Convert.ToDateTime(date);
             model.image1 = image1;
             model.image2 = image2;
             model.image3 = image3;

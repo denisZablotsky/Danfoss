@@ -14,35 +14,35 @@
         
         <br />
         <div id="FilterType">
-            <span>Фильтрация: </span>
+            <span>@Resource.Filter: </span>
             <select id="filterType" name="filterType" class="option-chart-filter">
-                <option value="1" selected>По месяцам</option>
-                <option value="2">По неделям</option>
+                <option value="1" selected>@Resource.FilterMonth</option>
+                <option value="2">@Resource.FilterWeek</option>
             </select>
         </div>
 
         <div id="WeekFilter" style="display: none;" class="option-chart-filter">
-            <span class="chart-options-opt">Номер недели: </span><input type="number" value="1" max="52" min="1" name="weekNumber" />
+            <span class="chart-options-opt">@Resource.WeekNumber: </span><input type="number" value="1" max="52" min="1" name="weekNumber" />
             <br />
         </div>
 
         <div id="MonthFilter" class="option-chart-filter" style="display: none;">
-            <span class="chart-options-opt">Номер месяца: </span><input type="number" value="1" max="12" min="1" name="monthNumber" />
+            <span class="chart-options-opt">@Resource.MonthNumber: </span><input type="number" value="1" max="12" min="1" name="monthNumber" />
             <br />
         </div>
 
         <div id="WeekFilterMany" style="display: none;" class="option-chart-filter">
-            <span class="chart-options-opt">Фильтрация по неделям: с</span><input type="number" value="1" max="52" min="1" name="min" />
-            <span> по </span><input type="number" value="52" max="52" min="1" name="max" />
+            <span class="chart-options-opt">@Resource.FilterWeek: @Resource.From</span><input type="number" value="1" max="52" min="1" name="min" />
+            <span> @Resource.To </span><input type="number" value="52" max="52" min="1" name="max" />
             <br />
         </div>
         <div id="MonthFilterMany" class="option-chart-filter">
-            <span class="chart-options-opt">Фильтрация по месяцам: с</span><input type="number" value="1" max="12" min="1" name="minMonth" />
-            <span> по </span><input type="number" value="12" max="12" min="1" name="maxMonth" />
+            <span class="chart-options-opt">@Resource.FilterMonth: @Resource.From</span><input type="number" value="1" max="12" min="1" name="minMonth" />
+            <span> @Resource.To </span><input type="number" value="12" max="12" min="1" name="maxMonth" />
             <br />
         </div>
 
-        <div class="chart-options-submit"><input type="submit" value="Построить" /></div>
+        <div class="chart-options-submit"><input type="submit" value="@Resource.CreateBtn" /></div>
 
     }
 

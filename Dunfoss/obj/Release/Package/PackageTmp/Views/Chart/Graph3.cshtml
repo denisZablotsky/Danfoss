@@ -17,7 +17,7 @@
         var dataN = new Array(titles.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["Неделя", "Good", { role: "annotation" }, "Medium", { role: "annotation" }, "Poor", { role: "annotation" }];
+        dataN[0] = ["@Resource.Week", "Good", { role: "annotation" }, "Medium", { role: "annotation" }, "Poor", { role: "annotation" }];
         for(var i = 0; i < titles.length; i++){
             if(good[i] != 0 || med[i] != 0 || poor[i] != 0){
                 var goodAn = "";
@@ -42,13 +42,13 @@
         var data = google.visualization.arrayToDataTable(dataN);
         var view = new google.visualization.DataView(data);
         var options = {
-                title: 'Новые расчеты БТП',
+                title: '@Resource.NewCalcGraph',
                 isStacked: true,
                 hAxis: {
-                    title: 'Номер недели',
+                    title: '@Resource.WeekNumber',
                     format: 'W'
                 },
-                hAxis: {title: "Количество расчетов", slantedText:true, slantedTextAngle: 270 },
+                hAxis: {title: "@Resource.QuantityCalc", slantedText:true, slantedTextAngle: 270 },
                 colors: ['#92d14f', '#E20011', '#333333']
             };
 
