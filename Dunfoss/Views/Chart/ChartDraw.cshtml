@@ -30,7 +30,7 @@
         var dataN = new Array(allValues.length + 1);
         var count = 1;
         var flag = 1;
-        dataN[0] = ["@Resource.Week", "@Resource.DelayedTasks", { role: "annotation" }, "@Resource.NormTasks", { role: "annotation" }, { role: "annotation" }];
+        dataN[0] = ["@Resource.Week", "@Resource.NormTasks", { role: "annotation" }, "@Resource.DelayedTasks", { role: "annotation" }, { role: "annotation" }];
         for(var i = 0; i < allValues.length; i++){
             if(allValues[i] != 0){
                 var percent = (((allValues[i] - goodValues[i]) * 100) / allValues[i]).toFixed(0);
