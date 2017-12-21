@@ -28,11 +28,14 @@
             <td>@ViewBag.Table1[0]</td>
             <td>@ViewBag.Table1[1]</td>
         </tr>
-        <tr>
-            <td colspan="2">Для дивизиона @divisions[ViewBag.Division - 1]</td>
-            <td>@ViewBag.Table1[2]</td>
-            <td>@ViewBag.Table1[3]</td>
-        </tr>
+        @if (ViewBag.Division != 9)
+        {
+            <tr>
+                <td colspan="2">Для дивизиона @divisions[ViewBag.Division - 1]</td>
+                <td>@ViewBag.Table1[2]</td>
+                <td>@ViewBag.Table1[3]</td>
+            </tr>
+        }
     </table>
 
 
@@ -67,11 +70,14 @@
             <td>@ViewBag.Table3[0]</td>
             <td>@ViewBag.Table3[1]</td>
         </tr>
-        <tr>
-            <td>Для дивизиона @divisions[ViewBag.Division - 1]</td>
-            <td>@ViewBag.Table3[2]</td>
-            <td>@ViewBag.Table3[3]</td>
-        </tr>
+        @if (ViewBag.Division != 9)
+        {
+            <tr>
+                <td>Для дивизиона @divisions[ViewBag.Division - 1]</td>
+                <td>@ViewBag.Table3[2]</td>
+                <td>@ViewBag.Table3[3]</td>
+            </tr>
+        }
     </table>
 
         

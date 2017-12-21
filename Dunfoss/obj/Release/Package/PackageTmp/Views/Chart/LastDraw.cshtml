@@ -20,8 +20,8 @@
             </select>
         </div>
         <div style="width:500px; margin: auto; padding-top: 15px;">
-            @Html.RadioButton("typeCountSum", "sum", true)<span>Количество единичных расчетов в задачах</span><br />
-            @Html.RadioButton("typeCountSum", "count")<span>Количество задач</span><br />
+            @Html.RadioButton("typeCountSum", "sum", true)<span>@Resource.QuantitySingleCals</span><br />
+            @Html.RadioButton("typeCountSum", "count")<span>@Resource.QuantityTasks</span><br />
         </div>
         <div class="chart-options"><div class="chart-options-submit"><input type="submit" value="@Resource.CreateBtn" /></div></div>
         }

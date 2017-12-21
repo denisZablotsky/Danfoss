@@ -115,7 +115,7 @@ namespace Dunfoss.Charts
                 {
                     for (int f = RangA; f <= RangB; f++)
                     {
-                        if (foundRows[j].ItemArray[21].ToString() == item.ToString() && ((foundRows[j].ItemArray[17].ToString() == "W" + f))) { Sum += Convert.ToInt32(foundRows[j].ItemArray[38]); }
+                        if (foundRows[j].ItemArray[21].ToString() == item.ToString() && (foundRows[j].ItemArray[39].ToString() != "") && ((foundRows[j].ItemArray[17].ToString() == "W" + f))) { Sum += Convert.ToInt32(foundRows[j].ItemArray[39]); }
                     }
                 }
                 values[index] = Sum;

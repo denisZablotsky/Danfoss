@@ -50,9 +50,13 @@ namespace Dunfoss.Controllers
             return View();
         }
 
+
+
         [HttpGet]
-        public ActionResult GetLetterById(int id)
+        public ActionResult GetLetterById(int id = -1)
         {
+            if (id == -1)
+                return Redirect("/");
             Letter letter = letterRepository.GetLetterById(id);
             int[] all = null;
             string[] table = letter.Table1.Split(';');

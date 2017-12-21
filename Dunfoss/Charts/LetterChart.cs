@@ -29,8 +29,7 @@ namespace Dunfoss.Charts
         DateTime Oktober = new DateTime(2017, 10, 31, 23, 59, 00);
         DateTime November = new DateTime(2017, 11, 30, 23, 59, 00);
         DateTime December = new DateTime(2017, 12, 31, 23, 59, 00);
-        int[] Allint;
-        int[] Goodint;
+
         string[] Cities = new string[]{ "Краснодар - HE", "Ростов-на-Дону - HE", "Волгоград - HE", "Саратов - HE",
             "Владивосток - HE", "Хабаровск - HE", "Иркутск - HE", "Красноярск - HE",
             "Новосибирск - HE", "Омск - HE", "Санкт-Петербург - HE", "Екатеринбург - HE", "Ижевск - HE", "Пермь - HE",

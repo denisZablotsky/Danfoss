@@ -4,7 +4,7 @@
 }
 
 <div class="chart-options">
-    @using (Ajax.BeginForm("ChartDraw", "Chart", new { filename = ViewBag.Filename }, new AjaxOptions { UpdateTargetId = "chart-draw" }))
+    @using (Ajax.BeginForm("ChartDraw", "Chart", new { filename = ViewBag.Filename}, new AjaxOptions { UpdateTargetId = "chart-draw" }))
     {
         <span>@Resource.TypeGraph</span>
         <select id="chartNumber" name="chartNumber">
@@ -31,7 +31,7 @@
             <br />
         </div>
         <div id="MonthFilter" class="option-chart-filter">
-            <span class="chart-options-opt">@Resource.FilterWeek: @Resource.From</span><input type="number" value="1" max="12" min="1" name="minMonth" />
+            <span class="chart-options-opt">@Resource.FilterMonth: @Resource.From</span><input type="number" value="1" max="12" min="1" name="minMonth" />
             <span> @Resource.To </span><input type="number" value="12" max="12" min="1" name="maxMonth" />
             <br />
         </div>
@@ -40,17 +40,17 @@
             <br />
         </div>
         <div id="Division" style="display: none;" class="option-chart-filter">
-            <span>Дивизионы :</span>
+            <span>@Resource.Divisions :</span>
             <select id="division" name="division">
-                <option>Все</option>
-                <option>Юг</option>
-                <option>Дальний Восток</option>
-                <option>Западная Сибирь</option>
-                <option>Северо-Запад</option>
-                <option>Урал</option>
-                <option>Москва</option>
-                <option>Поволжье</option>
-                <option>Центр</option>
+                <option>@Resource.All</option>
+                <option>@Resource.South</option>
+                <option>@Resource.FEast</option>
+                <option>@Resource.WestSib</option>
+                <option>@Resource.Northwest</option>
+                <option>@Resource.Ural</option>
+                <option>@Resource.Moscow</option>
+                <option>@Resource.Volga</option>
+                <option>@Resource.Center</option>
             </select>
             <br />
         </div>

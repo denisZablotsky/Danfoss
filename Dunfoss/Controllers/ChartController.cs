@@ -304,7 +304,6 @@ namespace Dunfoss.Controllers
             {
                 titlesMonth[i] = (i + monthMin - 1).ToString();
             }
-            string MainTitle = "";
             if (ChartType == "1")
             {
                 DesignChart design = new DesignChart();
